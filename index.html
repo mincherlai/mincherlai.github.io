@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Min-Cherl JUNG | Innovation Lab for OHP Materials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a0f2e;
+      --dark-blue: #0d1b4b;
+      --accent: #00c6ff;
+      --accent2: #7b61ff;
+      --accent3: #00e5a0;
+      --white: #ffffff;
+      --light-gray: #f0f4ff;
+      --text-muted: #8892b0;
+      --card-bg: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      background: rgba(10,15,46,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: var(--white) !important;
+      padding: 8px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* ─── HERO ────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 60px 60px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a2a6c 0%, #0a0f2e 60%);
+    }
+
+    /* animated dots/particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float linear infinite;
+      opacity: 0.15;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      10%  { opacity: 0.15; }
+      90%  { opacity: 0.15; }
+      100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,198,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,198,255,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    /* glow orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .orb1 {
+      width: 500px; height: 500px;
+      background: rgba(0,198,255,0.12);
+      top: -100px; left: -100px;
+      animation: orb-move1 12s ease-in-out infinite alternate;
+    }
+    .orb2 {
+      width: 400px; height: 400px;
+      background: rgba(123,97,255,0.15);
+      bottom: -80px; right: -80px;
+      animation: orb-move2 10s ease-in-out infinite alternate;
+    }
+    .orb3 {
+      width: 300px; height: 300px;
+      background: rgba(0,229,160,0.08);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    @keyframes orb-move1 {
+      from { transform: translate(0,0); }
+      to   { transform: translate(60px, 40px); }
+    }
+    @keyframes orb-move2 {
+      from { transform: translate(0,0); }
+      to   { transform: translate(-50px, -30px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,198,255,0.1);
+      border: 1px solid rgba(0,198,255,0.3);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.5); }
+    }
+
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(0,198,255,0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 45px rgba(0,198,255,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      background: rgba(0,198,255,0.05);
+    }
+
+    /* stats row */
+    .hero-stats {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      margin-top: 70px;
+      padding-top: 50px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* ─── SECTIONS common ─────────────────────── */
+    section { padding: 100px 60px; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 560px;
+      font-size: 0.97rem;
+    }
+
+    /* ─── ABOUT ───────────────────────────────── */
+    #about {
+      background: var(--dark-blue);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(0,198,255,0.15), rgba(123,97,255,0.15));
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      gap: 12px;
+    }
+    .about-photo-placeholder svg {
+      width: 56px; height: 56px;
+      opacity: 0.3;
+    }
+    .about-frame {
+      position: absolute;
+      inset: -10px;
+      border-radius: 20px;
+      border: 1px solid rgba(0,198,255,0.15);
+      pointer-events: none;
+    }
+    .about-accent-dot {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent2), var(--accent3));
+      opacity: 0.3;
+      filter: blur(30px);
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .tag {
+      background: rgba(0,198,255,0.08);
+      border: 1px solid rgba(0,198,255,0.2);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .timeline {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .timeline-year {
+      min-width: 60px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      padding-top: 2px;
+    }
+    .timeline-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    .timeline-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── RESEARCH ────────────────────────────── */
+    #research {
+      position: relative;
+      overflow: hidden;
+    }
+    .research-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .research-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .research-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .research-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .research-card:hover {
+      border-color: rgba(0,198,255,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .research-card:hover::before { transform: scaleX(1); }
+
+    .card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,198,255,0.15), rgba(123,97,255,0.15));
+      border: 1px solid rgba(0,198,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .card-text {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .card-link:hover { text-decoration: underline; }
+
+    /* ─── PUBLICATIONS ────────────────────────── */
+    #publications {
+      background: var(--dark-blue);
+    }
+    .pub-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pub-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .pub-item:hover { border-color: rgba(0,198,255,0.3); }
+    .pub-year {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 42px;
+      padding-top: 3px;
+    }
+    .pub-body { flex: 1; }
+    .pub-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .pub-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .pub-journal {
+      display: inline-block;
+      background: rgba(123,97,255,0.1);
+      border: 1px solid rgba(123,97,255,0.25);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      margin-top: 8px;
+    }
+
+    /* ─── TEAM ────────────────────────────────── */
+    #team {
+    }
+    .team-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,198,255,0.3);
+    }
+    .team-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .team-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .team-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── NEWS ────────────────────────────────── */
+    #news {
+      background: var(--dark-blue);
+    }
+    .news-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,198,255,0.3);
+    }
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--accent3);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .news-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .news-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT ─────────────────────────────── */
+    #contact {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(0,198,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--white);
+      transition: border-color 0.2s, transform 0.2s;
+      min-width: 200px;
+    }
+    .contact-card:hover {
+      border-color: rgba(0,198,255,0.4);
+      transform: translateY(-3px);
+    }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(0,198,255,0.15), rgba(123,97,255,0.15));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .contact-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+    .contact-value {
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .footer-inst {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── UTILITY ─────────────────────────────── */
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin-bottom: 28px;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 70px 24px; }
+      #hero { padding: 100px 24px 60px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ NAV ════════ -->
+  <nav>
+    <a href="#hero" class="nav-logo">Dr. Min-Cherl <span>JUNG</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- floating particles -->
+    <div class="particle" style="width:4px;height:4px;background:var(--accent);left:15%;top:80%;animation-duration:9s;animation-delay:0s;"></div>
+    <div class="particle" style="width:3px;height:3px;background:var(--accent2);left:30%;top:90%;animation-duration:11s;animation-delay:2s;"></div>
+    <div class="particle" style="width:5px;height:5px;background:var(--accent3);left:60%;top:85%;animation-duration:8s;animation-delay:1s;"></div>
+    <div class="particle" style="width:3px;height:3px;background:var(--accent);left:75%;top:75%;animation-duration:13s;animation-delay:4s;"></div>
+    <div class="particle" style="width:4px;height:4px;background:var(--accent2);left:85%;top:88%;animation-duration:10s;animation-delay:3s;"></div>
+    <div class="particle" style="width:6px;height:6px;background:var(--accent3);left:45%;top:92%;animation-duration:7s;animation-delay:1.5s;"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">Shanghai Jiao Tong University · GIFT</div>
+      <h1 class="hero-title">
+        Innovation Lab for<br/>
+        <span class="highlight">Organic-Inorganic</span><br/>
+        Hybrid Materials
+      </h1>
+      <p class="hero-sub">
+        Exploring the frontier of perovskite materials science — from atomic-scale defects
+        to next-generation THz medical devices.
+      </p>
+      <div class="hero-buttons">
+        <a href="#research" class="btn-primary">Explore Research →</a>
+        <a href="https://www.researchgate.net/profile/Min-Cherl-Jung" target="_blank" class="btn-secondary">ResearchGate ↗</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Years Research</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Research Pillars</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Core Methods</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Institutions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ ABOUT ════════ -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-photo-wrap">
+        <div class="about-photo-placeholder">
+          <!-- Replace with actual photo: <img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:16px;" /> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Photo placeholder</span>
+        </div>
+        <div class="about-frame"></div>
+        <div class="about-accent-dot"></div>
+      </div>
+
+      <div>
+        <div class="section-label">Principal Investigator</div>
+        <h2 class="section-title">Dr. Min-Cherl JUNG</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Associate Professor at the Global Institute of Future Technology (GIFT),
+          Shanghai Jiao Tong University. Specialising in surface physics, organic-inorganic
+          hybrid perovskite materials, and THz-based applications for next-generation
+          medical and sensing devices.
+        </p>
+
+        <div class="about-tags">
+          <span class="tag">Surface Physics</span>
+          <span class="tag">OHP Materials</span>
+          <span class="tag">THz Spectroscopy</span>
+          <span class="tag">ARPES / NEXAFS</span>
+          <span class="tag">Thin Film</span>
+          <span class="tag">Synchrotron</span>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2026–</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">Associate Professor · Shanghai Jiao Tong University, GIFT, China</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2020–24</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">Associate Professor · University of Tsukuba, Faculty of Pure and Applied Sciences</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2016–19</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">Assistant Professor · Nara Institute of Science and Technology (NAIST)</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2012–15</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">Staff Scientist · OIST, Energy Materials and Surface Sciences Unit</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2003</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">Ph.D. · Department of Physics, University of Seoul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ RESEARCH ════════ -->
+  <section id="research">
+    <div class="research-inner">
+      <div class="research-header">
+        <div>
+          <div class="section-label">What We Study</div>
+          <h2 class="section-title">Research Focus</h2>
+        </div>
+        <p class="section-desc">
+          Two core research pillars, bridged by advanced characterisation techniques
+          at the surface and interface level.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <!-- Card 1 -->
+        <div class="research-card">
+          <div class="card-icon">🔬</div>
+          <div class="card-title">Defect–Phonon–Electronic Structure Correlations</div>
+          <p class="card-text">
+            Investigating how chemical and structural defects in OHP thin films and single
+            crystals influence phonon dispersion and electronic band structure via
+            synchrotron-based soft X-ray techniques (ARPES, NEXAFS, SPEM).
+          </p>
+          <a href="#publications" class="card-link">See publications →</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="research-card">
+          <div class="card-icon">📡</div>
+          <div class="card-title">THz-Based Applications for Medical Devices</div>
+          <p class="card-text">
+            Harnessing OHP materials for terahertz (THz-TDS) sensing, modulation,
+            and imaging — targeting next-generation non-invasive medical diagnostics
+            in collaboration with Yonsei Medical School.
+          </p>
+          <a href="#publications" class="card-link">See publications →</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="research-card">
+          <div class="card-icon">⚗️</div>
+          <div class="card-title">Thin Film Fabrication & Characterisation</div>
+          <p class="card-text">
+            State-of-the-art vacuum-based thin film growth of OHP layers with comprehensive
+            surface and interface characterisation — XRD, SEM, XPS, and THz-TDS —
+            to bridge fundamental physics and device application.
+          </p>
+          <a href="#contact" class="card-link">Collaborate with us →</a>
+        </div>
+      </div>
+
+      <!-- approach visual -->
+      <div style="margin-top:56px; background:var(--card-bg); border:1px solid var(--border); border-radius:16px; padding:40px; text-align:center;">
+        <div class="section-label" style="text-align:center; margin-bottom:20px;">Our Approach</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-size:2rem; margin-bottom:8px;">🧪</div>
+            <div style="font-size:0.85rem; font-weight:600; margin-bottom:4px;">Defects</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">CH₃-NH₂ in PbI₃</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:24px; align-items:center;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="font-size:0.78rem; color:var(--accent); font-weight:600;">Energy band<br/>correlation</div>
+              <div style="color:var(--accent); font-size:1.3rem;">→</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="color:var(--accent3); font-size:1.3rem;">←</div>
+              <div style="font-size:0.78rem; color:var(--accent3); font-weight:600;">Phonon-dispersion<br/>correlation</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:24px;">
+            <div style="text-align:center;">
+              <div style="font-size:2rem; margin-bottom:8px;">💡</div>
+              <div style="font-size:0.85rem; font-weight:600; margin-bottom:4px;">Electronic Structure</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">ARPES · NEXAFS · SPEM</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:2rem; margin-bottom:8px;">〰️</div>
+              <div style="font-size:0.85rem; font-weight:600; margin-bottom:4px;">Phonon Dispersion</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">New physical property</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ PUBLICATIONS ════════ -->
+  <section id="publications">
+    <div class="pub-inner">
+      <div class="pub-header">
+        <div>
+          <div class="section-label">Selected Work</div>
+          <h2 class="section-title">Publications</h2>
+        </div>
+        <a href="https://www.researchgate.net/profile/Min-Cherl-Jung" target="_blank" class="btn-secondary" style="font-size:0.85rem; padding:10px 22px;">All Papers on ResearchGate ↗</a>
+      </div>
+
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <div class="pub-title">Surface defect engineering in hybrid perovskite thin films: correlations between chemical structure and THz absorption</div>
+            <div class="pub-meta">Min-Cherl Jung et al. · University of Tsukuba</div>
+            <div class="pub-journal">Frontiers in Physics</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div class="pub-body">
+            <div class="pub-title">THz-time domain spectroscopy of MAPbI₃ perovskite: phonon-dispersion and electronic structure analysis</div>
+            <div class="pub-meta">Min-Cherl Jung, Inhee Maeng, Sung Jae Oh et al.</div>
+            <div class="pub-journal">Organic Electronics</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2022</div>
+          <div class="pub-body">
+            <div class="pub-title">NEXAFS and ARPES investigation of interface states in vacuum-evaporated vs. solution-grown OHP films</div>
+            <div class="pub-meta">Min-Cherl Jung, Jinwoo Park et al. · Univ. of Seoul collaboration</div>
+            <div class="pub-journal">Frontiers in Chemistry</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2019</div>
+          <div class="pub-body">
+            <div class="pub-title">Synchrotron-based soft X-ray spectroscopy of defect-induced band-gap modification in hybrid perovskites</div>
+            <div class="pub-meta">Min-Cherl Jung et al. · NAIST, Division of Materials Science</div>
+            <div class="pub-journal">ACS Applied Materials</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px; text-align:center;">
+        * Publication details are placeholders — see
+        <a href="https://www.researchgate.net/profile/Min-Cherl-Jung" target="_blank" style="color:var(--accent);">ResearchGate</a>
+        for full and accurate list.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════ TEAM ════════ -->
+  <section id="team">
+    <div class="team-inner">
+      <div class="section-label">Our People</div>
+      <h2 class="section-title">Lab Members</h2>
+      <p class="section-desc">
+        We cultivate global-standard attitudes and frontier thinking — all research is conducted in English
+        to build an open, international scientific culture.
+      </p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">MJ</div>
+          <div class="team-name">Dr. Min-Cherl JUNG</div>
+          <div class="team-role">Principal Investigator</div>
+        </div>
+        <div class="team-card" style="border-style:dashed; opacity:0.6;">
+          <div class="team-avatar" style="background:rgba(255,255,255,0.1); color:var(--text-muted); font-size:1.6rem;">+</div>
+          <div class="team-name">Ph.D. Students</div>
+          <div class="team-role">Positions open — join us!</div>
+        </div>
+        <div class="team-card" style="border-style:dashed; opacity:0.6;">
+          <div class="team-avatar" style="background:rgba(255,255,255,0.1); color:var(--text-muted); font-size:1.6rem;">+</div>
+          <div class="team-name">Postdocs</div>
+          <div class="team-role">Positions open — join us!</div>
+        </div>
+        <div class="team-card" style="border-style:dashed; opacity:0.6;">
+          <div class="team-avatar" style="background:rgba(255,255,255,0.1); color:var(--text-muted); font-size:1.6rem;">+</div>
+          <div class="team-name">Master's Students</div>
+          <div class="team-role">Positions open — join us!</div>
+        </div>
+      </div>
+
+      <!-- recruitment -->
+      <div style="margin-top:48px; background:linear-gradient(135deg, rgba(0,198,255,0.08), rgba(123,97,255,0.08)); border:1px solid rgba(0,198,255,0.2); border-radius:16px; padding:40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:1.2rem; font-weight:700; margin-bottom:10px;">Join Our Lab</div>
+          <p style="font-size:0.88rem; color:var(--text-muted); max-width:480px; line-height:1.65;">
+            We are actively recruiting motivated students and researchers who are passionate about
+            frontier materials science, surface physics, and THz applications. All work conducted in English.
+          </p>
+        </div>
+        <a href="#contact" class="btn-primary">Get in Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ NEWS ════════ -->
+  <section id="news">
+    <div class="news-inner">
+      <div class="section-label">Latest Updates</div>
+      <h2 class="section-title">News & Highlights</h2>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">Jan 2026</div>
+          <div class="news-title">Lab Launched at Shanghai Jiao Tong University</div>
+          <p class="news-text">
+            Dr. Jung joins the Global Institute of Future Technology (GIFT) at SJTU as
+            Associate Professor, establishing a new research laboratory for OHP materials.
+          </p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Dec 2024</div>
+          <div class="news-title">Associate Editor — Frontiers in Physics & Chemistry</div>
+          <p class="news-text">
+            Dr. Jung appointed Associate Editor for <em>Frontiers in Physics</em> (IF 3.1)
+            and <em>Frontiers in Chemistry</em> (IF 4.2), Frontiers Media.
+          </p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">Jul 2018</div>
+          <div class="news-title">Honored Invited Speaker at ThinFilm2018</div>
+          <p class="news-text">
+            Dr. Jung delivered an invited lecture at ThinFilm2018 International Conference
+            in Shenzhen, China (19 July 2018).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ CONTACT ════════ -->
+  <section id="contact">
+    <div class="contact-glow"></div>
+    <div class="contact-inner">
+      <div class="section-label" style="text-align:center;">Get in Touch</div>
+      <h2 class="section-title" style="text-align:center;">Contact</h2>
+      <p class="section-desc" style="margin:0 auto 0; text-align:center;">
+        Interested in collaboration, student positions, or any questions?
+        We're always happy to hear from you.
+      </p>
+
+      <div class="contact-cards">
+        <a href="mailto:mincherl.jung.ut@gmail.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">mincherl.jung.ut<br/>@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.researchgate.net/profile/Min-Cherl-Jung" target="_blank" class="contact-card">
+          <div class="contact-icon">🔬</div>
+          <div>
+            <div class="contact-label">ResearchGate</div>
+            <div class="contact-value">Min-Cherl Jung</div>
+          </div>
+        </a>
+        <a href="#" class="contact-card">
+          <div class="contact-icon">🏛️</div>
+          <div>
+            <div class="contact-label">Affiliation</div>
+            <div class="contact-value">GIFT · SJTU<br/>Shanghai, China</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer>
+    <div class="footer-logo">Dr. Min-Cherl <span>JUNG</span></div>
+    <div class="footer-inst">Global Institute of Future Technology · Shanghai Jiao Tong University</div>
+    <div class="footer-copy">© 2026 Innovation Lab for OHP Materials</div>
+  </footer>
+
+</body>
+</html>
