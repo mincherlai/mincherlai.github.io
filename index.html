@@ -493,6 +493,85 @@
     }
     .card-link:hover { text-decoration: underline; }
 
+    /* ─── RESEARCH CARD BACKGROUND IMAGES ────── */
+
+    /* Card 1: Defect–Phonon–Electronic Structure (crystal/molecular structure, dark blue) */
+    .card-synchrotron {
+      background-image: url('https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Card 2: THz Medical Applications (medical vials / clinical, dark) */
+    .card-thz {
+      background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Card 3: Thin Film Fabrication (circuit board / semiconductor, dark) */
+    .card-film {
+      background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center top;
+    }
+
+    /* Dark gradient overlay — overrides the 2px ::before line for image cards */
+    .card-synchrotron::before,
+    .card-thz::before,
+    .card-film::before {
+      height: 100%;
+      background: linear-gradient(160deg, rgba(0,6,25,0.88) 0%, rgba(5,18,65,0.76) 100%);
+      transform: none !important;
+      transition: none !important;
+      z-index: 0;
+    }
+
+    /* Animated top accent line moved to ::after for image cards */
+    .card-synchrotron::after,
+    .card-thz::after,
+    .card-film::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      z-index: 2;
+    }
+    .card-synchrotron:hover::after,
+    .card-thz:hover::after,
+    .card-film:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Lift card content above the dark overlay */
+    .card-synchrotron > *,
+    .card-thz > *,
+    .card-film > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Slightly brighten body text on image cards for readability */
+    .card-synchrotron .card-text,
+    .card-thz .card-text,
+    .card-film .card-text {
+      color: rgba(185, 200, 225, 0.92);
+    }
+
+    /* Stronger border glow on hover for image cards */
+    .card-synchrotron:hover,
+    .card-thz:hover,
+    .card-film:hover {
+      border-color: rgba(0, 198, 255, 0.45);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 198, 255, 0.1);
+    }
+
+
+
     /* ─── PUBLICATIONS ────────────────────────── */
     #publications {
       background: var(--dark-blue);
@@ -916,7 +995,7 @@
 
       <div class="research-grid">
         <!-- Card 1 -->
-        <div class="research-card">
+        <div class="research-card card-synchrotron">
           <div class="card-icon">🔬</div>
           <div class="card-title">Defect–Phonon–Electronic Structure Correlations</div>
           <p class="card-text">
@@ -928,7 +1007,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="research-card">
+        <div class="research-card card-thz">
           <div class="card-icon">📡</div>
           <div class="card-title">THz-Based Applications for Medical Devices</div>
           <p class="card-text">
@@ -940,7 +1019,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="research-card">
+        <div class="research-card card-film">
           <div class="card-icon">⚗️</div>
           <div class="card-title">Thin Film Fabrication & Characterisation</div>
           <p class="card-text">
