@@ -380,7 +380,7 @@
       margin-top: 36px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 28px;
     }
     .timeline-item {
       display: flex;
@@ -388,11 +388,12 @@
       align-items: flex-start;
     }
     .timeline-year {
-      min-width: 60px;
+      min-width: 68px;
       font-size: 0.78rem;
       font-weight: 700;
       color: var(--accent);
       padding-top: 2px;
+      flex-shrink: 0;
     }
     .timeline-dot {
       width: 8px; height: 8px;
@@ -405,6 +406,52 @@
       font-size: 0.85rem;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+    .timeline-role {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #e6edf3;
+      line-height: 1.4;
+    }
+    .timeline-period {
+      font-weight: 400;
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+    .timeline-org {
+      font-size: 0.80rem;
+      color: var(--accent);
+      opacity: 0.85;
+      margin-top: 3px;
+      margin-bottom: 7px;
+    }
+    .timeline-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .timeline-bullets li {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .timeline-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+    }
+    .timeline-advisor {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-style: italic;
+      opacity: 0.8;
     }
 
     /* ─── RESEARCH ────────────────────────────── */
@@ -902,7 +949,7 @@
           <div class="stat-label">Years Research</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">2</div>
+          <div class="stat-number">3</div>
           <div class="stat-label">Research Pillars</div>
         </div>
         <div class="stat-item">
@@ -949,31 +996,147 @@
         </div>
 
         <div class="timeline">
+
           <div class="timeline-item">
             <span class="timeline-year">2026–</span>
             <div class="timeline-dot"></div>
-            <span class="timeline-text">Associate Professor (Research) · Shanghai Jiao Tong University, GIFT, China</span>
+            <div class="timeline-text">
+              <div class="timeline-role">Associate Professor (Research)<span class="timeline-period">Jan. 2026 – Present</span></div>
+              <div class="timeline-org">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University, China</div>
+              <ul class="timeline-bullets">
+                <li>Defect, phonon-dispersion, and electronic structures of organic–inorganic hybrid perovskite (OHP) materials using synchrotron radiation-based techniques and THz-based spectroscopy</li>
+                <li>Development of new THz-based applications (THz-wave sensing/modulating/imaging devices) using OHP materials for flexible medical devices</li>
+                <li>Research on improving the stability of cathode-electrolyte solid-solid interfaces in solid-state batteries based on synchrotron radiation characterization</li>
+              </ul>
+            </div>
           </div>
+
           <div class="timeline-item">
             <span class="timeline-year">2020–24</span>
             <div class="timeline-dot"></div>
-            <span class="timeline-text">Associate Professor · University of Tsukuba, Faculty of Pure and Applied Sciences</span>
+            <div class="timeline-text">
+              <div class="timeline-role">Associate Professor<span class="timeline-period">Jan. 2020 – Dec. 2024</span></div>
+              <div class="timeline-org">Division of Materials Science, Institute of Pure and Applied Sciences, University of Tsukuba, Japan</div>
+              <ul class="timeline-bullets">
+                <li>Defect, phonon-dispersion, and electronic structures of OHP materials using synchrotron radiation-based techniques and THz-based spectroscopy</li>
+                <li>New THz-based applications using OHP materials for flexible medical devices</li>
+                <li>Operated the 'Innovation Lab for Organic–Inorganic Hybrid Materials'; published 14 SCI papers and delivered 5 invited talks during this tenure</li>
+              </ul>
+            </div>
           </div>
+
           <div class="timeline-item">
             <span class="timeline-year">2016–19</span>
             <div class="timeline-dot"></div>
-            <span class="timeline-text">Assistant Professor · Nara Institute of Science and Technology (NAIST)</span>
+            <div class="timeline-text">
+              <div class="timeline-role">Assistant Professor<span class="timeline-period">Oct. 2016 – Dec. 2019</span></div>
+              <div class="timeline-org">Division of Materials Science, Nara Institute of Science and Technology (NAIST), Japan</div>
+              <ul class="timeline-bullets">
+                <li>Defect, phonon-dispersion, and electronic structures of OHP materials using synchrotron radiation-based techniques</li>
+                <li>New THz-wave sensing/modulating/imaging device applications using OHP materials</li>
+              </ul>
+            </div>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-year">2012–15</span>
+            <span class="timeline-year">2011–15</span>
             <div class="timeline-dot"></div>
-            <span class="timeline-text">Staff Scientist · OIST, Energy Materials and Surface Sciences Unit</span>
+            <div class="timeline-text">
+              <div class="timeline-role">Staff Scientist<span class="timeline-period">Dec. 2011 – Nov. 2015</span></div>
+              <div class="timeline-org">Energy Materials and Surface Sciences Unit (Qi Unit), Okinawa Institute of Science and Technology Graduate University (OIST), Japan</div>
+              <ul class="timeline-bullets">
+                <li>Organohalide perovskite-based solar-cell device research</li>
+                <li>Fabrication of organic-based hole transport layers and related device applications</li>
+                <li>Organic thin film fabrication and organic field-effect transistors (OFETs)</li>
+              </ul>
+            </div>
           </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2010–11</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <div class="timeline-role">Research Assistant Professor<span class="timeline-period">Nov. 2010 – Oct. 2011</span></div>
+              <div class="timeline-org">Department of Physics, POSTECH, Republic of Korea</div>
+              <ul class="timeline-bullets">
+                <li>Research on atomic wires and layers with Si and metal atoms using ARPES with synchrotron radiation</li>
+                <li>Development of laser-based photoelectron spectroscopy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2010</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <div class="timeline-role">Principal Researcher<span class="timeline-period">Apr. 2010 – Oct. 2010</span></div>
+              <div class="timeline-org">Memory Division, Samsung Electronics Co. Ltd., Republic of Korea</div>
+              <ul class="timeline-bullets">
+                <li>R&amp;D for Giga-bit class PRAM (phase-change random access memory); contributed to the successful 4x–5x nm pitch class PRAM development, culminating in Samsung's announcement of 1-Gbit/58-nm PRAM (February 2011)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2008–10</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <div class="timeline-role">Research Professor<span class="timeline-period">Nov. 2008 – Feb. 2010</span></div>
+              <div class="timeline-org">Department of Physics, University of Ulsan, Republic of Korea</div>
+              <ul class="timeline-bullets">
+                <li>Materials research on phase-change random access memory (PRAM)</li>
+                <li>Development of Group-IV (Si, Ge) based nanostructures and nanocrystallites</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2005–08</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <div class="timeline-role">Senior Researcher / Beamline Manager<span class="timeline-period">Mar. 2005 – Oct. 2008</span></div>
+              <div class="timeline-org">Beamline Division, Pohang Accelerator Laboratory (PAL), POSTECH, Republic of Korea</div>
+              <ul class="timeline-bullets">
+                <li>Manager of 8A1 Beamline (U7 Spectromicroscopy, Soft X-ray Beamline)</li>
+                <li>Electronic structure and chemical state analysis using XPS, NEXAFS, and SPEM</li>
+                <li>Study of phase-change materials (GeTe, Sb₂Te₃, Ge₂Sb₂Te₅, etc.) for PRAM applications</li>
+                <li>Development of Group-IV (Si, Ge) based nanostructures and nanocrystallites</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2003–05</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <div class="timeline-role">Postdoctoral Researcher<span class="timeline-period">Sep. 2003 – Mar. 2005</span></div>
+              <div class="timeline-org">Nano-Surface Group, Korea Institute of Standards and Science (KRISS), Republic of Korea</div>
+              <ul class="timeline-bullets">
+                <li>Development of time-resolved photoelectron spectroscopy (TRPES) using femtosecond Ti:Sapphire laser</li>
+                <li>Excited electron dynamics at metal/organic material interfaces</li>
+              </ul>
+              <div class="timeline-advisor">Research Advisor: Dr. Yongsup Park (Kyunghee University)</div>
+            </div>
+          </div>
+
           <div class="timeline-item">
             <span class="timeline-year">2003</span>
             <div class="timeline-dot"></div>
             <span class="timeline-text">Ph.D. · Department of Physics, University of Seoul</span>
           </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2000</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">M.S. · Department of Physics, University of Seoul</span>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">1998</span>
+            <div class="timeline-dot"></div>
+            <span class="timeline-text">B.S. · Department of Physics, University of Seoul</span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -988,7 +1151,7 @@
           <h2 class="section-title">Research Focus</h2>
         </div>
         <p class="section-desc">
-          Two core research pillars, bridged by advanced characterisation techniques
+          Three core research pillars, bridged by advanced characterisation techniques
           at the surface and interface level.
         </p>
       </div>
