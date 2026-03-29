@@ -328,6 +328,40 @@
     .about-career .timeline {
       gap: 12px;
     }
+    .about-career details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .about-career summary {
+      padding: 16px 24px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .about-career summary:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    .about-career summary::-webkit-details-marker { display: none; }
+    .about-career summary::before {
+      content: '▸';
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+    .about-career details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .about-career details[open] .timeline {
+      padding: 8px 24px 24px;
+    }
 
     .about-photo-wrap {
       position: relative;
@@ -1006,6 +1040,8 @@
       </div>
     </div>
     <div class="about-career">
+      <details>
+        <summary>Career History (2003 – 2024)</summary>
         <div class="timeline">
 
           <div class="timeline-item">
@@ -1099,6 +1135,7 @@
           </div>
 
         </div>
+      </details>
     </div>
   </section>
 
