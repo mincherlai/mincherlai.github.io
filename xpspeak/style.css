@@ -101,6 +101,14 @@ button { font-family: inherit; }
 #peakTable select { font-size: 13px; padding: 5px; border: 1px solid var(--line); border-radius: 6px; }
 #peakTable .act { width: 22px; }
 #peakTable td.ro { color: var(--muted); }
+
+/* value + per-parameter fix (lock) checkbox */
+.pcell { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.pcell .lock { font-size: 10px; color: var(--muted); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 2px; user-select: none; line-height: 1; }
+.pcell .lock input { width: auto; margin: 0; }
+.pcell.locked input[data-f] { background: #fff4d6; border-color: #e0b651; color: #7a5a00; }
+.pcell.locked .lock { color: #b07d00; }
 .delbtn { background: #fff; border: 1px solid var(--line); border-radius: 6px;
   width: 28px; height: 30px; cursor: pointer; color: var(--primary); }
 

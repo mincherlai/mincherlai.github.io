@@ -1,7 +1,7 @@
 /* Service worker: cache the app shell so XPSPeak opens offline after first load.
    The Pyodide/scipy wasm is large and served from a CDN; the browser's HTTP
    cache handles it, while this SW guarantees the local app shell is available. */
-const CACHE = "xpspeak-v2";
+const CACHE = "xpspeak-v3";
 const SHELL = [
   "./", "./index.html", "./style.css", "./app.js", "./bridge.py",
   "./manifest.webmanifest",

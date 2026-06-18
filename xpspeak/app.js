@@ -152,18 +152,19 @@ function renderTable() {
   r.peaks.forEach((pk, i) => {
     const tr = document.createElement("tr");
     tr.dataset.i = i;
+    ensureConstraints(pk);
     tr.innerHTML = `
       <td class="ro">${i}</td>
       <td><input class="name" value="${pk.name || ""}" data-f="name"></td>
       <td>${typeSelect(pk.peak_type)}</td>
       <td><input data-f="sos" value="${num(pk.sos)}"></td>
-      <td><input data-f="position" value="${num(pk.position)}"></td>
-      <td><input data-f="area" value="${num(pk.area)}"></td>
-      <td><input data-f="fwhm" value="${num(pk.fwhm)}"></td>
-      <td><input data-f="gl" value="${num(pk.gl)}"></td>
+      ${pcell("position", pk)}
+      ${pcell("area", pk)}
+      ${pcell("fwhm", pk)}
+      ${pcell("gl", pk)}
       <td><input data-f="ts" value="${num(pk.ts)}"></td>
       <td><input data-f="tl" value="${num(pk.tl)}"></td>
-      <td><input type="checkbox" data-f="fix" ${pk.fix ? "checked" : ""}></td>
+      <td><input type="checkbox" data-f="fix" ${pk.fix ? "checked" : ""} title="피크 전체 고정"></td>
       <td class="ro afwhm">—</td>
       <td><button class="delbtn" title="삭제">✕</button></td>`;
     tb.appendChild(tr);
@@ -171,6 +172,14 @@ function renderTable() {
     tr.querySelectorAll("input[data-f]").forEach((inp) => {
       const ev = inp.type === "checkbox" ? "change" : "input";
       inp.addEventListener(ev, () => onCellEdit(i, inp));
+    });
+    // Per-parameter fix (lock) checkboxes.
+    tr.querySelectorAll("input[data-fix]").forEach((chk) => {
+      chk.addEventListener("change", () => {
+        ensureConstraints(pk);
+        pk.constraints[chk.dataset.fix].fixed = chk.checked;
+        chk.closest(".pcell").classList.toggle("locked", chk.checked);
+      });
     });
     tr.querySelector("select").addEventListener("change", (e) => {
       r.peaks[i].peak_type = e.target.value;
@@ -189,6 +198,24 @@ function typeSelect(v) {
     `<option ${t === v ? "selected" : ""}>${t}</option>`).join("")}</select>`;
 }
 function num(v) { return (v === undefined || v === null) ? 0 : v; }
+
+// A value cell with an inline per-parameter "fix" (lock) checkbox.
+function pcell(f, pk) {
+  const fixed = pk.constraints && pk.constraints[f] && pk.constraints[f].fixed;
+  return `<td><div class="pcell${fixed ? " locked" : ""}">
+    <input data-f="${f}" value="${num(pk[f])}">
+    <label class="lock" title="이 파라미터 고정">
+      <input type="checkbox" data-fix="${f}" ${fixed ? "checked" : ""}>🔒</label>
+  </div></td>`;
+}
+
+// Guarantee a peak carries a full constraints object (older saves may lack it).
+function ensureConstraints(pk) {
+  if (!pk.constraints) pk.constraints = defaultConstraints();
+  for (const p of ["position", "area", "fwhm", "gl", "ts", "tl"])
+    if (!pk.constraints[p])
+      pk.constraints[p] = { ref: null, mode: "add", value: 0, lower: null, upper: null, fixed: false };
+}
 
 function onCellEdit(i, inp) {
   const r = curRegion(); const pk = r.peaks[i]; const f = inp.dataset.f;
