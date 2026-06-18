@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="XPSPeak">
+<meta name="theme-color" content="#0c1c34">
+<title>XPSPeak — XPS Peak Fitting</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+
+<div id="splash">
+  <img src="icons/icon-192.png" alt="" width="84" height="84">
+  <h1>XPSPeak for Mac / iPad</h1>
+  <div id="splash-msg">계산 엔진(numpy · scipy)을 불러오는 중…<br>처음 한 번만 시간이 걸립니다.</div>
+  <div class="spinner"></div>
+</div>
+
+<header>
+  <div class="brand">XPSPeak</div>
+  <div class="toolbar">
+    <label class="sel">Region
+      <select id="regionSel"></select>
+    </label>
+    <button id="prevBtn" class="icon">◀</button>
+    <button id="nextBtn" class="icon">▶</button>
+    <label class="sel">Func
+      <select id="glMode">
+        <option value="sum">GL sum</option>
+        <option value="product">GL product</option>
+      </select>
+    </label>
+    <span class="spacer"></span>
+    <button id="importBtn">Import</button>
+    <button id="demoBtn">Demo</button>
+    <button id="saveBtn">Save</button>
+    <button id="loadBtn">Open</button>
+    <button id="exportBtn">Export</button>
+  </div>
+</header>
+
+<main>
+  <section id="plotWrap">
+    <div id="plot"></div>
+    <div id="chi2" class="chi2">χ² = —</div>
+  </section>
+
+  <aside id="panel">
+    <div class="card">
+      <div class="card-h">Background</div>
+      <div class="grid">
+        <label>Type
+          <select id="bgType">
+            <option>None</option><option selected>Linear</option>
+            <option>Shirley</option><option>Shirley+Linear</option><option>Tougaard</option>
+          </select>
+        </label>
+        <label>Avg pts
+          <select id="bgAvg"><option>1</option><option>3</option><option>5</option><option>7</option><option>9</option></select>
+        </label>
+        <label>Slope <input type="number" id="bgSlope" value="0" step="1"></label>
+        <label>Toug. B1 <input type="number" id="bgB1" value="100" step="10"></label>
+        <label>Region shift <input type="number" id="regShift" value="0" step="0.1"></label>
+        <button id="optB1Btn" class="wide">Optimize B1</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">Peaks</div>
+      <div class="table-scroll">
+        <table id="peakTable">
+          <thead><tr>
+            <th>#</th><th>Name</th><th>Type</th><th>s.o.s</th><th>Position</th>
+            <th>Area</th><th>FWHM</th><th>%GL</th><th>TS</th><th>TL</th>
+            <th>Fix</th><th>act.FWHM</th><th></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="row">
+        <button id="addPeakBtn">+ Add Peak</button>
+      </div>
+      <div class="row">
+        <button id="optPeakBtn">Optimize Peak</button>
+        <button id="optRegionBtn" class="primary">Optimize Region</button>
+        <button id="optAllBtn">Optimize All</button>
+      </div>
+    </div>
+    <div class="hint">데이터는 이 기기 안에서만 처리됩니다. 인터넷 없이도 동작해요(첫 로딩 후).</div>
+  </aside>
+</main>
+
+<input type="file" id="fileInput" accept=".prn,.txt,.asc,.dat,.des,.xpsj,.json" style="display:none">
+
+<!-- Import format chooser -->
+<div id="importModal" class="modal">
+  <div class="modal-box">
+    <h3>파일 형식 선택</h3>
+    <p>가져올 데이터 형식을 고르고 파일을 선택하세요.</p>
+    <select id="importFmt">
+      <option value="ascii">ASCII 2열 (.prn / .txt)</option>
+      <option value="phi">Phi Multiplex (.asc)</option>
+      <option value="leybold">Leybold (.dat)</option>
+      <option value="vamas">VAMAS (.txt)</option>
+      <option value="kratos">Kratos DES (.des)</option>
+    </select>
+    <div class="row">
+      <button id="importPick" class="primary">파일 선택…</button>
+      <button id="importCancel">취소</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
