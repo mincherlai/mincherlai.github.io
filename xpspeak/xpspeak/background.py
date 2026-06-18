@@ -46,36 +46,43 @@ def shirley_background(
 ) -> np.ndarray:
     """Iterative Shirley background.
 
-    The Shirley background at each point is proportional to the integrated
-    signal (above background) on the high-kinetic-energy side.  We iterate
-    until convergence.  Endpoints are pinned to (optionally averaged) data.
+    Inelastically scattered electrons pile up on the high-binding-energy
+    (low-kinetic-energy) side, so the Shirley background rises from the
+    low-BE endpoint to the high-BE endpoint, stepping up under each peak.
+
+    At binding energy E the background is proportional to the peak area that
+    lies at *lower* BE (higher kinetic energy) than E:
+
+        B(E) = lo + (hi - lo) * A_below(E) / A_total
+
+    where lo/hi are the (optionally averaged) baselines at the low-/high-BE
+    endpoints.  We iterate B until convergence.  Endpoints are pinned to data.
     """
-    y0 = _endpoint_value(y, 0, navg)
-    y1 = _endpoint_value(y, -1, navg)
     n = len(y)
     if n < 2:
-        return np.full_like(y, y0)
+        return np.full_like(y, _endpoint_value(y, 0, navg))
 
-    # Work on a monotonically increasing energy axis so the cumulative
-    # integral direction is well defined; restore order at the end.
+    # Work on a monotonically increasing binding-energy axis so "area below"
+    # (cumulative from the low-BE end) is well defined; restore order at the end.
     order = np.argsort(x)
     xs = x[order]
-    ys = y[order]
-    # Background endpoints follow the sorted order.
-    lo, hi = ys[0], ys[-1]
+    ys = y[order].astype(float)
+    # Baselines at the low-BE and high-BE ends (averaged over navg points).
+    lo = _endpoint_value(ys, 0, navg)
+    hi = _endpoint_value(ys, -1, navg)
 
     bg = np.linspace(lo, hi, n)
     for _ in range(max_iter):
         # Signal above current background.
         s = np.clip(ys - bg, 0.0, None)
-        # Cumulative area from high-energy end.
         area_total = np.trapezoid(s, xs)
         if area_total <= 0:
             break
         new_bg = np.empty(n)
         for i in range(n):
-            area_i = np.trapezoid(s[i:], xs[i:])
-            new_bg[i] = lo + (hi - lo) * area_i / area_total
+            # Cumulative peak area from the low-BE end up to point i.
+            area_below = np.trapezoid(s[:i + 1], xs[:i + 1])
+            new_bg[i] = lo + (hi - lo) * area_below / area_total
         if np.max(np.abs(new_bg - bg)) < tol * max(abs(hi - lo), 1.0):
             bg = new_bg
             break
