@@ -202,6 +202,8 @@
     }
     .nav-logo em { font-style: italic; color: var(--bronze); }
     .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
+    .nav-toggle { display: none; background: none; border: 1px solid var(--line); color: var(--ink); font-size: 1.1rem; line-height: 1; padding: 8px 11px; cursor: pointer; }
+    .nav-toggle[aria-expanded="true"] { background: var(--ink); color: var(--paper); }
     .nav-links a:not(.nav-cta) {
       text-decoration: none;
       color: var(--ink-soft);
@@ -351,36 +353,6 @@
 
     /* ─── ABOUT ───────────────────────────────── */
     #about { background: var(--paper-2); }
-    .about-inner {
-      display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 90px;
-      align-items: start;
-    }
-    .about-photo-wrap {
-      position: relative;
-      overflow: hidden;
-    }
-    .about-photo-wrap img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(0.35) contrast(1.02);
-      transform: scale(1.01);
-      transition: filter 0.9s var(--ease), transform 1.4s var(--ease);
-    }
-    .about-photo-wrap:hover img { filter: grayscale(0); transform: scale(1.045); }
-    .about-photo-caption {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 14px;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .about-photo-caption em { font-family: var(--serif); text-transform: none; letter-spacing: 0.02em; font-size: 0.84rem; }
 
     .about-tags { display: flex; flex-wrap: wrap; gap: 0; margin: 30px 0 40px; border-top: 1px solid var(--line-soft); }
     .tag {
@@ -790,7 +762,15 @@
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 960px) {
       nav { padding: 16px 24px; }
-      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none; position: fixed; top: 64px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--paper); border-bottom: 1px solid var(--line);
+      }
+      .nav-links li { padding: 16px 24px; border-top: 1px solid var(--line-soft); }
+      .nav-links .nav-cta { display: inline-block; }
+      body.nav-open .nav-links { display: flex; }
       section { padding: 90px 24px; }
       #hero { padding: 130px 24px 70px; }
       .hero-meta-right { flex-wrap: wrap; row-gap: 12px; }
@@ -818,7 +798,8 @@
   <!-- ════════ NAV ════════ -->
   <nav>
     <a href="#hero" class="nav-logo">Min-Cherl <em>Jung</em></a>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') !== 'true'); document.body.classList.toggle('nav-open')">☰</button>
+    <ul class="nav-links" id="nav-links" onclick="document.body.classList.remove('nav-open'); document.querySelector('.nav-toggle').setAttribute('aria-expanded','false')">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -855,9 +836,9 @@
 
       <div class="hero-stats reveal">
         <div class="stat-item"><div class="stat-number">25<sup>+</sup></div><div class="stat-label">Years Research</div></div>
-        <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Research Pillars</div></div>
-        <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Core Methods</div></div>
-        <div class="stat-item"><div class="stat-number">8<sup>+</sup></div><div class="stat-label">Institutions</div></div>
+        <div class="stat-item"><div class="stat-number" data-stat="publications">71</div><div class="stat-label">Publications</div></div>
+        <div class="stat-item"><div class="stat-number" data-stat="citations">2,367</div><div class="stat-label">Citations</div></div>
+        <div class="stat-item"><div class="stat-number" data-stat="h_index">25</div><div class="stat-label">h-index</div></div>
       </div>
     </div>
   </section>
@@ -865,16 +846,6 @@
   <!-- ════════ ABOUT ════════ -->
   <section id="about">
     <div class="inner about-inner">
-      <div class="reveal">
-        <div class="about-photo-wrap">
-          <img src="photo1.jpg" alt="Dr. Min-Cherl Jung" />
-        </div>
-        <div class="about-photo-caption">
-          <em>Dr. Min-Cherl Jung</em>
-          <span>Principal Investigator</span>
-        </div>
-      </div>
-
       <div class="reveal">
         <div class="eyebrow"><span class="section-no">01</span> Principal Investigator</div>
         <h2 class="section-title">Dr. Min-Cherl <em>Jung</em></h2>
@@ -1168,7 +1139,9 @@
 
       <p class="contact-recruit reveal">
         Openings are available for motivated students and postdocs —
-        <a href="mailto:mincherl.jung@sjtu.edu.cn">get in touch</a>.
+        <a href="mailto:mincherl.jung@sjtu.edu.cn">get in touch</a>.<br>
+        <strong>English is the official working language of the lab</strong> — all research, meetings and
+        correspondence are in English. Please write to us in English.
       </p>
     </div>
   </section>
@@ -1218,6 +1191,11 @@
         list.after(btn);
       }
     }).catch((e) => console.warn('publications.json unavailable, keeping static list', e));
+
+    // ── Scholar metrics from data/stats.json
+    fetch('data/stats.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((st) => {
+      document.querySelectorAll('[data-stat]').forEach((el) => { if (st[el.dataset.stat]) el.textContent = st[el.dataset.stat].toLocaleString('en-US'); });
+    }).catch(() => {});
 
     // ── Latest Substack posts from data/posts.json
     fetch('data/posts.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((posts) => {
