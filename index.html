@@ -90,12 +90,6 @@
     .pub-item.hidden { display: none; }
     .pub-more { display: block; margin: 40px auto 0; background: none; cursor: pointer; font-family: var(--sans); }
 
-    /* ─── WRITING (Substack) ──────────────────── */
-    .writing { margin-top: 72px; border-top: 1px solid var(--line); padding-top: 40px; }
-    .writing-list { list-style: none; padding: 0; margin: 24px 0 0; }
-    .writing-list li { padding: 16px 0; border-bottom: 1px solid var(--line-soft); display: flex; gap: 28px; align-items: baseline; flex-wrap: wrap; }
-    .writing-list a { text-decoration: none; font-family: var(--serif); font-size: 1.15rem; font-weight: 400; }
-    .writing-list a:hover { color: var(--bronze); }
 
     /* ─── REVEAL ──────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity 1.1s var(--ease), transform 1.1s var(--ease); }
@@ -1123,10 +1117,6 @@
           </p>
         </div>
       </div>
-      <div class="writing reveal" id="writing" hidden>
-        <div class="eyebrow">Writing · <a href="https://theautomatedlab.substack.com" target="_blank" rel="noopener" style="text-decoration:none">The Automated Lab ↗</a></div>
-        <ul class="writing-list"></ul>
-      </div>
     </div>
   </section>
 
@@ -1205,16 +1195,6 @@
     // ── Scholar metrics from data/stats.json
     fetch('data/stats.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((st) => {
       document.querySelectorAll('[data-stat]').forEach((el) => { if (st[el.dataset.stat]) el.textContent = st[el.dataset.stat].toLocaleString('en-US'); });
-    }).catch(() => {});
-
-    // ── Latest Substack posts from data/posts.json
-    fetch('data/posts.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((posts) => {
-      if (!posts.length) return;
-      const box = document.getElementById('writing');
-      box.querySelector('.writing-list').innerHTML = posts.map((p) => `
-        <li><span class="news-date" style="margin:0">${new Date(p.date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</span>
-            <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></li>`).join('');
-      box.hidden = false;
     }).catch(() => {});
   </script>
 

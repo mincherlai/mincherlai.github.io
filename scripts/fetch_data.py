@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Build data/publications.json (ORCID ∪ Crossref) and data/posts.json (Substack RSS). Stdlib only."""
-import json, re, sys, urllib.request, xml.etree.ElementTree as ET
+"""Build data/publications.json (ORCID ∪ Crossref) and data/stats.json (Scholar). Stdlib only."""
+import json, re, sys, urllib.request
 from pathlib import Path
 
 ORCID = "0000-0002-6073-0908"
-FEED = "https://theautomatedlab.substack.com/feed"
-API = "https://theautomatedlab.substack.com/api/v1/posts?limit=5"
 MAILTO = "mincherl.jung@sjtu.edu.cn"  # Crossref polite pool
 DATA = Path(__file__).resolve().parent.parent / "data"
 HDR = {"Accept": "application/json", "User-Agent": f"mincherlai.github.io (mailto:{MAILTO})"}
@@ -108,17 +106,6 @@ def stats(n_pubs):
     return st, err
 
 
-def posts():
-    try:
-        root = ET.fromstring(get(FEED, raw=True))
-        items = [{"title": i.findtext("title"), "url": i.findtext("link"), "date": i.findtext("pubDate")}
-                 for i in root.iter("item")]
-    except Exception as e:  # Substack's RSS 403s from datacenter IPs; its JSON API answers there
-        print("feed:", e, "— trying the JSON API", file=sys.stderr)
-        items = [{"title": p["title"], "url": p["canonical_url"], "date": p["post_date"]} for p in get(API)]
-    return items[:5]
-
-
 def load(name):
     p = DATA / name
     return json.loads(p.read_text()) if p.exists() else None
@@ -155,5 +142,4 @@ if __name__ == "__main__":
     pubs, pub_err = refresh("publications.json", publications)
     st, stat_err = stats(len(pubs))
     write("stats.json", st)
-    _, post_err = refresh("posts.json", posts)
-    write("_sources.json", {"publications": pub_err, "stats": stat_err, "posts": post_err})
+    write("_sources.json", {"publications": pub_err, "stats": stat_err})
