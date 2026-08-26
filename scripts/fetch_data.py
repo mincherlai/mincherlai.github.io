@@ -86,26 +86,52 @@ def publications():
 SCHOLAR = "https://scholar.google.com/citations?user=v7GsEJ4AAAAJ&hl=en"
 
 
-def scholar(n_pubs):
-    """Citations / h-index / i10 from the public Scholar profile. Scholar has no API and blocks some IPs,
-    so on any failure keep the previous numbers (stats are a signal, not a gate)."""
-    f = DATA / "stats.json"
-    st = json.loads(f.read_text()) if f.exists() else {}
+def scholar_metrics():
+    """Citations / h-index / i10 from the public Scholar profile (no API exists)."""
+    req = urllib.request.Request(SCHOLAR, headers={"User-Agent": "Mozilla/5.0 (Macintosh) AppleWebKit/537.36 Chrome/126.0 Safari/537.36", "Accept-Language": "en"})
+    html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "ignore")
+    nums = re.findall(r'<td class="gsc_rsb_std">(\d+)</td>', html)  # all, since2021, all, since2021, ...
+    return {"citations": int(nums[0]), "h_index": int(nums[2]), "i10_index": int(nums[4])}
+
+
+def stats(n_pubs):
+    """Scholar numbers, keeping the previous ones if the scrape is blocked — the count always updates."""
+    st = load("stats.json") or {}
     try:
-        req = urllib.request.Request(SCHOLAR, headers={"User-Agent": "Mozilla/5.0 (Macintosh) AppleWebKit/537.36 Chrome/126.0 Safari/537.36", "Accept-Language": "en"})
-        html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "ignore")
-        nums = re.findall(r'<td class="gsc_rsb_std">(\d+)</td>', html)  # all, since2021, all, since2021, ...
-        st.update(citations=int(nums[0]), h_index=int(nums[2]), i10_index=int(nums[4]))
+        st.update(scholar_metrics())
+        err = "ok"
     except Exception as e:
-        print("scholar skip", e, file=sys.stderr)
+        err = f"{type(e).__name__}: {e}"
+        print("stats.json:", err, "— keeping previous", file=sys.stderr)
     st["publications"] = n_pubs
-    return st
+    return st, err
 
 
 def posts():
     root = ET.fromstring(get(FEED, raw=True))
     return [{"title": i.findtext("title"), "url": i.findtext("link"), "date": i.findtext("pubDate"),
              "summary": i.findtext("description") or ""} for i in root.iter("item")][:5]
+
+
+def load(name):
+    p = DATA / name
+    return json.loads(p.read_text()) if p.exists() else None
+
+
+def refresh(name, fn):
+    """Write data/<name> from fn(); if the source is unreachable keep the committed file.
+    Upstream blocking one feed must not fail the whole run — but losing every copy does."""
+    try:
+        obj = fn()
+    except Exception as e:
+        err = f"{type(e).__name__}: {e}"
+        old = load(name)
+        if old is None:
+            raise
+        print(f"{name}: {err} — keeping previous", file=sys.stderr)
+        return old, err
+    write(name, obj)
+    return obj, "ok"
 
 
 def write(name, obj):
@@ -120,7 +146,8 @@ def write(name, obj):
 if __name__ == "__main__":
     assert clean_title("CH 3 NH 3 PbI 3 Cuboid") == "CH₃NH₃PbI₃ Cuboid" and clean_title("a<sub>2</sub>b <i>x</i> Phase 2 Sb 2 I 9") == "a₂b x Phase 2 Sb₂I₉" and clean_title("MA3Sb2I9 at ThinFilm2018, CsPbI3 v2.0") == "MA₃Sb₂I₉ at ThinFilm2018, CsPbI₃ v2.0"
     DATA.mkdir(exist_ok=True)
-    pubs = publications()
-    write("publications.json", pubs)
-    write("stats.json", scholar(len(pubs)))
-    write("posts.json", posts())
+    pubs, pub_err = refresh("publications.json", publications)
+    st, stat_err = stats(len(pubs))
+    write("stats.json", st)
+    _, post_err = refresh("posts.json", posts)
+    write("_sources.json", {"publications": pub_err, "stats": stat_err, "posts": post_err})
