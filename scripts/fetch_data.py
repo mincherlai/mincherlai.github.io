@@ -5,6 +5,7 @@ from pathlib import Path
 
 ORCID = "0000-0002-6073-0908"
 FEED = "https://theautomatedlab.substack.com/feed"
+API = "https://theautomatedlab.substack.com/api/v1/posts?limit=5"
 MAILTO = "mincherl.jung@sjtu.edu.cn"  # Crossref polite pool
 DATA = Path(__file__).resolve().parent.parent / "data"
 HDR = {"Accept": "application/json", "User-Agent": f"mincherlai.github.io (mailto:{MAILTO})"}
@@ -108,9 +109,14 @@ def stats(n_pubs):
 
 
 def posts():
-    root = ET.fromstring(get(FEED, raw=True))
-    return [{"title": i.findtext("title"), "url": i.findtext("link"), "date": i.findtext("pubDate"),
-             "summary": i.findtext("description") or ""} for i in root.iter("item")][:5]
+    try:
+        root = ET.fromstring(get(FEED, raw=True))
+        items = [{"title": i.findtext("title"), "url": i.findtext("link"), "date": i.findtext("pubDate")}
+                 for i in root.iter("item")]
+    except Exception as e:  # Substack's RSS 403s from datacenter IPs; its JSON API answers there
+        print("feed:", e, "— trying the JSON API", file=sys.stderr)
+        items = [{"title": p["title"], "url": p["canonical_url"], "date": p["post_date"]} for p in get(API)]
+    return items[:5]
 
 
 def load(name):
