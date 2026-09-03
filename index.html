@@ -979,7 +979,7 @@
         <div class="pub-year">2026</div>
         <div>
           <div class="pub-title">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</div>
-          <div class="pub-authors">Young Mi Lee, Inhee Maeng, Jinwoo Park, Seung-Jae Oh, Min-Cherl Jung</div>
+          <div class="pub-authors">Young Mi Lee, Inhee Maeng, Jinwoo Park, Seung-Jae Oh, Min-Cherl Jung*</div>
           <div class="pub-blurb">A review resolving the dichotomy of band-like transport in a soft, anharmonic lattice — from the Pb 6s² lone pair to large polarons, defect tolerance and the T<sup>−3/2</sup> mobility law — with seven open questions and the measurements needed to settle them.</div>
           <div class="pub-foot">
             <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
@@ -1007,7 +1007,7 @@
           <div class="pub-year">2024</div>
           <div>
             <div class="pub-title">THz-Wave Absorption Properties of Organic-Inorganic Hybrid Perovskite Materials: A New Candidate for THz Sensors</div>
-            <div class="pub-authors">Inhee Maeng, Young Mi Lee, Min-Cherl Jung</div>
+            <div class="pub-authors">Inhee Maeng, Young Mi Lee, Min-Cherl Jung*</div>
             <div class="pub-foot">
               <span class="pub-journal">Small</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
@@ -1019,7 +1019,7 @@
           <div class="pub-year">2023</div>
           <div>
             <div class="pub-title">Predicted THz-wave absorption properties observed in all-inorganic perovskite CsPbI₃ thin films: Integrity at the grain boundary</div>
-            <div class="pub-authors">Inhee Maeng, Shi Chen, Seungjun Lee, Shenghao Wang, Young-Kyun Kwon, Min-Cherl Jung</div>
+            <div class="pub-authors">Inhee Maeng, Shi Chen, Seungjun Lee, Shenghao Wang, Young-Kyun Kwon, Min-Cherl Jung*</div>
             <div class="pub-foot">
               <span class="pub-journal">Materials Today Physics</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
@@ -1031,7 +1031,7 @@
           <div class="pub-year">2021</div>
           <div>
             <div class="pub-title">Unusual terahertz-wave absorptions in δ/α-mixed-phase FAPbI₃ single crystals: interfacial phonon vibration modes</div>
-            <div class="pub-authors">Inhee Maeng, Seungjun Lee, E.Q. Han, Yurou Zhang, Seung Jae Oh, Masakazu Nakamura, Jung-Ho Yun, Lianzhou Wang, Young-Kyun Kwon, Min-Cherl Jung</div>
+            <div class="pub-authors">Inhee Maeng, Seungjun Lee, E.Q. Han, Yurou Zhang, Seung Jae Oh, Masakazu Nakamura, Jung-Ho Yun, Lianzhou Wang, Young-Kyun Kwon, Min-Cherl Jung*</div>
             <div class="pub-foot">
               <span class="pub-journal">NPG Asia Materials</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
@@ -1043,7 +1043,7 @@
           <div class="pub-year">2020</div>
           <div>
             <div class="pub-title">Unique phonon modes of a CH₃NH₃PbBr₃ hybrid perovskite film without the influence of defect structures: an attempt toward a novel THz-based application</div>
-            <div class="pub-authors">Inhee Maeng, Seungjun Lee, Hiroshi Tanaka, Jung-Ho Yun, Shenghao Wang, Masakazu Nakamura, Young-Kyun Kwon, Min-Cherl Jung</div>
+            <div class="pub-authors">Inhee Maeng, Seungjun Lee, Hiroshi Tanaka, Jung-Ho Yun, Shenghao Wang, Masakazu Nakamura, Young-Kyun Kwon, Min-Cherl Jung*</div>
             <div class="pub-foot">
               <span class="pub-journal">NPG Asia Materials</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
@@ -1054,6 +1054,7 @@
       </div>
 
       <p class="pub-note reveal">
+        * Corresponding author.<br />
         Synced daily from <a href="https://orcid.org/0000-0002-6073-0908" target="_blank" rel="noopener">ORCID</a> and Crossref —
         see also <a href="https://www.researchgate.net/profile/Min-Cherl-Jung" target="_blank" rel="noopener">ResearchGate</a>.
       </p>
@@ -1205,6 +1206,9 @@
     // ── Publications from data/publications.json (static markup above is the no-JS / offline fallback)
     const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
     const SHOW = 8;
+    // corresponding author = last author when it is Min-Cherl Jung (any Crossref spelling: M.-C. Jung, M. C. Jung, …)
+    const JUNG = /^M(in)?[\s.‐-]*C(herl)?\.?\s*Jung$/;
+    const authors = (a) => a.map((n, i) => esc(n) + (i === a.length - 1 && JUNG.test(n) ? '*' : '')).join(', ');
     fetch('data/publications.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((pubs) => {
       const list = document.querySelector('.pub-list');
       list.innerHTML = pubs.map((p, i) => `
@@ -1212,7 +1216,7 @@
           <div class="pub-year">${p.year}</div>
           <div>
             <div class="pub-title">${esc(p.title)}</div>
-            <div class="pub-authors">${esc(p.authors.join(', '))}</div>
+            <div class="pub-authors">${authors(p.authors)}</div>
             <div class="pub-foot"><span class="pub-journal">${esc(p.journal)}</span><span class="pub-doi"><span>DOI ↗</span></span></div>
           </div>
           <div class="pub-arrow">↗</div>
