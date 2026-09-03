@@ -605,6 +605,18 @@
     .pub-note { font-size: 0.8rem; font-weight: 300; color: var(--ivory-mute); margin-top: 34px; text-align: center; }
     .pub-note a { color: var(--bronze-bright); }
 
+    /* recent highlight — one featured paper above the list */
+    .pub-highlight-label { margin-bottom: 22px; }
+    .pub-highlight {
+      border: 1px solid var(--bronze-bright);
+      padding: 36px 40px;
+      margin-bottom: 64px;
+    }
+    .pub-highlight .pub-title { font-size: 1.42rem; }
+    .pub-highlight-fig { grid-column: 1 / -1; margin: -36px -40px 36px; border-bottom: 1px solid var(--bronze-bright); }
+    .pub-highlight-fig img { display: block; width: 100%; height: auto; }
+    .pub-highlight .pub-blurb { font-size: 0.9rem; font-weight: 300; color: var(--ivory-soft); margin-top: 16px; line-height: 1.8; max-width: 720px; }
+
     /* ─── PEOPLE ──────────────────────────────── */
     .people-grid {
       display: grid;
@@ -958,6 +970,22 @@
         </div>
         <a href="https://orcid.org/0000-0002-6073-0908" target="_blank" rel="noopener" class="btn-outline">ORCID ↗</a>
       </div>
+
+      <div class="eyebrow pub-highlight-label reveal">Recent Highlight</div>
+      <a class="pub-item pub-highlight reveal" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">
+        <div class="pub-highlight-fig"><img src="highlight_bandlike.webp" alt="Schematic: from the soft anharmonic [PbX₃]⁻ framework to dressed quasiparticles, transport and defect phenomenology" loading="lazy" width="1712" height="1152" /></div>
+        <div class="pub-year">2026</div>
+        <div>
+          <div class="pub-title">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</div>
+          <div class="pub-authors">Young Mi Lee, Inhee Maeng, Jinwoo Park, Seung-Jae Oh, Min-Cherl Jung</div>
+          <div class="pub-blurb">A review resolving the dichotomy of band-like transport in a soft, anharmonic lattice — from the Pb 6s² lone pair to large polarons, defect tolerance and the T<sup>−3/2</sup> mobility law — with seven open questions and the measurements needed to settle them.</div>
+          <div class="pub-foot">
+            <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
+            <span class="pub-doi"><span>arXiv:2608.28104 ↗</span></span>
+          </div>
+        </div>
+        <div class="pub-arrow">↗</div>
+      </a>
 
       <div class="pub-list reveal">
         <a class="pub-item" href="https://doi.org/10.1016/j.apsusc.2026.166846" target="_blank" rel="noopener">
