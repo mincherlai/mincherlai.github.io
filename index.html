@@ -774,6 +774,7 @@
       text-transform: uppercase;
       color: var(--ivory-mute);
     }
+    .footer-colophon { font-size: 0.72rem; font-weight: 300; color: var(--ivory-mute); margin-top: 8px; text-align: right; }
 
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 960px) {
@@ -806,6 +807,7 @@
       .timeline-item { grid-template-columns: 84px 1fr; gap: 16px; }
       .approach-frame { padding: 44px 22px 36px; }
       footer { padding: 64px 24px 34px; }
+      .footer-colophon { text-align: left; }
     }
   </style>
 </head>
@@ -954,8 +956,8 @@
 
       <div class="approach-frame reveal">
         <div class="eyebrow">Our Approach</div>
-        <h3>From atomic structure to <em>working devices</em></h3>
-        <img src="approach3.webp" alt="Our research approach" loading="lazy" width="1800" height="968" />
+        <h3>From atomic structure to <em>working devices</em>, based on:</h3>
+        <img src="approach4.webp" alt="Investigating halide perovskite correlations: defects, electronic structure and phonons" loading="lazy" width="1920" height="1024" />
       </div>
     </div>
   </section>
@@ -1180,7 +1182,10 @@
       <div class="footer-word">Min-Cherl <em>Jung</em></div>
       <div class="footer-meta">
         <div class="footer-inst">Global Institute of Future Technology<br />Shanghai Jiao Tong University</div>
-        <div class="footer-copy">© 2026 Innovation Lab for OHP Materials</div>
+        <div>
+          <div class="footer-copy">© 2026 Innovation Lab for OHP Materials</div>
+          <div class="footer-colophon">Site built with Claude · Illustrations generated with Grok</div>
+        </div>
       </div>
     </div>
   </footer>
