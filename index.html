@@ -358,6 +358,11 @@
     /* ─── ABOUT ───────────────────────────────── */
     #about { background: var(--paper-2); }
 
+    .pi-head { display: flex; align-items: center; gap: 28px; margin-top: 22px; }
+    .pi-head .section-title { margin: 0; }
+    .pi-head .pi-avatar { margin-bottom: 0; flex: none; }
+    .pi-head:hover .pi-avatar { filter: grayscale(0); }
+
     .about-tags { display: flex; flex-wrap: wrap; gap: 0; margin: 30px 0 40px; border-top: 1px solid var(--line-soft); }
     .tag {
       padding: 12px 20px 12px 0;
@@ -867,7 +872,10 @@
     <div class="inner about-inner">
       <div class="reveal">
         <div class="eyebrow"><span class="section-no">01</span> Principal Investigator</div>
-        <h2 class="section-title">Dr. Min-Cherl <em>Jung</em></h2>
+        <div class="pi-head">
+          <img src="jung.webp" class="person-avatar pi-avatar" width="96" height="96" alt="Dr. Min-Cherl Jung" />
+          <h2 class="section-title">Dr. Min-Cherl <em>Jung</em></h2>
+        </div>
         <div class="about-tags">
           <span class="tag">Condensed Matter Physics</span>
           <span class="tag">Surface / Interface Physics</span>
