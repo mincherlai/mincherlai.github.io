@@ -22,8 +22,17 @@
 (function () {
   var q = new URLSearchParams(location.search);
   var target = null;
+  // 0) #vault=...&file=...  (fragment stays out of server logs; values are
+  //    already percent-encoded, so they are passed through raw, not re-encoded)
+  var h = {};
+  location.hash.replace(/^#/, '').split('&').forEach(function (kv) {
+    var i = kv.indexOf('=');
+    if (i > 0) h[kv.slice(0, i)] = kv.slice(i + 1);
+  });
+  if (h.vault) {
+    target = 'obsidian://open?vault=' + h.vault + (h.file ? '&file=' + h.file : '');
   // 1) ?vault=...&file=...  → obsidian://open?vault=...&file=...
-  if (q.get('vault')) {
+  } else if (q.get('vault')) {
     var p = new URLSearchParams();
     p.set('vault', q.get('vault'));
     if (q.get('file')) p.set('file', q.get('file'));
