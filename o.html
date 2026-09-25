@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Open in Obsidian</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 32px 16px;
+         background: #fff; color: #222; text-align: center; }
+  a.btn { display: inline-block; margin-top: 16px; padding: 12px 20px; border-radius: 8px;
+          background: #7c3aed; color: #fff; text-decoration: none; }
+  p.err { color: #b91c1c; }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } }
+</style>
+</head>
+<body>
+<p id="msg">Obsidian 을 여는 중…</p>
+<p><a id="go" class="btn" href="#" hidden>Obsidian 에서 열기</a></p>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var target = null;
+  // 0) #vault=...&file=...  (fragment stays out of server logs; values are
+  //    already percent-encoded, so they are passed through raw, not re-encoded)
+  var h = {};
+  location.hash.replace(/^#/, '').split('&').forEach(function (kv) {
+    var i = kv.indexOf('=');
+    if (i > 0) h[kv.slice(0, i)] = kv.slice(i + 1);
+  });
+  if (h.vault) {
+    target = 'obsidian://open?vault=' + h.vault + (h.file ? '&file=' + h.file : '');
+  // 1) ?vault=...&file=...  → obsidian://open?vault=...&file=...
+  } else if (q.get('vault')) {
+    var p = new URLSearchParams();
+    p.set('vault', q.get('vault'));
+    if (q.get('file')) p.set('file', q.get('file'));
+    target = 'obsidian://open?' + p.toString().replace(/\+/g, '%20');
+  // 2) ?u=obsidian://...  (full URI, obsidian scheme only)
+  } else if (q.get('u') && /^obsidian:\/\//i.test(q.get('u'))) {
+    target = q.get('u');
+  }
+  var msg = document.getElementById('msg');
+  if (!target) {
+    msg.textContent = '올바르지 않은 링크입니다.';
+    msg.className = 'err';
+    return;
+  }
+  var a = document.getElementById('go');
+  a.href = target;
+  a.hidden = false;
+  location.replace(target);
+})();
+</script>
+</body>
+</html>
