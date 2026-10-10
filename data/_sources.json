@@ -1,4 +1,4 @@
 {
  "publications": "ok",
- "stats": "IndexError: list index out of range"
+ "stats": "HTTPError: HTTP Error 403: Forbidden"
 }
