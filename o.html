@@ -9,21 +9,29 @@
 <style>
   body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 32px 16px;
          background: #fff; color: #222; text-align: center; }
-  a.btn { display: inline-block; margin-top: 16px; padding: 12px 20px; border-radius: 8px;
-          background: #7c3aed; color: #fff; text-decoration: none; }
+  a.btn { display: inline-block; margin-top: 16px; padding: 14px 28px; border-radius: 10px;
+          background: #7c3aed; color: #fff; text-decoration: none; font-size: 17px; font-weight: 600; }
+  button.copy { display: inline-block; margin-top: 12px; padding: 10px 20px; border-radius: 8px;
+          background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; font-size: 15px; }
   p.err { color: #b91c1c; }
-  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } }
+  p.hint { color: #6b7280; font-size: 14px; margin-top: 20px; line-height: 1.6; }
+  code.uri { display: block; margin: 12px auto 0; max-width: 92%; word-break: break-all;
+          font-size: 12px; color: #6b7280; background: #f9fafb; padding: 8px; border-radius: 6px; }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; }
+    button.copy { background: #1f2937; color: #d1d5db; border-color: #374151; }
+    p.hint { color: #9ca3af; } code.uri { background: #1f2937; color: #9ca3af; } }
 </style>
 </head>
 <body>
-<p id="msg">Obsidian 을 여는 중…</p>
-<p><a id="go" class="btn" href="#" hidden>Obsidian 에서 열기</a></p>
+<p id="msg">Obsidian 에서 여는 중…</p>
+<p><a id="go" class="btn" href="#">📓 Obsidian 에서 열기</a></p>
+<p><button id="copy" class="copy">🔗 링크 복사</button></p>
+<code class="uri" id="uri"></code>
+<p class="hint" id="hint">버튼을 눌러도 안 열리면, 위 링크를 복사해서<br>Safari 주소창에 붙여넣으세요.</p>
 <script>
 (function () {
   var q = new URLSearchParams(location.search);
   var target = null;
-  // 0) #vault=...&file=...  (fragment stays out of server logs; values are
-  //    already percent-encoded, so they are passed through raw, not re-encoded)
   var h = {};
   location.hash.replace(/^#/, '').split('&').forEach(function (kv) {
     var i = kv.indexOf('=');
@@ -31,13 +39,11 @@
   });
   if (h.vault) {
     target = 'obsidian://open?vault=' + h.vault + (h.file ? '&file=' + h.file : '');
-  // 1) ?vault=...&file=...  → obsidian://open?vault=...&file=...
   } else if (q.get('vault')) {
     var p = new URLSearchParams();
     p.set('vault', q.get('vault'));
     if (q.get('file')) p.set('file', q.get('file'));
     target = 'obsidian://open?' + p.toString().replace(/\+/g, '%20');
-  // 2) ?u=obsidian://...  (full URI, obsidian scheme only)
   } else if (q.get('u') && /^obsidian:\/\//i.test(q.get('u'))) {
     target = q.get('u');
   }
@@ -45,12 +51,39 @@
   if (!target) {
     msg.textContent = '올바르지 않은 링크입니다.';
     msg.className = 'err';
+    document.getElementById('hint').style.display = 'none';
     return;
   }
   var a = document.getElementById('go');
   a.href = target;
-  a.hidden = false;
-  location.replace(target);
+  document.getElementById('uri').textContent = target;
+  var tried = false;
+  function tryOpen() {
+    if (tried) return; tried = true;
+    var ifr = document.createElement('iframe');
+    ifr.style.display = 'none';
+    ifr.src = target;
+    document.body.appendChild(ifr);
+    setTimeout(function(){ window.location.href = target; }, 300);
+  }
+  tryOpen();
+  a.addEventListener('click', function (e) { tried = true; });
+  document.getElementById('copy').addEventListener('click', function () {
+    function done(ok) {
+      document.getElementById('copy').textContent = ok ? '✅ 복사됨' : '❌ 복사 실패 — 위 링크를 길게 눌러 복사하세요';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(target).then(function(){ done(true); }, function(){ done(false); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = target; document.body.appendChild(ta); ta.select();
+      try { done(document.execCommand('copy')); } catch (e) { done(false); }
+      document.body.removeChild(ta);
+    }
+  });
+  setTimeout(function () {
+    msg.textContent = '자동으로 안 열리면 아래 버튼을 눌러주세요 👇';
+  }, 2500);
 })();
 </script>
 </body>
