@@ -619,6 +619,7 @@
 
     /* recent highlight — one featured paper above the list */
     .pub-highlight-label { margin-bottom: 22px; }
+    .pub-group-label { margin-top: 64px; }
     .pub-highlight {
       border: 1px solid var(--bronze-bright);
       padding: 36px 40px;
@@ -1031,7 +1032,32 @@
         <div class="pub-highlight-fig"><img src="highlight_bandlike.webp" alt="Schematic: from the soft anharmonic [PbX₃]⁻ framework to dressed quasiparticles, transport and defect phenomenology" loading="lazy" width="1712" height="1152" /></div>
       </a>
 
-      <div class="pub-list reveal">
+      <div class="eyebrow pub-highlight-label pub-group-label reveal" id="pub-year-label">2026 Publications</div>
+      <div class="pub-list pub-list-year reveal">
+        <a class="pub-item" href="https://doi.org/10.1002/adma.75413" target="_blank" rel="noopener">
+          <div class="pub-year">2026</div>
+          <div>
+            <div class="pub-title">Pathway Engineering Enables Durable Iridium‐Free Acidic Water Oxidation</div>
+            <div class="pub-authors">Feng Cao, Taiyan Zhang, Kang Hua, Wenchao Wang, Yifei Liu, Ruizhao Wang, Haonan Li, Keun Hwa Chae, Young Mi Lee, Min‐Cherl Jung, Xiaoke Li, Wenjiang Ding, Lina Chong</div>
+            <div class="pub-foot">
+              <span class="pub-journal">Advanced Materials</span>
+              <span class="pub-doi"><span>DOI ↗</span></span>
+            </div>
+          </div>
+          <div class="pub-arrow">↗</div>
+        </a>
+        <a class="pub-item" href="https://doi.org/10.3390/nano16171072" target="_blank" rel="noopener">
+          <div class="pub-year">2026</div>
+          <div>
+            <div class="pub-title">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells: Toward a Universal Framework</div>
+            <div class="pub-authors">Inhee Maeng, Young Mi Lee, Jinwoo Park, Seung Jae Oh, Min-Cherl Jung*</div>
+            <div class="pub-foot">
+              <span class="pub-journal">Nanomaterials</span>
+              <span class="pub-doi"><span>DOI ↗</span></span>
+            </div>
+          </div>
+          <div class="pub-arrow">↗</div>
+        </a>
         <a class="pub-item" href="https://doi.org/10.1016/j.apsusc.2026.166846" target="_blank" rel="noopener">
           <div class="pub-year">2026</div>
           <div>
@@ -1044,13 +1070,17 @@
           </div>
           <div class="pub-arrow">↗</div>
         </a>
+      </div>
+
+      <div class="eyebrow pub-highlight-label pub-group-label reveal">Selected Papers</div>
+      <div class="pub-list pub-list-selected reveal">
         <a class="pub-item" href="https://doi.org/10.1002/smsc.202300186" target="_blank" rel="noopener">
           <div class="pub-year">2024</div>
           <div>
-            <div class="pub-title">THz-Wave Absorption Properties of Organic-Inorganic Hybrid Perovskite Materials: A New Candidate for THz Sensors</div>
+            <div class="pub-title">THz‐Wave Absorption Properties of Organic–Inorganic Hybrid Perovskite Materials: A New Candidate for THz Sensors</div>
             <div class="pub-authors">Inhee Maeng, Young Mi Lee, Min-Cherl Jung*</div>
             <div class="pub-foot">
-              <span class="pub-journal">Small</span>
+              <span class="pub-journal">Small Science</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
             </div>
           </div>
@@ -1072,7 +1102,7 @@
           <div class="pub-year">2021</div>
           <div>
             <div class="pub-title">Unusual terahertz-wave absorptions in δ/α-mixed-phase FAPbI₃ single crystals: interfacial phonon vibration modes</div>
-            <div class="pub-authors">Inhee Maeng, Seungjun Lee, E.Q. Han, Yurou Zhang, Seung Jae Oh, Masakazu Nakamura, Jung-Ho Yun, Lianzhou Wang, Young-Kyun Kwon, Min-Cherl Jung*</div>
+            <div class="pub-authors">Inhee Maeng, Seungjun Lee, E. Q. Han, Yurou Zhang, Seung Jae Oh, Masakazu Nakamura, Jung-Ho Yun, Lianzhou Wang, Young-Kyun Kwon, Min-Cherl Jung*</div>
             <div class="pub-foot">
               <span class="pub-journal">NPG Asia Materials</span>
               <span class="pub-doi"><span>DOI ↗</span></span>
@@ -1093,6 +1123,8 @@
           <div class="pub-arrow">↗</div>
         </a>
       </div>
+
+      <div class="pub-list pub-list-all" hidden></div>
 
       <p class="pub-note reveal">
         * Corresponding author.<br />
@@ -1246,16 +1278,16 @@
 
     // ── Publications from data/publications.json (static markup above is the no-JS / offline fallback)
     const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-    const SHOW = 8;
     // corresponding author = last author when it is Min-Cherl Jung (any Crossref spelling: M.-C. Jung, M. C. Jung, …)
     const JUNG = /^M(in)?[\s.‐-]*C(herl)?\.?\s*Jung$/;
     // co-corresponding (not last author) — by DOI
     const CO_CORR = new Set(['10.1016/j.apsusc.2026.166846']);
+    // Selected Papers — curated representative works, by DOI
+    const SELECTED = new Set(['10.1002/smsc.202300186', '10.1016/j.mtphys.2022.100960', '10.1038/s41427-021-00343-7', '10.1038/s41427-020-0235-6']);
     const authors = (a, doi) => a.map((n, i) => esc(n) + (JUNG.test(n) && (i === a.length - 1 || CO_CORR.has(doi)) ? '*' : '')).join(', ');
     fetch('data/publications.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)).then((pubs) => {
-      const list = document.querySelector('.pub-list');
-      list.innerHTML = pubs.map((p, i) => `
-        <a class="pub-item${i >= SHOW ? ' hidden' : ''}" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">
+      const item = (p) => `
+        <a class="pub-item" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">
           <div class="pub-year">${p.year}</div>
           <div>
             <div class="pub-title">${esc(p.title)}</div>
@@ -1263,13 +1295,26 @@
             <div class="pub-foot"><span class="pub-journal">${esc(p.journal)}</span><span class="pub-doi"><span>DOI ↗</span></span></div>
           </div>
           <div class="pub-arrow">↗</div>
-        </a>`).join('');
-      if (pubs.length > SHOW) {
+        </a>`;
+      const thisYear = pubs.reduce((m, p) => Math.max(m, p.year || 0), 0);
+      const yearLabel = document.getElementById('pub-year-label');
+      if (yearLabel) yearLabel.textContent = `${thisYear} Publications`;
+      const yearList = document.querySelector('.pub-list-year');
+      if (yearList) yearList.innerHTML = pubs.filter((p) => p.year === thisYear).map(item).join('');
+      const selList = document.querySelector('.pub-list-selected');
+      if (selList) selList.innerHTML = pubs.filter((p) => SELECTED.has(p.doi)).map(item).join('');
+      const allList = document.querySelector('.pub-list-all');
+      if (allList) {
+        allList.innerHTML = pubs.map(item).join('');
         const btn = document.createElement('button');
         btn.className = 'btn-outline pub-more';
         btn.textContent = `Show all ${pubs.length} publications`;
-        btn.onclick = () => { list.querySelectorAll('.hidden').forEach((el) => el.classList.remove('hidden')); btn.remove(); };
-        list.after(btn);
+        btn.onclick = () => {
+          const open = allList.hidden;
+          allList.hidden = !open;
+          btn.textContent = open ? 'Show fewer' : `Show all ${pubs.length} publications`;
+        };
+        allList.after(btn);
       }
     }).catch((e) => console.warn('publications.json unavailable, keeping static list', e));
 
