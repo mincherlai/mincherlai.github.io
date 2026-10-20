@@ -14,17 +14,53 @@ def get(url, raw=False):
         return r.read() if raw else json.load(r)
 
 
+def iso_date(parts):
+    """date-parts [y, m?, d?] -> 'YYYY-MM-DD' ('00' for unknown parts)."""
+    y = int(parts[0])
+    mo = int(parts[1]) if len(parts) > 1 and parts[1] else 0
+    d = int(parts[2]) if len(parts) > 2 and parts[2] else 0
+    return f"{y:04d}-{mo:02d}-{d:02d}"
+
+
+def date_rank(d):
+    """Precision of an ISO date: 2 = full, 1 = year+month, 0 = year only, -1 = none."""
+    if not d or len(d) < 10:
+        return -1
+    return sum(1 for x in d.split("-")[1:] if x != "00")
+
+
+def crossref_date(m):
+    """Best available publication date from a Crossref work."""
+    for key in ("published", "published-online", "published-print", "issued", "created"):
+        dp = (m.get(key) or {}).get("date-parts")
+        if dp and dp[0]:
+            return iso_date(dp[0])
+    return ""
+
+
+def orcid_date(s):
+    pd = s.get("publication-date") or {}
+    y = (pd.get("year") or {}).get("value")
+    if not y:
+        return ""
+    mo = (pd.get("month") or {}).get("value") or 0
+    d = (pd.get("day") or {}).get("value") or 0
+    return f"{int(y):04d}-{int(mo):02d}-{int(d):02d}"
+
+
 def orcid_works():
     for g in get(f"https://pub.orcid.org/v3.0/{ORCID}/works")["group"]:
         s = g["work-summary"][0]
         ids = {i["external-id-type"]: i["external-id-value"] for i in s["external-ids"]["external-id"]}
         if s["type"] != "journal-article" or "doi" not in ids:
             continue
+        od = orcid_date(s)
         yield {
             "doi": ids["doi"].lower(),
             "title": clean_title(s["title"]["title"]["value"]),
             "journal": (s.get("journal-title") or {}).get("value", ""),
-            "year": int((s.get("publication-date") or {}).get("year", {}).get("value") or 0),
+            "year": int(od[:4]) if od else 0,
+            "date": od,
         }
 
 
@@ -42,11 +78,13 @@ def clean_title(t):
 
 def crossref_item(m):
     ct = m.get("container-title") or [""]
+    date = crossref_date(m)
     return {
         "doi": m["DOI"].lower(),
         "title": clean_title(m["title"][0]),
         "journal": ct[0],
-        "year": (m.get("issued") or m.get("created"))["date-parts"][0][0],
+        "year": int(date[:4]) if date else 0,
+        "date": date,
         "authors": [f"{a.get('given', '')} {a.get('family', '')}".strip() for a in m.get("author", [])],
     }
 
@@ -65,7 +103,10 @@ def publications():
     for p in list(orcid_works()) + crossref_works():
         cur = pubs.setdefault(p["doi"], {})
         for k, v in p.items():  # prefer non-empty values
-            if v and not cur.get(k):
+            if k == "date":  # prefer the most precise date (full > month > year)
+                if date_rank(v) > date_rank(cur.get(k)):
+                    cur[k] = v
+            elif v and not cur.get(k):
                 cur[k] = v
     for doi, p in pubs.items():
         if not (p.get("authors") and p.get("journal")):  # ORCID summaries lack authors → one Crossref lookup, cached via old json
@@ -79,7 +120,14 @@ def publications():
                 except Exception as e:  # ponytail: a missing author list is not worth failing the run
                     print("lookup skip", doi, e, file=sys.stderr)
             p.setdefault("authors", []); p.setdefault("journal", "")
-    return sorted(pubs.values(), key=lambda p: (-p["year"], p["title"]))
+    def sort_key(p):
+        d = p.get("date") or ""
+        y = int(d[:4]) if len(d) >= 4 and d[:4].isdigit() else p.get("year", 0)
+        mo = int(d[5:7]) if len(d) >= 7 and d[5:7].isdigit() else 0
+        dd = int(d[8:10]) if len(d) >= 10 and d[8:10].isdigit() else 0
+        return (-y, -mo, -dd, p["title"])
+
+    return sorted(pubs.values(), key=sort_key)
 
 
 SCHOLAR = "https://scholar.google.com/citations?user=v7GsEJ4AAAAJ&hl=en"
