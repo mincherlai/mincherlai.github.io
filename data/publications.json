@@ -1,31 +1,10 @@
 [
  {
-  "doi": "10.1016/j.apsusc.2026.166846",
-  "title": "Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites",
-  "journal": "Applied Surface Science",
-  "year": 2026,
-  "authors": [
-   "Seungwoo Yoo",
-   "Young Mi Lee",
-   "Seungjun Lee",
-   "Inhee Maeng",
-   "Jae Ho Kim",
-   "Yuya Yoshie",
-   "Sakura Nishino Takeda",
-   "Masakazu Nakamura",
-   "Zhe Sun",
-   "Seung Jae Oh",
-   "Myungkwan Song",
-   "Shenghao Wang",
-   "Min-Cherl Jung",
-   "Young-Kyun Kwon"
-  ]
- },
- {
   "doi": "10.1002/adma.75413",
   "title": "Pathway Engineering Enables Durable Iridium‐Free Acidic Water Oxidation",
   "journal": "Advanced Materials",
   "year": 2026,
+  "date": "2026-10-14",
   "authors": [
    "Feng Cao",
    "Taiyan Zhang",
@@ -47,6 +26,7 @@
   "title": "Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells: Toward a Universal Framework",
   "journal": "Nanomaterials",
   "year": 2026,
+  "date": "2026-08-28",
   "authors": [
    "Inhee Maeng",
    "Young Mi Lee",
@@ -56,10 +36,34 @@
   ]
  },
  {
+  "doi": "10.1016/j.apsusc.2026.166846",
+  "title": "Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites",
+  "journal": "Applied Surface Science",
+  "year": 2026,
+  "date": "2026-08-00",
+  "authors": [
+   "Seungwoo Yoo",
+   "Young Mi Lee",
+   "Seungjun Lee",
+   "Inhee Maeng",
+   "Jae Ho Kim",
+   "Yuya Yoshie",
+   "Sakura Nishino Takeda",
+   "Masakazu Nakamura",
+   "Zhe Sun",
+   "Seung Jae Oh",
+   "Myungkwan Song",
+   "Shenghao Wang",
+   "Min-Cherl Jung",
+   "Young-Kyun Kwon"
+  ]
+ },
+ {
   "doi": "10.1002/smsc.202300186",
   "title": "THz‐Wave Absorption Properties of Organic–Inorganic Hybrid Perovskite Materials: A New Candidate for THz Sensors",
   "journal": "Small Science",
   "year": 2024,
+  "date": "2024-01-15",
   "authors": [
    "Inhee Maeng",
    "Young Mi Lee",
@@ -71,6 +75,7 @@
   "title": "Predicted THz-wave absorption properties observed in all-inorganic perovskite CsPbI₃ thin films: Integrity at the grain boundary",
   "journal": "Materials Today Physics",
   "year": 2023,
+  "date": "2023-01-00",
   "authors": [
    "Inhee Maeng",
    "Shi Chen",
@@ -81,10 +86,22 @@
   ]
  },
  {
+  "doi": "10.3389/fchem.2022.1054197",
+  "title": "Editorial: Light manipulation in novel functional materials and waveguide structures",
+  "journal": "Frontiers in Chemistry",
+  "year": 2022,
+  "date": "2022-10-13",
+  "authors": [
+   "Tingchao He",
+   "Min-Cherl Jung"
+  ]
+ },
+ {
   "doi": "10.1039/d2ta04705e",
   "title": "Chain aggregation dictates bimolecular charge recombination and fill factor of all-polymer blend solar cells",
   "journal": "Journal of Materials Chemistry A",
   "year": 2022,
+  "date": "2022-00-00",
   "authors": [
    "Ren Hagio",
    "Hiroaki Benten",
@@ -99,38 +116,48 @@
   ]
  },
  {
-  "doi": "10.3389/fchem.2022.1054197",
-  "title": "Editorial: Light manipulation in novel functional materials and waveguide structures",
-  "journal": "Frontiers in Chemistry",
-  "year": 2022,
-  "authors": [
-   "Tingchao He",
-   "Min-Cherl Jung"
-  ]
- },
- {
-  "doi": "10.1016/j.apsusc.2020.148536",
-  "title": "Bias effect on surface chemical states of CH₃NH₃PbBr₃ hybrid perovskite single crystal: Decreasing CH₃NH₂ molecular defect",
-  "journal": "Applied Surface Science",
+  "doi": "10.35848/1882-0786/ac36b2",
+  "title": "Correlation of THz-wave absorption properties by different halogen elements in FAPb(Br, I)-based hybrid perovskite thin films",
+  "journal": "Applied Physics Express",
   "year": 2021,
+  "date": "2021-12-01",
   "authors": [
-   "Young Mi Lee",
    "Inhee Maeng",
-   "Miaoqiang Lyu",
-   "Jung-Ho Yun",
-   "Lianzhou Wang",
+   "Asuka Matsuyama",
    "Masakazu Nakamura",
    "Min-Cherl Jung"
   ]
  },
  {
-  "doi": "10.35848/1882-0786/ac36b2",
-  "title": "Correlation of THz-wave absorption properties by different halogen elements in FAPb(Br, I)-based hybrid perovskite thin films",
-  "journal": "Applied Physics Express",
+  "doi": "10.1038/s41427-021-00343-7",
+  "title": "Unusual terahertz-wave absorptions in δ/α-mixed-phase FAPbI₃ single crystals: interfacial phonon vibration modes",
+  "journal": "NPG Asia Materials",
   "year": 2021,
+  "date": "2021-11-26",
   "authors": [
    "Inhee Maeng",
-   "Asuka Matsuyama",
+   "Seungjun Lee",
+   "E. Q. Han",
+   "Yurou Zhang",
+   "Seung Jae Oh",
+   "Masakazu Nakamura",
+   "Jung-Ho Yun",
+   "Lianzhou Wang",
+   "Young-Kyun Kwon",
+   "Min-Cherl Jung"
+  ]
+ },
+ {
+  "doi": "10.3389/fchem.2021.753141",
+  "title": "Terahertz Wave Absorption Property of all Mixed Organic–Inorganic Hybrid Perovskite Thin Film MA(Sn, Pb)(Br, I)₃ Fabricated by Sequential Vacuum Evaporation Method",
+  "journal": "Frontiers in Chemistry",
+  "year": 2021,
+  "date": "2021-09-16",
+  "authors": [
+   "Inhee Maeng",
+   "Hiroshi Tanaka",
+   "Valynn Katrine Mag-usara",
+   "Makoto Nakajima",
    "Masakazu Nakamura",
    "Min-Cherl Jung"
   ]
@@ -140,6 +167,7 @@
   "title": "Self‐Assembled Perovskite Nanoislands on CH₃NH₃PbI₃ Cuboid Single Crystals by Energetic Surface Engineering",
   "journal": "Advanced Functional Materials",
   "year": 2021,
+  "date": "2021-09-12",
   "authors": [
    "Yurou Zhang",
    "Dohyung Kim",
@@ -161,51 +189,19 @@
   ]
  },
  {
-  "doi": "10.3389/fchem.2021.753141",
-  "title": "Terahertz Wave Absorption Property of all Mixed Organic–Inorganic Hybrid Perovskite Thin Film MA(Sn, Pb)(Br, I)₃ Fabricated by Sequential Vacuum Evaporation Method",
-  "journal": "Frontiers in Chemistry",
+  "doi": "10.1016/j.apsusc.2020.148536",
+  "title": "Bias effect on surface chemical states of CH₃NH₃PbBr₃ hybrid perovskite single crystal: Decreasing CH₃NH₂ molecular defect",
+  "journal": "Applied Surface Science",
   "year": 2021,
+  "date": "2021-01-00",
   "authors": [
+   "Young Mi Lee",
    "Inhee Maeng",
-   "Hiroshi Tanaka",
-   "Valynn Katrine Mag-usara",
-   "Makoto Nakajima",
-   "Masakazu Nakamura",
-   "Min-Cherl Jung"
-  ]
- },
- {
-  "doi": "10.1038/s41427-021-00343-7",
-  "title": "Unusual terahertz-wave absorptions in δ/α-mixed-phase FAPbI₃ single crystals: interfacial phonon vibration modes",
-  "journal": "NPG Asia Materials",
-  "year": 2021,
-  "authors": [
-   "Inhee Maeng",
-   "Seungjun Lee",
-   "E. Q. Han",
-   "Yurou Zhang",
-   "Seung Jae Oh",
-   "Masakazu Nakamura",
+   "Miaoqiang Lyu",
    "Jung-Ho Yun",
    "Lianzhou Wang",
-   "Young-Kyun Kwon",
+   "Masakazu Nakamura",
    "Min-Cherl Jung"
-  ]
- },
- {
-  "doi": "10.1021/acs.macromol.0c00623",
-  "title": "Enhancement of Short-Range Ordering of Low-Bandgap Donor–Acceptor Conjugated Polymer in Polymer/Polymer Blend Films",
-  "journal": "Macromolecules",
-  "year": 2020,
-  "authors": [
-   "Anjar Taufik Hidayat",
-   "Hiroaki Benten",
-   "Noboru Ohta",
-   "Yunju Na",
-   "Azusa Muraoka",
-   "Hirotaka Kojima",
-   "Min-Cherl Jung",
-   "Masakazu Nakamura"
   ]
  },
  {
@@ -213,6 +209,7 @@
   "title": "Halide Perovskite Single Crystals: Optoelectronic Applications and Strategical Approaches",
   "journal": "Energies",
   "year": 2020,
+  "date": "2020-08-17",
   "authors": [
    "Yurou Zhang",
    "Miaoqiang Lyu",
@@ -226,35 +223,20 @@
   ]
  },
  {
-  "doi": "10.3390/nano10040721",
-  "title": "Strong Linear Correlation between CH₃NH₂ Molecular Defect and THz-Wave Absorption in CH₃NH₃PbI₃ Hybrid Perovskite Thin Film",
-  "journal": "Nanomaterials",
+  "doi": "10.1021/acs.macromol.0c00623",
+  "title": "Enhancement of Short-Range Ordering of Low-Bandgap Donor–Acceptor Conjugated Polymer in Polymer/Polymer Blend Films",
+  "journal": "Macromolecules",
   "year": 2020,
+  "date": "2020-08-11",
   "authors": [
-   "Inhee Maeng",
-   "Asuka Matsuyama",
-   "Jung-Ho Yun",
-   "Shenghao Wang",
-   "Chul Kang",
-   "Chul-Sik Kee",
-   "Masakazu Nakamura",
-   "Min-Cherl Jung"
-  ]
- },
- {
-  "doi": "10.3390/nano10071253",
-  "title": "Surface Degradation Mechanism on CH₃NH₃PbBr₃ Hybrid Perovskite Single Crystal by a Grazing E-Beam Irradiation",
-  "journal": "Nanomaterials",
-  "year": 2020,
-  "authors": [
-   "Heriyanto Syafutra",
-   "Jung-Ho Yun",
-   "Yuya Yoshie",
-   "Miaoqiang Lyu",
-   "Sakura Nishino Takeda",
-   "Masakazu Nakamura",
-   "Lianzhou Wang",
-   "Min-Cherl Jung"
+   "Anjar Taufik Hidayat",
+   "Hiroaki Benten",
+   "Noboru Ohta",
+   "Yunju Na",
+   "Azusa Muraoka",
+   "Hirotaka Kojima",
+   "Min-Cherl Jung",
+   "Masakazu Nakamura"
   ]
  },
  {
@@ -262,6 +244,7 @@
   "title": "Unique phonon modes of a CH₃NH₃PbBr₃ hybrid perovskite film without the influence of defect structures: an attempt toward a novel THz-based application",
   "journal": "NPG Asia Materials",
   "year": 2020,
+  "date": "2020-08-03",
   "authors": [
    "Inhee Maeng",
    "Seungjun Lee",
@@ -274,16 +257,37 @@
   ]
  },
  {
-  "doi": "10.1016/j.orgel.2019.03.016",
-  "title": "An origin of the irreproducibility of hole injection barrier from Au top-contact electrodes and its influence on device performance in top-contact organic field-effect transistors",
-  "journal": "Organic Electronics",
-  "year": 2019,
+  "doi": "10.3390/nano10071253",
+  "title": "Surface Degradation Mechanism on CH₃NH₃PbBr₃ Hybrid Perovskite Single Crystal by a Grazing E-Beam Irradiation",
+  "journal": "Nanomaterials",
+  "year": 2020,
+  "date": "2020-06-28",
   "authors": [
-   "Min-Cherl Jung",
-   "Takeshi Horie",
-   "Hirotaka Kojima",
-   "Hiroaki Benten",
-   "Masakazu Nakamura"
+   "Heriyanto Syafutra",
+   "Jung-Ho Yun",
+   "Yuya Yoshie",
+   "Miaoqiang Lyu",
+   "Sakura Nishino Takeda",
+   "Masakazu Nakamura",
+   "Lianzhou Wang",
+   "Min-Cherl Jung"
+  ]
+ },
+ {
+  "doi": "10.3390/nano10040721",
+  "title": "Strong Linear Correlation between CH₃NH₂ Molecular Defect and THz-Wave Absorption in CH₃NH₃PbI₃ Hybrid Perovskite Thin Film",
+  "journal": "Nanomaterials",
+  "year": 2020,
+  "date": "2020-04-10",
+  "authors": [
+   "Inhee Maeng",
+   "Asuka Matsuyama",
+   "Jung-Ho Yun",
+   "Shenghao Wang",
+   "Chul Kang",
+   "Chul-Sik Kee",
+   "Masakazu Nakamura",
+   "Min-Cherl Jung"
   ]
  },
  {
@@ -291,6 +295,7 @@
   "title": "Clean interface without any intermixed state between ultra-thin P₃ polymer and CH₃NH₃PbI₃ hybrid perovskite thin film",
   "journal": "Scientific Reports",
   "year": 2019,
+  "date": "2019-12-00",
   "authors": [
    "Min-Cherl Jung",
    "Asuka Matsuyama",
@@ -303,25 +308,10 @@
   ]
  },
  {
-  "doi": "10.7567/1882-0786/aaf0ac",
-  "title": "Formation of CH₃NH₂-incorporated intermediate state in CH₃NH₃PbI₃ hybrid perovskite thin film formed by sequential vacuum evaporation",
-  "journal": "Applied Physics Express",
-  "year": 2019,
-  "authors": [
-   "Min-Cherl Jung",
-   "Sora Kobori",
-   "Asuka Matsuyama",
-   "Inhee Maeng",
-   "Young Mi Lee",
-   "Hirotaka Kojima",
-   "Hiroaki Benten",
-   "Masakazu Nakamura"
-  ]
- },
- {
   "doi": "10.1038/s41598-019-42359-8",
   "title": "Significant THz absorption in CH₃NH₂ molecular defect-incorporated organic-inorganic hybrid perovskite thin film",
   "year": 2019,
+  "date": "2019-12-00",
   "journal": "Scientific Reports",
   "authors": [
    "Inhee Maeng",
@@ -339,10 +329,25 @@
   ]
  },
  {
+  "doi": "10.1016/j.orgel.2019.03.016",
+  "title": "An origin of the irreproducibility of hole injection barrier from Au top-contact electrodes and its influence on device performance in top-contact organic field-effect transistors",
+  "journal": "Organic Electronics",
+  "year": 2019,
+  "date": "2019-06-00",
+  "authors": [
+   "Min-Cherl Jung",
+   "Takeshi Horie",
+   "Hirotaka Kojima",
+   "Hiroaki Benten",
+   "Masakazu Nakamura"
+  ]
+ },
+ {
   "doi": "10.7567/1882-0786/ab0eec",
   "title": "Significant THz-wave absorption property in mixed δ- and α-FAPbI₃ hybrid perovskite flexible thin film formed by sequential vacuum evaporation",
   "journal": "Applied Physics Express",
   "year": 2019,
+  "date": "2019-05-01",
   "authors": [
    "Young Mi Lee",
    "Jung-Ho Yun",
@@ -357,10 +362,28 @@
   ]
  },
  {
+  "doi": "10.7567/1882-0786/aaf0ac",
+  "title": "Formation of CH₃NH₂-incorporated intermediate state in CH₃NH₃PbI₃ hybrid perovskite thin film formed by sequential vacuum evaporation",
+  "journal": "Applied Physics Express",
+  "year": 2019,
+  "date": "2019-01-01",
+  "authors": [
+   "Min-Cherl Jung",
+   "Sora Kobori",
+   "Asuka Matsuyama",
+   "Inhee Maeng",
+   "Young Mi Lee",
+   "Hirotaka Kojima",
+   "Hiroaki Benten",
+   "Masakazu Nakamura"
+  ]
+ },
+ {
   "doi": "10.3389/fenrg.2018.00128",
   "title": "Comprehensive Understanding and Controlling the Defect Structures: An Effective Approach for Organic-Inorganic Hybrid Perovskite-Based Solar-Cell Application",
   "journal": "Frontiers in Energy Research",
   "year": 2018,
+  "date": "2018-11-00",
   "authors": [
    "Young Mi Lee",
    "Inhee Maeng",
@@ -372,23 +395,11 @@
   ]
  },
  {
-  "doi": "10.1016/j.orgel.2017.10.006",
-  "title": "Diffusion and influence on photovoltaic characteristics of p-type dopants in organic photovoltaics for energy harvesting from blue-light",
-  "journal": "Organic Electronics",
-  "year": 2018,
-  "authors": [
-   "Min-Cherl Jung",
-   "Hirotaka Kojima",
-   "Izumi Matsumura",
-   "Hiroaki Benten",
-   "Masakazu Nakamura"
-  ]
- },
- {
   "doi": "10.1021/acs.jpclett.8b00494",
   "title": "Surface Instability of Sn-Based Hybrid Perovskite Thin Film, CH₃NH₃SnI₃: The Origin of Its Material Instability",
   "journal": "The Journal of Physical Chemistry Letters",
   "year": 2018,
+  "date": "2018-05-03",
   "authors": [
    "Young Mi Lee",
    "Jinwoo Park",
@@ -399,10 +410,25 @@
   ]
  },
  {
+  "doi": "10.1016/j.orgel.2017.10.006",
+  "title": "Diffusion and influence on photovoltaic characteristics of p-type dopants in organic photovoltaics for energy harvesting from blue-light",
+  "journal": "Organic Electronics",
+  "year": 2018,
+  "date": "2018-01-00",
+  "authors": [
+   "Min-Cherl Jung",
+   "Hirotaka Kojima",
+   "Izumi Matsumura",
+   "Hiroaki Benten",
+   "Masakazu Nakamura"
+  ]
+ },
+ {
   "doi": "10.1016/j.orgel.2016.01.018",
   "title": "Dopant interdiffusion effects in n-i-p structured spiro-OMeTAD hole transport layer of organometal halide perovskite solar cells",
   "journal": "Organic Electronics: physics, materials, applications",
   "year": 2016,
+  "date": "2016-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Yabing Qi"
@@ -413,6 +439,7 @@
   "title": "Properties and solar cell applications of Pb-free perovskite films formed by vapor deposition",
   "journal": "RSC Advances",
   "year": 2016,
+  "date": "2016-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Sonia R. Raga",
@@ -424,6 +451,7 @@
   "title": "The presence of CH3NH2neutral species in organometal halide perovskite films",
   "journal": "Applied Physics Letters",
   "year": 2016,
+  "date": "2016-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Young Mi Lee",
@@ -443,6 +471,7 @@
   "title": "Two different phase-change origins with chemical-and structural-phase-changes in C doped (1.5 wt.%) in 3 Sb₁Te₂",
   "journal": "Scientific Reports",
   "year": 2016,
+  "date": "2016-00-00",
   "authors": [
    "Y. M. Lee",
    "S. Y. Lee",
@@ -457,6 +486,7 @@
   "title": "Flat-Lying Semiconductor-Insulator Interfacial Layer in DNTT Thin Films",
   "journal": "Acs Applied Materials & Interfaces",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Matthew R. Leyden",
@@ -473,6 +503,7 @@
   "title": "Influence of Air Annealing on High Efficiency Planar Structure Perovskite Solar Cells",
   "journal": "Chemistry of Materials",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Sonia R. Raga",
    "Min-Cherl Jung",
@@ -487,6 +518,7 @@
   "title": "Mixed interlayers at the interface between PEDOT:PSS and conjugated polymers provide charge transport control",
   "journal": "Journal of Materials Chemistry C",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Adam J. Moulé",
    "Min-Cherl Jung",
@@ -510,6 +542,7 @@
   "title": "Observations on Si-based micro-clusters embedded in TaN thin film deposited by co-sputtering with oxygen contamination",
   "journal": "AIP Advances",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Young Mi Lee",
    "Min-Sang Jung",
@@ -522,6 +555,7 @@
   "title": "Substantial improvement of perovskite solar cells stability by pinhole-free hole transport layer with doping engineering",
   "journal": "Scientific Reports",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Sonia R. Raga",
@@ -534,6 +568,7 @@
   "title": "Ultrathin polycrystalline 6,13-bis(triisopropylsilylethynyl)-pentacene films",
   "journal": "Journal of Vacuum Science and Technology A: Vacuum, Surfaces and Films",
   "year": 2015,
+  "date": "2015-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Dongrong Zhang",
@@ -552,6 +587,7 @@
   "title": "Effects of carbon doping on chemical states of amorphous Ge₂Sb₂Te₅, measured with synchrotron radiation",
   "journal": "Current Applied Physics",
   "year": 2014,
+  "date": "2014-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Young Mi Lee",
@@ -563,6 +599,7 @@
   "title": "Electrical and optical properties of transparent flexible electrodes: Effects of UV ozone and oxygen plasma treatments",
   "journal": "Organic Electronics",
   "year": 2014,
+  "date": "2014-00-00",
   "authors": [
    "Yuichi Kato",
    "Min-Cherl Jung",
@@ -575,6 +612,7 @@
   "title": "Observation of chemical separation of In₃Sb₁Te₂ thin film during phase transition",
   "journal": "Applied Surface Science",
   "year": 2014,
+  "date": "2014-00-00",
   "authors": [
    "Y.M. Lee",
    "J. Baik",
@@ -590,6 +628,7 @@
   "title": "Only the chemical state of Indium changes in Mn-doped In₃Sb₁ Te-2 (Mn: 10 at.%) during multi-level resistance changes",
   "journal": "Scientific Reports",
   "year": 2014,
+  "date": "2014-00-00",
   "authors": [
    "Y. M. Lee",
    "D. Ahn",
@@ -609,6 +648,7 @@
   "title": "Reliability improvement of bulk-heterojunction organic solar cell by using reduced graphene oxide as hole-transport layer",
   "journal": "Physica Status Solidi a-Applications and Materials Science",
   "year": 2014,
+  "date": "2014-00-00",
   "authors": [
    "Nhu Thuy Ho",
    "V. Senthilkumar",
@@ -625,6 +665,7 @@
   "title": "Self-Assembled Nanowires with Giant Rashba Split Bands",
   "journal": "Physical Review Letters",
   "year": 2013,
+  "date": "2013-00-00",
   "authors": [
    "Jewook Park",
    "Sung Won Jung",
@@ -639,6 +680,7 @@
   "title": "Hybrid Heterocycle-Containing Electron-Transport Materials Synthesized by Regioselective Suzuki Cross-Coupling Reactions for Highly Efficient Phosphorescent OLEDs with Unprecedented Low Operating Voltage",
   "journal": "Chemistry of Materials",
   "year": 2012,
+  "date": "2012-00-00",
   "authors": [
    "Ming Liu",
    "Shi-Jian Su",
@@ -653,6 +695,7 @@
   "title": "Characterization of Fe-doped In-Sb-Te (Fe: 10 at.%) material with individual electrical-phase-change and magnetic properties",
   "journal": "Aip Advances",
   "year": 2011,
+  "date": "2011-00-00",
   "authors": [
    "Young Mi Lee",
    "Dang Duc Dung",
@@ -670,6 +713,7 @@
   "title": "Chemical bonding structures of silicon oxynitride films grown by ionised N-2 and pure O-2 gas mixtures at low temperature",
   "journal": "Advances in Applied Ceramics",
   "year": 2011,
+  "date": "2011-00-00",
   "authors": [
    "H‐J Yun",
    "J Lee",
@@ -685,6 +729,7 @@
   "title": "Chemical states and photoluminescence of Si0.3Ge0.7-nitride film formed by N-2(+) gas",
   "journal": "Applied Physics Letters",
   "year": 2011,
+  "date": "2011-00-00",
   "authors": [
    "Y. M. Lee",
    "S. H. Jang",
@@ -697,6 +742,7 @@
   "title": "Nitrogen contribution to N-doped GeTe (N: 8.4 at.%) in the structural phase transition",
   "journal": "Current Applied Physics",
   "year": 2011,
+  "date": "2011-00-00",
   "authors": [
    "Y.M. Lee",
    "H.J. Shin",
@@ -712,6 +758,7 @@
   "title": "The trapping of N-2 molecules and the reduction in its bonding length in Ge(001) due to N-2(+) ion implantation",
   "journal": "Journal of Applied Physics",
   "year": 2011,
+  "date": "2011-00-00",
   "authors": [
    "Young Mi Lee",
    "Won Seok Yun",
@@ -724,6 +771,7 @@
   "title": "Chemical states of Bi-doped GeTe (Bi: 6 at.%) thin film in structural phase transition investigated by synchrotron X-ray photoelectron spectroscopy",
   "journal": "Current Applied Physics",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "M.-C. Jung",
    "Y.M. Lee",
@@ -740,6 +788,7 @@
   "title": "High-resolution X-ray photoelectron spectroscopy study of InTe thin film in structural phase transition from amorphous to crystalline phase",
   "journal": "Thin Solid Films",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "Young Mi Lee",
    "Yongsup Park",
@@ -755,6 +804,7 @@
   "title": "Spontaneous formation of Ge nanocrystals with the capping layer of Si₃N₄ by N-2(+) implantation and rapid thermal annealing",
   "journal": "Thin Solid Films",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Young Mi Lee",
@@ -771,6 +821,7 @@
   "title": "Surface property change of graphene using nitrogen ion",
   "journal": "Journal of Physics-Condensed Matter",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "Ki-Jeong Kim",
    "Hangil Lee",
@@ -788,6 +839,7 @@
   "title": "Synchrotron-Based X-ray Spectroscopic Investigation of Nitrogen-Doped Ge-Bi (8.4 at. %)-Te Thin Films during the Amorphous-to-Crystalline Structural Phase Transition",
   "journal": "Japanese Journal of Applied Physics",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "Kihong Kim",
    "M.-C. Jung",
@@ -801,6 +853,7 @@
   "title": "Temperature-dependent high-resolution X-ray photoelectron spectroscopic study on Ge₁Sb₂Te₄",
   "journal": "Thin Solid Films",
   "year": 2010,
+  "date": "2010-00-00",
   "authors": [
    "Y.M. Lee",
    "M.-C. Jung",
@@ -817,6 +870,7 @@
   "title": "Spectromicroscopic investigation of lateral-type Ge₂Sb₂Te₅ device failure",
   "journal": "Semiconductor Science and Technology",
   "year": 2009,
+  "date": "2009-00-00",
   "authors": [
    "Sung-Hoon Hong",
    "Byeong-Ju Bae",
@@ -830,6 +884,7 @@
   "title": "Synchrotron-Radiation Study of Valence States and Electronic Structures of AgNi₁-xCoxO₂ Delafossite Oxides",
   "journal": "Ieee Transactions on Magnetics",
   "year": 2009,
+  "date": "2009-00-00",
   "authors": [
    "J.-S. Kang",
    "S.S. Lee",
@@ -849,6 +904,7 @@
   "title": "Chemical state and atomic structure of Ge(2)Sb(2)Te(5) system for nonvolatile phase-change random access memory",
   "journal": "Journal of Applied Physics",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Ki-Hong Kim",
@@ -867,6 +923,7 @@
   "title": "Chemical states of GeTe thin-film during structural phase-change by annealing in ultra-high vacuum",
   "journal": "European Physical Journal B",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "C. Ko",
    "Y. M. Lee",
@@ -884,6 +941,7 @@
   "title": "Chemical states of GeTe thin-film during structural phase-change by annealing in ultra-high vacuum",
   "journal": "European Physical Journal B",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "E. Bittner",
    "A. Nußbaumer",
@@ -896,6 +954,7 @@
   "title": "Effect of indium on phase-change characteristics and local chemical states of In-Ge-Sb-Te alloys",
   "journal": "Applied Physics Letters",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "H. J. Shin",
    "Youn-Seon Kang",
@@ -915,6 +974,7 @@
   "title": "Investigation of electronic structure of amorphous, metastable, and stable phases of Ge(1)Sb(2)Te(4) film by high-resolution x-ray photoemission spectroscopy",
   "journal": "Applied Physics Letters",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "Y. M. Lee",
    "M.-C. Jung",
@@ -928,6 +988,7 @@
   "title": "Scanning Photoemission Microscopy of Graphene Sheets on SiO₂",
   "journal": "Advanced Materials",
   "year": 2008,
+  "date": "2008-00-00",
   "authors": [
    "Ki‐jeong Kim",
    "Hangil Lee",
@@ -948,6 +1009,7 @@
   "title": "Chemical phase transitions of a Si oxide film on SiC by MeV electron beam irradiation",
   "journal": "Applied Physics Letters",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "C. Jeon",
    "J. H. Nam",
@@ -965,6 +1027,7 @@
   "title": "Ge nitride formation in n-doped amorphous Ge₂Sb₂Te₅",
   "journal": "Applied Physics Letters",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "M.-C. Jung",
    "Y. M. Lee",
@@ -983,6 +1046,7 @@
   "title": "Photoelectron spectrum from a thin organic layer exposed to intense x rays",
   "journal": "Journal of Applied Physics",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "M. C. Jung",
    "H. J. Shin",
@@ -994,6 +1058,7 @@
   "title": "Thermal decomposition of ethylene on Si(111): Formation of the Si(111)root 3 x root 3: carbon structure",
   "journal": "Surface Science",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "J.W. Kim",
    "T.U. Kampen",
@@ -1006,6 +1071,7 @@
   "title": "Valence and spin states in delafossite AgNiO₂ and the frustrated Jahn-Teller system ANiO(2) (A=Li,Na)",
   "journal": "Physical Review B",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "J.-S. Kang",
    "S. S. Lee",
@@ -1027,6 +1093,7 @@
   "title": "Valence states of transition-metal ions in cubic perovskites SrMn₁-xFexO₃",
   "journal": "Journal of Applied Physics",
   "year": 2007,
+  "date": "2007-00-00",
   "authors": [
    "H. J. Lee",
    "G. Kim",
@@ -1047,6 +1114,7 @@
   "title": "Degradation mechanism of organic light-emitting device investigated by scanning photoelectron microscopy coupled with peel-off technique",
   "journal": "Applied Physics Letters",
   "year": 2006,
+  "date": "2006-00-00",
   "authors": [
    "H. J. Shin",
    "M. C. Jung",
@@ -1061,6 +1129,7 @@
   "title": "High-resolution x-ray photoelectron spectroscopy on oxygen-free amorphous Ge₂Sb₂Te₅",
   "journal": "Applied Physics Letters",
   "year": 2006,
+  "date": "2006-00-00",
   "authors": [
    "M.-C. Jung",
    "H. J. Shin",
@@ -1074,6 +1143,7 @@
   "title": "Observation of molecular nitrogen in N-doped Ge₂Sb₂Te₅",
   "journal": "Applied Physics Letters",
   "year": 2006,
+  "date": "2006-00-00",
   "authors": [
    "Kihong Kim",
    "Ju-Chul Park",
@@ -1092,6 +1162,7 @@
   "title": "Chemical and structural stabilities of SiNxnano-scale islands formed by ionized N2gas at room temperature",
   "journal": "Japanese Journal of Applied Physics, Part 1: Regular Papers and Short Notes and Review Papers",
   "year": 2004,
+  "date": "2004-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Moonsup Han"
@@ -1102,6 +1173,7 @@
   "title": "Color variation of ZnGa₂O₄ phosphor by reduction-oxidation processes",
   "journal": "Applied Physics Letters",
   "year": 2003,
+  "date": "2003-00-00",
   "authors": [
    "J. S. Kim",
    "H. I. Kang",
@@ -1122,6 +1194,7 @@
   "title": "Nanostructured silicon formations as a result of ionized N(2) gas reactions on silicon with native oxide layers",
   "journal": "Applied Physics Letters",
   "year": 2003,
+  "date": "2003-00-00",
   "authors": [
    "Min-Cherl Jung",
    "Tae Gyoung Lee",
