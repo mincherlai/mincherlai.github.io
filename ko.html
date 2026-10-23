@@ -633,6 +633,33 @@
     .pub-highlight-fig img { display: block; width: 100%; height: auto; }
     .pub-highlight .pub-blurb { font-size: 0.9rem; font-weight: 300; color: var(--ivory-soft); margin-top: 16px; line-height: 1.8; max-width: 720px; }
 
+    .pub-title-link { color: inherit; text-decoration: none; }
+    .pub-title-link:hover { color: var(--bronze-bright); }
+    a.pub-arrow { text-decoration: none; color: inherit; }
+    .pub-detail { margin-top: 20px; border-top: 1px solid var(--line-inv-soft); max-width: 720px; }
+    .pub-detail summary {
+      padding: 16px 0 4px;
+      cursor: pointer;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze-bright);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .pub-detail summary::-webkit-details-marker { display: none; }
+    .pub-detail summary::after { content: '+'; margin-left: auto; font-size: 1.15rem; font-weight: 300; }
+    .pub-detail[open] summary::after { content: '\2212'; }
+    .pub-detail-body { padding-top: 10px; font-size: 0.9rem; font-weight: 300; color: var(--ivory-soft); line-height: 1.85; }
+    .pub-detail-body p { margin-bottom: 12px; }
+    .pub-detail-body p:last-child { margin-bottom: 2px; }
+    .pub-detail-body strong { color: var(--ivory); font-weight: 500; }
+
+
     /* ─── PEOPLE ──────────────────────────────── */
     .people-grid {
       display: grid;
@@ -1000,34 +1027,50 @@
       </div>
 
       <div class="eyebrow pub-highlight-label reveal">최근 하이라이트</div>
-            <a class="pub-item pub-highlight reveal" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">
+            <article class="pub-item pub-highlight reveal">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-title">Polarons in Lead-Halide Perovskites: What the Structural Evidence Does and Does Not Establish</div>
+          <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">Polarons in Lead-Halide Perovskites: What the Structural Evidence Does and Does Not Establish</a></div>
           <div class="pub-authors">Inhee Maeng, Young Mi Lee, Jinwoo Park, Seung Jae Oh, Min-Cherl Jung*</div>
           <div class="pub-blurb">A critical review of the structural evidence for polarons in lead-halide perovskites — time-resolved lattice distortion, dimensionality-dependent carrier–lattice coupling, and the first direct test of defect tolerance — separating what polaron formation does and does not establish, with proposed experiments to clarify carrier behavior.</div>
+          <details class="pub-detail">
+            <summary>상세 요약</summary>
+            <div class="pub-detail-body">
+              <p><strong>문제 제기.</strong> 납 할라이드 페로브스카이트의 전하 운반자는 흔히 큰 폴라론(large polaron)으로 설명되고, 운반자를 따라다니는 격자 변형은 대전된 결함을 차폐해 결함 허용성(defect tolerance)을 만든다는 근거로 자주 인용됩니다. 이 리뷰는 구조적 증거가 실제로 확립하는 것이 무엇인지를 묻습니다.</p>
+              <p><strong>그림을 복잡하게 만드는 세 가지 발견.</strong> (1) 시간 분해 구조 측정으로 광유도 격자 변형을 직접 측정할 수 있게 됐지만, 계산에 따르면 격자의 열운동만으로도 과거에 폴라론의 증거로 읽혔던 유효질량 증가가 나타날 수 있어, 변형이 측정된다는 사실만으로는 폴라론의 증거가 되지 않습니다. (2) 운반자–격자 결합은 3차원에서 2차원으로 갈수록 강해지지만, Ruddlesden–Popper와 Dion–Jacobson 두 계열은 서로 다른 채널로 결합하며, 그 대조적인 거동은 격자의 단단함이 아니라 어느 채널이 지배적인지로 결정됩니다. (3) 결함 허용성에 대한 최초의 직접 검증은 폴라론 차폐를 지지하지 않았고(저자들은 무르고 무질서한 격자를 원인으로 봅니다), 새로운 수송 데이터는 차폐가 운반자–운반자 산란을 줄일 뿐 결함에 의한 포획을 막지는 않음을 보여줍니다.</p>
+              <p><strong>결론.</strong> 폴라론이 형성된다 하더라도, 그것만으로 결함 허용성의 원인이라고 할 수는 없습니다. 결정을 위해서는 태양전지 동작 밀도부터 초고속 실험의 고밀도 영역까지, 여기 밀도에 따른 격자 변형을 측정해야 하며 — 이 리뷰가 제안하는 실험이 바로 그것입니다.</p>
+            </div>
+          </details>
           <div class="pub-foot">
             <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
-            <span class="pub-doi"><span>arXiv:2610.17809 ↗</span></span>
+            <span class="pub-doi"><a href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">arXiv:2610.17809 ↗</a></span>
           </div>
         </div>
-        <div class="pub-arrow">↗</div>
+        <a class="pub-arrow" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener" aria-label="View on arXiv">↗</a>
         <div class="pub-highlight-fig"><img src="highlight_polaron_evidence.webp" alt="Schematic: dressed carrier (large polaron) in the Pb–X octahedral framework with screened Coulomb potential at a charged point defect" loading="lazy" width="1148" height="502" /></div>
-      </a>
-<a class="pub-item pub-highlight reveal" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">
+      </article>
+<article class="pub-item pub-highlight reveal">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-title">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</div>
+          <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</a></div>
           <div class="pub-authors">Young Mi Lee, Inhee Maeng, Jinwoo Park, Seung-Jae Oh, Min-Cherl Jung*</div>
           <div class="pub-blurb">A review resolving the dichotomy of band-like transport in a soft, anharmonic lattice — from the Pb 6s² lone pair to large polarons, defect tolerance and the T<sup>−3/2</sup> mobility law — with seven open questions and the measurements needed to settle them.</div>
+          <details class="pub-detail">
+            <summary>상세 요약</summary>
+            <div class="pub-detail-body">
+              <p><strong>퍼즐.</strong> 납 할라이드 페로브스카이트는 가벼운 운반자 질량, 가파른 흡수단, 높은 결함 밀도에서도 유지되는 마이크로미터 규모의 확산 거리까지 — 기존 밴드 반도체처럼 전하를 나릅니다. 그런데 그 격자는 거의 액체처럼 행동합니다. 과감쇠 팔면체 운동, 준탄성 Raman 중심 피크, 극히 낮은 열전도도가 그것입니다.</p>
+              <p><strong>하나의 틀.</strong> 이 리뷰는 두 얼굴이 하나의 미시적 기원에서 나온다고 봅니다. Pb 6s<sup>2</sup> lone pair가 빚어내는, 무르고 강하게 비조화적인 극성 [PbX<sub>3</sub>]<sup>−</sup> 골격입니다. 같은 화학이 밴드 가장자리의 반결합(antibonding) 성격, 유전 응답의 크기와 다중 시간 척도, 그리고 모든 운반자를 감싸는 느린 격자 완화 동역학을 함께 결정합니다. 명목상의 입방상은 하나의 기하 구조가 아니라 국소적으로 대칭이 깨진 배위들이 열적으로 요동치는 앙상블로 취급되며 — 그래서 관례와 반대로 전자 구조보다 격자를 먼저 전개합니다.</p>
+              <p><strong>다루는 범위와 쟁점.</strong> 엑시톤, 중간 결합 영역의 Fröhlich 큰 폴라론, 운반자 수송, 결함 허용성, 2차원·나노결정 유도체로의 차원 축소, 대칭 깨짐을 다룹니다. 결함 허용성의 기원, 강유전성, T<sup>−3/2</sup> 이동도 법칙의 해석이라는 세 가지 쟁점을 비판적으로 평가하고, 일곱 가지 열린 질문과 이를 해결할 측정으로 마무리합니다.</p>
+            </div>
+          </details>
           <div class="pub-foot">
             <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
-            <span class="pub-doi"><span>arXiv:2608.28104 ↗</span></span>
+            <span class="pub-doi"><a href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">arXiv:2608.28104 ↗</a></span>
           </div>
         </div>
-        <div class="pub-arrow">↗</div>
+        <a class="pub-arrow" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener" aria-label="View on arXiv">↗</a>
         <div class="pub-highlight-fig"><img src="highlight_bandlike.webp" alt="Schematic: from the soft anharmonic [PbX₃]⁻ framework to dressed quasiparticles, transport and defect phenomenology" loading="lazy" width="1712" height="1152" /></div>
-      </a>
+      </article>
 
       <div class="eyebrow pub-highlight-label pub-group-label reveal" id="pub-year-label">2026년 발표 논문</div>
       <div class="pub-list pub-list-year reveal">

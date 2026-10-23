@@ -630,6 +630,33 @@
     .pub-highlight-fig img { display: block; width: 100%; height: auto; }
     .pub-highlight .pub-blurb { font-size: 0.9rem; font-weight: 300; color: var(--ivory-soft); margin-top: 16px; line-height: 1.8; max-width: 720px; }
 
+    .pub-title-link { color: inherit; text-decoration: none; }
+    .pub-title-link:hover { color: var(--bronze-bright); }
+    a.pub-arrow { text-decoration: none; color: inherit; }
+    .pub-detail { margin-top: 20px; border-top: 1px solid var(--line-inv-soft); max-width: 720px; }
+    .pub-detail summary {
+      padding: 16px 0 4px;
+      cursor: pointer;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze-bright);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .pub-detail summary::-webkit-details-marker { display: none; }
+    .pub-detail summary::after { content: '+'; margin-left: auto; font-size: 1.15rem; font-weight: 300; }
+    .pub-detail[open] summary::after { content: '\2212'; }
+    .pub-detail-body { padding-top: 10px; font-size: 0.9rem; font-weight: 300; color: var(--ivory-soft); line-height: 1.85; }
+    .pub-detail-body p { margin-bottom: 12px; }
+    .pub-detail-body p:last-child { margin-bottom: 2px; }
+    .pub-detail-body strong { color: var(--ivory); font-weight: 500; }
+
+
     /* ─── PEOPLE ──────────────────────────────── */
     .people-grid {
       display: grid;
@@ -1002,34 +1029,50 @@
       </div>
 
       <div class="eyebrow pub-highlight-label reveal">Recent Highlight</div>
-            <a class="pub-item pub-highlight reveal" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">
+            <article class="pub-item pub-highlight reveal">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-title">Polarons in Lead-Halide Perovskites: What the Structural Evidence Does and Does Not Establish</div>
+          <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">Polarons in Lead-Halide Perovskites: What the Structural Evidence Does and Does Not Establish</a></div>
           <div class="pub-authors">Inhee Maeng, Young Mi Lee, Jinwoo Park, Seung Jae Oh, Min-Cherl Jung*</div>
           <div class="pub-blurb">A critical review of the structural evidence for polarons in lead-halide perovskites — time-resolved lattice distortion, dimensionality-dependent carrier–lattice coupling, and the first direct test of defect tolerance — separating what polaron formation does and does not establish, with proposed experiments to clarify carrier behavior.</div>
+          <details class="pub-detail">
+            <summary>Detailed summary</summary>
+            <div class="pub-detail-body">
+              <p><strong>The question.</strong> Carriers in lead-halide perovskites are widely pictured as large polarons, and the lattice distortion travelling with them is routinely invoked to explain defect tolerance — screening of the carrier from charged defects. This review asks what the structural evidence actually establishes.</p>
+              <p><strong>Three findings that complicate the picture.</strong> (1) Time-resolved structural probes now measure the photoinduced lattice distortion directly — yet calculations show that thermal lattice motion alone can produce the effective-mass increase once read as a polaron signature, so a measured distortion is not by itself proof of a polaron. (2) Carrier–lattice coupling strengthens from 3D to 2D, but the Ruddlesden–Popper and Dion–Jacobson families couple through different channels; their contrasting behaviour is set by which channel dominates, not by lattice stiffness alone. (3) The first direct test of defect tolerance does not support polaron screening — its authors credit the soft, disordered lattice — and new transport data show screening reduces carrier–carrier scattering, not capture by defects.</p>
+              <p><strong>The bottom line.</strong> Even if polarons form, that alone does not make them the cause of defect tolerance. Settling it requires measuring the distortion as a function of excitation density, from solar-cell operating densities up to ultrafast-experiment regimes — the experiments this review proposes.</p>
+            </div>
+          </details>
           <div class="pub-foot">
             <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
-            <span class="pub-doi"><span>arXiv:2610.17809 ↗</span></span>
+            <span class="pub-doi"><a href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener">arXiv:2610.17809 ↗</a></span>
           </div>
         </div>
-        <div class="pub-arrow">↗</div>
+        <a class="pub-arrow" href="https://arxiv.org/abs/2610.17809" target="_blank" rel="noopener" aria-label="View on arXiv">↗</a>
         <div class="pub-highlight-fig"><img src="highlight_polaron_evidence.webp" alt="Schematic: dressed carrier (large polaron) in the Pb–X octahedral framework with screened Coulomb potential at a charged point defect" loading="lazy" width="1148" height="502" /></div>
-      </a>
-<a class="pub-item pub-highlight reveal" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">
+      </article>
+<article class="pub-item pub-highlight reveal">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-title">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</div>
+          <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">Band-like Carriers in a Soft, Anharmonic Lattice: Lead-Halide Perovskites</a></div>
           <div class="pub-authors">Young Mi Lee, Inhee Maeng, Jinwoo Park, Seung-Jae Oh, Min-Cherl Jung*</div>
           <div class="pub-blurb">A review resolving the dichotomy of band-like transport in a soft, anharmonic lattice — from the Pb 6s² lone pair to large polarons, defect tolerance and the T<sup>−3/2</sup> mobility law — with seven open questions and the measurements needed to settle them.</div>
+          <details class="pub-detail">
+            <summary>Detailed summary</summary>
+            <div class="pub-detail-body">
+              <p><strong>The puzzle.</strong> Lead-halide perovskites carry charge like conventional band semiconductors — light carrier masses, steep absorption onsets, micrometre-scale diffusion even at high defect densities — while their lattice behaves almost like a liquid: overdamped octahedral motions, quasielastic Raman central peaks, exceptionally low thermal conductivity.</p>
+              <p><strong>One framework.</strong> The review traces both faces to a single microscopic origin: the soft, strongly anharmonic, polar [PbX<sub>3</sub>]<sup>−</sup> framework shaped by the Pb 6s<sup>2</sup> lone pair. The same chemistry sets the antibonding character of the band edges, the magnitude and multiple timescales of the dielectric response, and the slow relaxational dynamics that dress every carrier. The nominally cubic phase is treated not as a single geometry but as a thermally fluctuating ensemble of locally symmetry-broken configurations — so the lattice is developed before the electronic structure, inverting the conventional order.</p>
+              <p><strong>Coverage and contested ground.</strong> Excitons, Fröhlich large polarons in the intermediate-coupling regime, carrier transport, defect tolerance, dimensional reduction to 2D and nanocrystalline derivatives, and symmetry breaking. Three contested issues — defect tolerance, ferroelectricity, and the interpretation of the T<sup>−3/2</sup> mobility law — are assessed critically, closing with seven open questions and the measurements needed to resolve them.</p>
+            </div>
+          </details>
           <div class="pub-foot">
             <span class="pub-journal">arXiv preprint, cond-mat.mtrl-sci</span>
-            <span class="pub-doi"><span>arXiv:2608.28104 ↗</span></span>
+            <span class="pub-doi"><a href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener">arXiv:2608.28104 ↗</a></span>
           </div>
         </div>
-        <div class="pub-arrow">↗</div>
+        <a class="pub-arrow" href="https://arxiv.org/abs/2608.28104" target="_blank" rel="noopener" aria-label="View on arXiv">↗</a>
         <div class="pub-highlight-fig"><img src="highlight_bandlike.webp" alt="Schematic: from the soft anharmonic [PbX₃]⁻ framework to dressed quasiparticles, transport and defect phenomenology" loading="lazy" width="1712" height="1152" /></div>
-      </a>
+      </article>
 
       <div class="eyebrow pub-highlight-label pub-group-label reveal" id="pub-year-label">2026 Publications</div>
       <div class="pub-list pub-list-year reveal">
