@@ -885,6 +885,10 @@
     .lb-col-ko { font-size: 13px; margin: 0 0 10px; color: var(--ink); }
     .lb-cnt { margin-top: 16px; font-size: 11px; letter-spacing: .24em; color: var(--muted); }
     .lb-opener-img { display: block; width: 100%; height: auto; margin-top: 18px; }
+    .lb-duo { display: flex; gap: 10px; margin-top: 18px; }
+    .lb-duo figure { flex: 1; margin: 0; min-width: 0; }
+    .lb-duo img { width: 100%; height: 118px; object-fit: cover; display: block; }
+    .lb-duo figcaption { font-size: 10px; letter-spacing: .14em; color: var(--muted); margin-top: 5px; text-align: center; }
     .lb-finpage { display: flex; align-items: center; height: 100%; }
     .lb-finpage img { width: 100%; height: auto; display: block; }
     .lb-authorpage { position: absolute; inset: 0; background: linear-gradient(rgba(255,253,249,.14), rgba(255,253,249,.14)), url('lookbook-author.jpg') center 22% / cover no-repeat; }
@@ -1381,7 +1385,7 @@
     function lbOpener(col, count) {
       const m = T.cols[col.key];
       const cnt = col.key === 'DYNAMICS' ? (count + 2) + ' ' + T.worksWord : count + ' ' + T.papersWord;
-      return '<div class="lb-opener"><div class="lb-huge">' + col.num + '</div><h3 class="lb-col-t">' + m.title + '</h3><p class="lb-col-ko">' + m.sub + '</p><p class="lb-p">' + m.intro + '</p><p class="lb-cnt">' + cnt + '</p><img class="lb-opener-img" src="' + col.img + '" alt=""></div>';
+      return '<div class="lb-opener"><div class="lb-huge">' + col.num + '</div><h3 class="lb-col-t">' + m.title + '</h3><p class="lb-col-ko">' + m.sub + '</p><p class="lb-p">' + m.intro + '</p><p class="lb-cnt">' + cnt + '</p>' + (col.key === 'MATERIALS' ? '<div class="lb-duo"><figure><img src="lookbook-dev-solar.jpg" alt="Illustration of a perovskite solar cell"><figcaption>PEROVSKITE SOLAR CELL</figcaption></figure><figure><img src="lookbook-dev-pram.jpg" alt="Illustration of a phase-change memory cell"><figcaption>PHASE-CHANGE MEMORY</figcaption></figure></div>' : '<img class="lb-opener-img" src="' + col.img + '" alt="">') + '</div>';
     }
     Promise.all([
       fetch('data/publications.json').then((r) => r.ok ? r.json() : Promise.reject(r.status)),
