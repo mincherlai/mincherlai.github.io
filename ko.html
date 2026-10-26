@@ -890,6 +890,7 @@
     .lb-opener-img { display: block; width: 100%; height: auto; margin-top: 18px; }
     .lb-finpage { display: flex; align-items: center; height: 100%; }
     .lb-finpage img { width: 100%; height: auto; display: block; }
+    .lb-authorpage { position: absolute; inset: 0; background: linear-gradient(rgba(255,253,249,.14), rgba(255,253,249,.14)), url('lookbook-author.jpg') center 22% / cover no-repeat; }
     .lb-rh { font-size: 10.5px; letter-spacing: .2em; font-weight: 700; color: var(--bronze); border-bottom: 1px solid var(--line-soft); padding-bottom: 7px; margin-bottom: 3px; text-transform: uppercase; }
     .lb-row { display: flex; gap: 8px; align-items: baseline; padding: 6.5px 0; border-bottom: 1px solid var(--line-soft); text-decoration: none; }
     .lb-row.big { padding: 11px 0; }
@@ -1421,7 +1422,7 @@
         '<div class="lb-opener"><div class="lb-kick">COLOPHON</div><h3 class="lb-h2">' + T.coloTitle + '</h3>' +
         '<p class="lb-p">' + T.coloBody1 + '</p><p class="lb-p">' + T.coloBody2 + '</p><p class="lb-fin">— Fin —</p></div>';
       slots.push(colo);
-      slots.push('<div class="lb-finpage"><img src="lookbook-fin.jpg" alt="A single perovskite octahedron with a glowing center — the end mark of this lookbook"></div>');
+      slots.push('<div class="lb-authorpage" role="img" aria-label="Pencil sketch portrait of Min-Cherl Jung"></div>');
       const spreads = [[imgIntro, imgFig], [storyL, storyR]];
       for (let i = 0; i < slots.length; i += 2) spreads.push([slots[i], slots[i + 1] || '']);
       const book = document.getElementById('lbBook');
