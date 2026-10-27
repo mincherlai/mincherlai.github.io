@@ -885,6 +885,7 @@
     .lb-col-ko { font-size: 13px; margin: 0 0 10px; color: var(--ink); }
     .lb-cnt { margin-top: 16px; font-size: 11px; letter-spacing: .24em; color: var(--muted); }
     .lb-opener-img { display: block; width: 100%; height: auto; margin-top: 18px; }
+    .lb-story-img { display: block; width: 100%; height: 168px; object-fit: contain; margin-top: 16px; }
     .lb-duo { display: flex; gap: 10px; margin-top: 18px; }
     .lb-duo figure { flex: 1; margin: 0; min-width: 0; }
     .lb-duo img { width: 100%; height: 118px; object-fit: cover; display: block; }
@@ -1408,7 +1409,7 @@
         '<div class="lb-figzone"><img src="lookbook-intro.jpg" alt="Illustration: a polaron glowing at the center of a halide perovskite octahedral lattice"><span class="lb-band"></span><span class="lb-figcap">' + T.figcap + '</span></div></div>';
       const storyL =
         '<div class="lb-opener"><div class="lb-kick">COVER STORY</div><h3 class="lb-h2">' + T.storyTitle + '</h3>' +
-        '<p class="lb-p">' + T.storyBody1 + '</p><p class="lb-p">' + T.storyBody2 + '</p></div>';
+        '<p class="lb-p">' + T.storyBody1 + '</p><p class="lb-p">' + T.storyBody2 + '</p><img class="lb-story-img" src="lookbook-cover.jpg" alt="Two octahedra — one holding a glowing polaron core, one wrapped in soft wavy lattice lines"></div>';
       const storyR = lbRh(T.reviewsHead) + REVIEWS.map(lbRev).join('') + '<p class="lb-end">' + T.storyNote + '</p>';
       const slots = [];
       COLS.forEach((col) => {
