@@ -928,6 +928,35 @@
       .lb-p { font-size: 12px; }
     }
   
+    /* ─── SCIENTIFIC ESSAY ─────────────────── */
+    .essay-list { margin-top: 64px; border-top: 1px solid var(--line); }
+    .essay-item { border-bottom: 1px solid var(--line); }
+    .essay-details > summary { list-style: none; cursor: pointer; display: block; padding: 42px 0 36px; }
+    .essay-details > summary::-webkit-details-marker { display: none; }
+    .essay-top { display: flex; justify-content: space-between; align-items: center; gap: 16px 24px; flex-wrap: wrap; }
+    .essay-date { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--bronze); }
+    .essay-keys { display: flex; gap: 8px; flex-wrap: wrap; }
+    .essay-keys span { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 5px 11px; border-radius: 999px; }
+    .essay-title { font-family: var(--serif); font-size: clamp(1.55rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.22; letter-spacing: -0.01em; margin-top: 20px; }
+    .essay-cover { display: block; width: 100%; height: auto; margin-top: 26px; border: 1px solid var(--line-soft); }
+    .essay-more { display: inline-block; margin-top: 24px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze); }
+    .essay-more::after { content: '+'; margin-left: 10px; font-size: 1.05rem; font-weight: 400; }
+    .essay-details[open] .essay-more::after { content: '\2212'; }
+    .essay-body { max-width: 760px; padding: 4px 0 52px; }
+    .essay-body p { font-size: 0.98rem; font-weight: 300; color: var(--ink-soft); line-height: 1.95; margin-bottom: 20px; }
+    .essay-body p.lede { font-size: 1.1rem; line-height: 1.8; color: var(--ink); }
+    .essay-body h4 { font-family: var(--serif); font-size: 1.32rem; font-weight: 700; line-height: 1.3; margin: 40px 0 14px; }
+    .essay-body h4 .no { color: var(--bronze); margin-right: 0.55em; }
+    .essay-part { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--bronze); margin: 58px 0 12px; }
+    .essay-part-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; line-height: 1.25; margin-bottom: 22px; }
+    .essay-body figure { margin: 32px 0; }
+    .essay-body figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line-soft); }
+    .essay-sources { font-size: 0.8rem; font-weight: 300; color: var(--muted); line-height: 1.85; border-top: 1px solid var(--line-soft); padding-top: 22px; margin-top: 38px; }
+    .essay-note { font-size: 0.86rem; font-weight: 300; font-style: italic; color: var(--muted); line-height: 1.85; }
+    .essay-sign { margin-top: 34px; }
+    .essay-sign .nm { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
+    .essay-sign .af { font-size: 0.82rem; font-weight: 300; color: var(--muted); margin-top: 5px; }
+
     /* ═══ LUCID — Format I theme (2026-10-27 spec, applied 2026-10-28) ═══ */
     :root {
       --paper: #ffffff;
@@ -1005,6 +1034,7 @@
       <li><a href="#research">연구</a></li>
       <li><a href="#publications">논문</a></li>
       <li><a href="#news">소식</a></li>
+        <li><a href="#essays">에세이</a></li>
       <li><a href="index.html" class="lang-switch">EN</a></li>
       <li><a href="#contact" class="nav-cta">연락처</a></li>
     </ul>
@@ -1364,10 +1394,59 @@
     </div>
   </section>
 
-  <!-- ════════ CONTACT ════════ -->
+  
+  <!-- ════════ SCIENTIFIC ESSAY ════════ -->
+  <section id="essays">
+    <div class="inner">
+      <div class="eyebrow reveal"><span class="section-no">05</span> 과학 에세이</div>
+      <h2 class="section-title reveal">과학 <em>에세이</em></h2>
+      <div class="essay-list reveal">
+        <article class="essay-item">
+          <details class="essay-details">
+            <summary>
+              <div class="essay-top"><span class="essay-date">2026년 10월</span><span class="essay-keys"><span>AI Energy</span><span>Watts per Ton</span><span>Neuromorphic Memory</span><span>Polaron</span></span></div>
+              <div class="essay-title">와트와 톤의 시대, Halide Perovskite</div>
+              <img class="essay-cover" src="essay_watts_tons_v1.webp" alt="태양광이 halide perovskite 격자로 들어가고, 격자의 결합이 신경망으로 이어지는 그림">
+              <span class="essay-more">에세이 읽기</span>
+            </summary>
+            <div class="essay-body">
+<p class="lede">AI의 통화는 와트와 톤이다. Halide Perovskite (HP)는 두 지표의 환율을 함께 바꾸는 물질 플랫폼이다.</p>
+<p>Elon Musk는 2026년 10월 20일 공개된 Walter Isaacson의 팟캐스트 The Builders에서, 앞으로 화폐는 질량과 에너지 같은 근본 물리량으로 측정될 것이고 기존의 화폐는 중요하지 않게 된다고 말했다. 이 발언의 성립 여부를 여기서 따지지는 않는다. 다만 이 말은 AI 산업이 지금 부딪힌 제약과 맞물린다. AI의 확장은 알고리즘의 성능보다 전력 공급과 하드웨어의 질량이 먼저 제한하는 단계에 들어섰다.</p>
+<p>국제에너지기구 (IEA)가 2025년 4월 낸 보고서 Energy and AI에 따르면, 전 세계 데이터센터의 전력 소비는 2024년 415 TWh로 전 세계 전력 소비의 약 1.5%를 차지했다. 2030년에는 약 945 TWh까지 늘어날 전망이다. 보고서는 이 증가의 핵심 동인으로 AI를 꼽는다. 수요를 세는 단위는 와트 (W)이다. 그 와트를 만들어 실어 나르는 발전 설비와 냉각 장치와 서버를 세는 단위는 톤 (ton)이다.</p>
+<h4><span class="no">01</span>톤당 와트 (태양전지)</h4>
+<p>HP 태양전지는 무게당 출력을 바꾼다. 초박형 플렉시블 셀의 최신 보고값은 47.8 W/g (PCE 21.44%) 이다. 종전 대표 기록은 29.4 W/g이다. 무기 박막 태양전지 (CIGS, 비정질 Si)가 약 3.2 W/g 수준인 것과 견주면 약 한 자릿수 높다. 계산된 이론 한계는 74.3 W/g이다. 단, 이 값들은 셀 수준의 지표이며 모듈과 어레이까지 포함한 시스템 수준의 W/kg와는 구분해서 읽어야 한다. 무게가 가벼운 전원이 의미를 갖는 곳은 질량 자체가 비용인 응용이다. Musk가 궤도 AI 하드웨어를 두고 톤당 약 100 kW를 계산 단위로 쓴 것도 같은 맥락의 발언이다.</p>
+<h4><span class="no">02</span>와트당 연산 (뉴로모픽 메모리)</h4>
+<p>연산 쪽의 병목은 데이터 이동이다. Horowitz가 ISSCC 2014에서 제시한 45 nm 공정의 수치로, 32-bit 부동소수점 덧셈에는 0.9 pJ가 들지만 32-bit DRAM 읽기에는 640 pJ가 든다. 데이터 이동이 연산보다 약 700배 비싼 것이다. 메모리 안에서 연산하는 뉴로모픽 구조가 필요한 이유가 여기에 있다. HP는 이온 이동의 활성화 에너지가 낮아 낮은 전압에서 저항 상태를 바꿀 수 있다. 공개 문헌에는 집적 인공 뉴런에서 스파이크당 20–60 pJ (Mater. Horiz. 2025), 마이크로스케일 인공 시냅스에서 fJ급 에너지를 보고한 결과가 있다. 이 수치들은 다른 연구 그룹이 공개한 보고값이다. 우리 그룹의 미발표 결과가 아니다.</p>
+<h4><span class="no">03</span>톤당 저장량 (배터리)</h4>
+<p>배터리는 세 번째 축으로, 단위는 톤당 저장량 (Wh/kg)이다. 발전과 연산이 싸져도 저장이 무거우면 시스템 전체의 질량은 줄지 않는다. 중요한 축이지만 LHP의 주 무대는 아니므로, 여기서는 앞의 두 축과 함께 봐야 할 별도의 문제로만 적어 둔다.</p>
+<p>LHP가 바꾸는 것은 결국 환율이다. 태양전지에서는 톤당 와트를 올리고 뉴로모픽 메모리에서는 와트당 연산을 올린다. 전력을 만드는 응용과 전력을 쓰는 응용이 같은 물질 플랫폼을 공유하는 경우는 드물다. 우리 그룹이 LHP를 연구하는 이유는 이 지점에 있다.</p>
+<p class="essay-sources">출처: IEA, Energy and AI (2025-04). Horowitz, ISSCC 2014. 무게당 출력 기록: PMC12279163 (47.8 W/g); 이론 한계: Panagiotopoulos et al., arXiv:2307.13444 (74.3 W/g). 뉴로모픽 보고값: Mater. Horiz. 2025 (PMC11745301); PMC11650764. Musk 발언: The Builders 팟캐스트 (2026-10-20 공개) 및 궤도 AI 하드웨어 관련 발언.</p>
+<div class="essay-part">Research Vision · 2페이지</div>
+<div class="essay-part-title">세 소자를 관통하는 하나의 물리</div>
+<p>세 소자는 기능이 다를 뿐이다. 성능과 한계를 정하는 물리는 하나이다. 격자와 결합한 캐리어와 격자 속 이온의 동역학이다.</p>
+<p>태양전지는 빛을 전류로 바꾸고 메모리는 전류를 상태로 바꾸며 배터리는 이온을 저장으로 바꾼다. 겉으로 보면 세 개의 다른 소자이다. 그러나 소자 안에서 실제로 일어나는 일을 따라가면 같은 장면이 반복된다. 캐리어가 격자의 변형을 동반해 이동하고 이온이 격자 속을 움직이며 그 움직임이 소자의 응답을 정한다.</p>
+<p>Halide Perovskite (HP)는 이 공통성이 분명하게 드러나는 물질이다. 격자가 연약하고 극성이 강해서 캐리어와 격자의 결합이 수송의 전면에 나타나기 때문이다.</p>
+<figure><img src="essay_one_physics_v1.webp" alt="하나의 halide perovskite 격자 중심에서 태양전지, 뉴로모픽 네트워크, 층상 배터리로 갈라지는 그림"></figure>
+<h4><span class="no">01</span>polaron이 나르는 전류 (태양전지)</h4>
+<p>HP 태양전지에서 전류를 나르는 것은 bare carrier가 아니다. 캐리어는 주변 격자의 분극과 변형을 동반한 polaron으로 움직인다. 이동도와 확산 거리와 재결합 속도는 이 polaron의 성질이다. 한편 이온 이동은 히스테리시스와 열화를 일으키는 축이다. 효율을 정하는 수송과 안정성을 정하는 이온 이동이 같은 캐리어–격자 결합에서 갈라진다. 태양전지의 설계는 이 결합의 세기와 성격을 읽는 일에서 시작한다.</p>
+<h4><span class="no">02</span>대가가 기능으로 (뉴로모픽 메모리)</h4>
+<p>뉴로모픽 메모리에서 저항 스위칭은 이온 이동과 전자 전도가 결합한 현상이다. 이온이 움직여 전도 경로가 바뀌고 그 상태가 저항값으로 남는다. 태양전지에서는 이온 이동성이 열화를 부르는 대가였다. 메모리에서는 그 이동성 자체가 정보를 쓰는 기능이다. 같은 물리가 응용에 따라 반대의 부호를 갖는 것이다. HP의 낮은 이온 이동 활성화 에너지는 낮은 전압에서 상태를 바꿀 수 있는 근거가 된다.</p>
+<h4><span class="no">03</span>저장도 같은 동역학 (배터리)</h4>
+<p>배터리에서도 사정은 같다. LiFePO<sub>4</sub>와 같은 전극 물질에서는 전자 전도가 small polaron hopping으로 설명되는 경우가 많다. 전자가 격자의 국소 변형과 함께 자리에서 자리로 뛰어 이동하는 방식이다. 충전과 방전에서는 리튬 이온의 확산과 이 polaron의 이동이 짝을 이뤄 일어난다. 저장 용량과 출력과 수명이 이 짝의 속도와 가역성에서 정해진다.</p>
+<p>소자마다 따로 쌓은 경험적 최적화는 결국 같은 벽에 부딪힌다. 측정해서 넣은 파라미터가 왜 그 값인지를 모르면 개선은 시행착오의 반복이 된다. 파라미터의 기원을 격자와의 결합에서 이해하면 경험값은 물질의 구조에서 계산하고 설계할 수 있는 양으로 바뀐다. 세 소자를 하나의 물리로 설계할 수 있게 되는 것도 그때이다. 물리적 이해가 중요한 이유는 여기에 있다.</p>
+<p class="essay-note">참고: 이 페이지는 ‘와트와 톤의 시대, Halide Perovskite’의 뒷장이다. Polaron 수송의 근거와 판정 기준은 별도 보고서 ‘캐리어 수송의 폴라론 재해석’에 정리되어 있다.</p>
+<div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- ════════ CONTACT ════════ -->
   <section id="contact">
     <div class="contact-inner">
-      <div class="eyebrow centered reveal"><span class="section-no">05</span> 연락하기</div>
+      <div class="eyebrow centered reveal"><span class="section-no">06</span> 연락하기</div>
       <h2 class="section-title reveal">연락처</h2>
       <p class="contact-lede reveal">
         공동연구, 학생 자리, 그 밖의 질문에 관심 있으신가요?<br />
