@@ -925,6 +925,35 @@
       .lb-p { font-size: 12px; }
     }
   
+    /* ─── SCIENTIFIC ESSAY ─────────────────── */
+    .essay-list { margin-top: 64px; border-top: 1px solid var(--line); }
+    .essay-item { border-bottom: 1px solid var(--line); }
+    .essay-details > summary { list-style: none; cursor: pointer; display: block; padding: 42px 0 36px; }
+    .essay-details > summary::-webkit-details-marker { display: none; }
+    .essay-top { display: flex; justify-content: space-between; align-items: center; gap: 16px 24px; flex-wrap: wrap; }
+    .essay-date { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--bronze); }
+    .essay-keys { display: flex; gap: 8px; flex-wrap: wrap; }
+    .essay-keys span { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 5px 11px; border-radius: 999px; }
+    .essay-title { font-family: var(--serif); font-size: clamp(1.55rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.22; letter-spacing: -0.01em; margin-top: 20px; }
+    .essay-cover { display: block; width: 100%; height: auto; margin-top: 26px; border: 1px solid var(--line-soft); }
+    .essay-more { display: inline-block; margin-top: 24px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze); }
+    .essay-more::after { content: '+'; margin-left: 10px; font-size: 1.05rem; font-weight: 400; }
+    .essay-details[open] .essay-more::after { content: '\2212'; }
+    .essay-body { max-width: 760px; padding: 4px 0 52px; }
+    .essay-body p { font-size: 0.98rem; font-weight: 300; color: var(--ink-soft); line-height: 1.95; margin-bottom: 20px; }
+    .essay-body p.lede { font-size: 1.1rem; line-height: 1.8; color: var(--ink); }
+    .essay-body h4 { font-family: var(--serif); font-size: 1.32rem; font-weight: 700; line-height: 1.3; margin: 40px 0 14px; }
+    .essay-body h4 .no { color: var(--bronze); margin-right: 0.55em; }
+    .essay-part { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--bronze); margin: 58px 0 12px; }
+    .essay-part-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; line-height: 1.25; margin-bottom: 22px; }
+    .essay-body figure { margin: 32px 0; }
+    .essay-body figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line-soft); }
+    .essay-sources { font-size: 0.8rem; font-weight: 300; color: var(--muted); line-height: 1.85; border-top: 1px solid var(--line-soft); padding-top: 22px; margin-top: 38px; }
+    .essay-note { font-size: 0.86rem; font-weight: 300; font-style: italic; color: var(--muted); line-height: 1.85; }
+    .essay-sign { margin-top: 34px; }
+    .essay-sign .nm { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
+    .essay-sign .af { font-size: 0.82rem; font-weight: 300; color: var(--muted); margin-top: 5px; }
+
     /* ═══ LUCID — Format I theme (2026-10-27 spec, applied 2026-10-28) ═══ */
     :root {
       --paper: #ffffff;
@@ -1002,6 +1031,7 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#news">News</a></li>
+        <li><a href="#essays">Essays</a></li>
       <li><a href="ko.html" class="lang-switch">KR</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -1367,10 +1397,59 @@
     </div>
   </section>
 
-  <!-- ════════ CONTACT ════════ -->
+  
+  <!-- ════════ SCIENTIFIC ESSAY ════════ -->
+  <section id="essays">
+    <div class="inner">
+      <div class="eyebrow reveal"><span class="section-no">05</span> Scientific Essay</div>
+      <h2 class="section-title reveal">Scientific <em>Essays</em></h2>
+      <div class="essay-list reveal">
+        <article class="essay-item">
+          <details class="essay-details">
+            <summary>
+              <div class="essay-top"><span class="essay-date">Oct 2026</span><span class="essay-keys"><span>AI Energy</span><span>Watts per Ton</span><span>Neuromorphic Memory</span><span>Polaron</span></span></div>
+              <div class="essay-title">The Age of Watts and Tons: Halide Perovskite</div>
+              <img class="essay-cover" src="essay_watts_tons_v1.webp" alt="Solar light enters a halide perovskite lattice whose bonds extend into a neural network">
+              <span class="essay-more">Read the essay</span>
+            </summary>
+            <div class="essay-body">
+<p class="lede">The currency of AI is the watt and the ton. LHP is a material platform that changes the exchange rate of both quantities at the same time.</p>
+<p>In the podcast The Builders by Walter Isaacson, released on 20 October 2026, Elon Musk said that money will be measured by fundamental physical quantities such as mass and energy, and that existing money will become unimportant. This document does not discuss whether that statement will be correct. The statement is, however, connected to the limitation that the AI industry faces now. The expansion of AI has entered a stage in which the supply of electric power and the mass of hardware limit growth before the performance of algorithms does.</p>
+<p>According to the report Energy and AI, published by the International Energy Agency (IEA) in April 2025, the electricity consumption of data centres in the world was 415 TWh in 2024, which was about 1.5% of the electricity consumption of the whole world. This consumption is expected to increase to about 945 TWh in 2030. The report points to AI as the main reason for this increase. The unit that counts the demand is the watt (W). The unit that counts the power plants, the cooling equipment, and the servers, which generate that wattage and carry it, is the ton.</p>
+<h4><span class="no">01</span>Watts per Ton (Solar Cells)</h4>
+<p>Halide perovskite (HP) solar cells change the power output per weight. The latest reported value of an ultrathin flexible cell is 47.8 W/g (PCE 21.44%). The previous representative record was 29.4 W/g. This value is higher by about one order of magnitude than that of inorganic thin-film solar cells (CIGS and amorphous Si), which are at the level of about 3.2 W/g. The calculated theoretical limit is 74.3 W/g. These values are, however, values at the cell level, and they must be read separately from the W/kg at the system level, which includes modules and arrays. A light power source has meaning in applications in which mass itself is a cost. The statement of Musk, who used about 100 kW per ton as a unit of calculation for orbital AI hardware, is also a statement in the same context.</p>
+<h4><span class="no">02</span>Computation per Watt (Neuromorphic Memory)</h4>
+<p>The bottleneck on the side of computation is the movement of data. In the numbers for a 45 nm process that Horowitz presented at ISSCC 2014, a 32-bit floating-point addition costs 0.9 pJ, but a 32-bit DRAM read costs 640 pJ. The movement of data is about 700 times more expensive than the computation. This is the reason why a neuromorphic structure, which computes inside the memory, is needed. In LHP, the activation energy for ion migration is low, so the resistance state can be changed at a low voltage. In the published literature, an energy of 20–60 pJ per spike has been reported for an integrated artificial neuron (Mater. Horiz. 2025), and an energy at the fJ level has been reported for a microscale artificial synapse. These numbers are reported values that other research groups have published. They are not unpublished results of our group.</p>
+<h4><span class="no">03</span>Storage per Ton (Batteries)</h4>
+<p>The battery is the third axis, and its unit is the storage per ton (Wh/kg). Even when generation and computation become cheap, the mass of the whole system does not decrease if the storage is heavy. The battery is an important axis, but it is not the main stage of LHP, so this document records it only as a separate problem that must be considered together with the first two axes.</p>
+<p>What LHP changes is, in the end, the exchange rate. In solar cells, LHP raises the watts per ton. In neuromorphic memory, LHP raises the computation per watt. A case in which an application that makes electricity and an application that uses electricity share the same material platform is rare. Our group studies LHP for this reason.</p>
+<p class="essay-sources">Sources: IEA, Energy and AI (2025-04). Horowitz, ISSCC 2014. Power-per-weight record: PMC12279163 (47.8 W/g); theoretical limit: Panagiotopoulos et al., arXiv:2307.13444 (74.3 W/g). Neuromorphic reported values: Mater. Horiz. 2025 (PMC11745301); PMC11650764. Statements of Musk: the podcast The Builders (released on 2026-10-20) and statements on orbital AI hardware.</p>
+<div class="essay-part">Research Vision · Page 2</div>
+<div class="essay-part-title">One Physics Through Three Devices</div>
+<p>The three devices differ only in function. The physics that decides their performance and their limits is one. It is the dynamics of carriers coupled to the lattice and of ions inside the lattice.</p>
+<p>A solar cell changes light into current. A memory changes current into a state. A battery changes ions into storage. On the surface, these are three different devices. Inside the devices, the same scene is repeated. A carrier moves together with the deformation of the lattice, an ion moves inside the lattice, and these movements decide the response of the device.</p>
+<p>Halide Perovskite (HP) is a material in which this common physics appears clearly. The lattice is soft and strongly polar, so the coupling between the carriers and the lattice governs the transport directly.</p>
+<figure><img src="essay_one_physics_v1.webp" alt="One halide perovskite lattice core branching into a solar cell, a neuromorphic network, and a layered battery"></figure>
+<h4><span class="no">01</span>Current Carried by Polarons (Solar Cells)</h4>
+<p>In an HP solar cell, the current is not carried by bare carriers. A carrier moves as a polaron, together with the polarization and the deformation of the lattice around it. The mobility, the diffusion length, and the recombination rate are properties of this polaron. Ion migration is the axis that causes hysteresis and degradation. The transport that decides the efficiency and the ion migration that decides the stability separate from the same carrier–lattice coupling. The design of a solar cell starts from reading the strength and the character of this coupling.</p>
+<h4><span class="no">02</span>The Cost Becomes a Function (Neuromorphic Memory)</h4>
+<p>In a neuromorphic memory, resistive switching is a phenomenon in which ion migration and electronic conduction are coupled. Ions move and change the conduction path, and the state remains as a resistance value. In a solar cell, ion mobility was a cost that caused degradation. In a memory, the same mobility is the function that writes information. The same physics has the opposite sign depending on the application. The low activation energy for ion migration in HP is the basis that allows the state to be changed at a low voltage.</p>
+<h4><span class="no">03</span>Storage Follows the Same Dynamics (Batteries)</h4>
+<p>The battery follows the same dynamics. In electrode materials such as LiFePO<sub>4</sub>, the electronic conduction is often explained by small polaron hopping. An electron jumps from one site to another site together with a local deformation of the lattice. During charge and discharge, the diffusion of lithium ions and the movement of this polaron take place as a pair. The storage capacity, the power, and the lifetime are decided by the speed and the reversibility of this pair.</p>
+<p>The empirical optimization accumulated separately for each device meets the same wall in the end. The wall is the coupling to the lattice. If we do not know why a measured parameter has its value, the improvement remains a repetition of trial and error. When the origin of the parameter is understood from the coupling to the lattice, the empirical value changes into a quantity that can be calculated and designed from the structure of the material. The three devices can then be designed with one physics. This is the reason why physical understanding is important.</p>
+<p class="essay-note">Note: This page follows ‘The Age of Watts and Tons: Halide Perovskite’ as its second page. The evidence and the criteria for polaron transport are summarized in a separate report.</p>
+<div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- ════════ CONTACT ════════ -->
   <section id="contact">
     <div class="contact-inner">
-      <div class="eyebrow centered reveal"><span class="section-no">05</span> Get in Touch</div>
+      <div class="eyebrow centered reveal"><span class="section-no">06</span> Get in Touch</div>
       <h2 class="section-title reveal">Contact</h2>
       <p class="contact-lede reveal">
         Interested in collaboration, student positions, or any questions?<br />
