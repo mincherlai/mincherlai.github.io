@@ -1021,6 +1021,45 @@
     .lb-ind { color: var(--muted); }
     .lb-prog { background: rgba(26,26,26,.10); }
     .lb-prog i { background: #0e5a50; }
+
+    /* ═══ LUCID DARK — night scheme incl. lookbook (2026-11-02) ═══ */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #141311;
+        --paper-2: #1a1916;
+        --coal: #0e0d0b;
+        --coal-2: #121110;
+        --ink: #edebe4;
+        --ink-soft: #c9c5b8;
+        --muted: #9b988e;
+        --bronze: #46b39c;
+        --bronze-bright: #5cc3ac;
+        --line: #2c2a26;
+        --line-soft: rgba(237,235,228,.08);
+        --line-inv: rgba(237,235,228,.20);
+        --line-inv-soft: rgba(237,235,228,.10);
+        --ivory: #edebe4;
+        --ivory-soft: rgba(237,235,228,.78);
+        --ivory-mute: rgba(237,235,228,.52);
+      }
+      body { background: #141311; }
+      section::before { background: #46b39c; }
+      .section-no, .research-index { color: #46b39c; }
+      #about, #news { border-top-color: #2c2a26; }
+      .hero-logo { background: #f6f4ee; }
+      /* — lookbook night — */
+      .lb-band { background: #0e0d0b; }
+      .lb .face { background: #1e1c18; border-color: #3a372f; box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+      .lb .pg.pr { background: linear-gradient(90deg, rgba(0,0,0,.38), transparent 22px); }
+      .lb .pg.pl { background: linear-gradient(-90deg, rgba(0,0,0,.30), transparent 22px); }
+      .lb-figcap { background: rgba(18,17,14,.88); }
+      .lb-authorpage { background: linear-gradient(rgba(18,17,14,.55), rgba(18,17,14,.55)), url('lookbook-author.jpg') center 22% / cover no-repeat; }
+      .lb-btn { border-color: var(--ivory); color: var(--ivory); background: transparent; }
+      .lb-btn.go { background: #0e5a50; border-color: #0e5a50; color: #ffffff; }
+      .lb-prog { background: rgba(237,235,228,.16); }
+      .lb-prog i { background: #46b39c; }
+    }
 </style>
 </head>
 <body>
