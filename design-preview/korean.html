@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D — 한국식 서책 · Design Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--paper:#F7F3EA;--paper2:#F1EADB;--ink:#211D16;--body:#45403A;--muted:#8A8172;--line:#D8CFBB;--seal:#B23A2A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--body);font-family:'Pretendard Variable',sans-serif;font-size:16.5px;line-height:1.75;
+background-image:repeating-linear-gradient(0deg,rgba(120,100,60,.025) 0 1px,transparent 1px 5px)}
+.sheet{max-width:1120px;margin:0 auto;padding:0 30px 0 74px;position:relative}
+.side{position:absolute;left:22px;top:120px;writing-mode:vertical-rl;font-family:'Noto Serif KR',serif;font-size:15px;letter-spacing:.5em;color:var(--muted)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--ink);font-size:13px;letter-spacing:.1em}
+.topbar .brand{font-family:'Noto Serif KR',serif;font-weight:700;color:var(--ink)}
+.topbar nav a{color:var(--body);text-decoration:none;margin-left:20px}
+.topbar nav a:hover{color:var(--seal)}
+.hero{padding:84px 0 64px;border-bottom:1px solid var(--line);position:relative}
+.hero .en{font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(38px,6.4vw,72px);line-height:1.22;color:var(--ink);letter-spacing:-.01em}
+.hero h1 .accent{color:var(--seal)}
+.seal{position:absolute;right:6px;top:96px;width:64px;height:64px;background:var(--seal);color:#F7F3EA;font-family:'Noto Serif KR',serif;font-weight:900;font-size:34px;display:flex;align-items:center;justify-content:center;border-radius:6px;transform:rotate(3deg);box-shadow:0 2px 10px rgba(178,58,42,.3);line-height:1}
+.hero .lede{margin-top:38px;font-size:18.5px;line-height:1.85;max-width:37em;color:var(--body)}
+.hero .lede b{color:var(--ink)}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-family:'Noto Serif KR',serif;font-weight:700;font-size:27px;color:var(--ink);margin-bottom:30px;display:flex;align-items:baseline;gap:16px}
+h2 .no{font-size:13px;color:var(--seal);letter-spacing:.2em;font-family:'Pretendard Variable',sans-serif;font-weight:600}
+.cols{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.cols p{margin-bottom:16px}
+.facts{border-left:1px solid var(--line);padding-left:28px}
+.facts div{margin-bottom:18px}
+.facts .k{font-size:12px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.facts .v{font-family:'Noto Serif KR',serif;font-size:17px;color:var(--ink);margin-top:3px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.tags span{border:1px solid var(--ink);padding:6px 14px;font-size:13.5px;color:var(--ink);background:rgba(255,255,255,.35)}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.theme{padding:22px 0;border-top:1px solid var(--line)}
+.theme h3{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.theme p{font-size:15px}
+.pub{padding:20px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:baseline}
+.pub .yr{font-family:'Noto Serif KR',serif;font-weight:700;color:var(--seal);font-size:15px}
+.pub .tt{font-family:'Noto Serif KR',serif;font-size:17.5px;color:var(--ink);line-height:1.55}
+.pub .jr{margin-left:auto;font-size:14px;color:var(--muted);font-style:italic;white-space:nowrap}
+footer{padding:36px 0 52px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;letter-spacing:.05em}
+@media(max-width:820px){.sheet{padding-left:30px}.side{display:none}.cols{grid-template-columns:1fr}.themes{grid-template-columns:1fr}.seal{display:none}.pub .jr{display:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="side">표면과 계면을 읽다</div>
+  <div class="topbar">
+    <span class="brand">정민철 연구실</span>
+    <nav><a href="#about">소개</a><a href="#research">연구</a><a href="#pubs">논문</a></nav>
+  </div>
+
+  <header class="hero">
+    <div class="en">Innovation Lab for Halide Perovskite Materials · Shanghai Jiao Tong University</div>
+    <h1>할라이드 페로브스카이트<br>소재 <span class="accent">혁신</span> 연구실</h1>
+    <div class="seal">正</div>
+    <p class="lede">원자 단위의 결함, 격자의 동역학, 그리고 에너지와 센서 소자 — <b>방사광과 테라헤르츠 파동으로 읽는 페로브스카이트의 이야기</b>를 연구합니다.</p>
+  </header>
+
+  <section id="about">
+    <h2><span class="no">첫째</span>연구실 소개</h2>
+    <div class="cols">
+      <div>
+        <p>이 연구실은 할라이드 페로브스카이트가 실제로 무엇을 할 수 있는지를 결정하는 것 — 원자 단위 결함과 격자 동역학 — 을 연구합니다. 결함의 종류와 상태, 밀도를 정량화하고, 같은 박막에서 측정한 테라헤르츠 흡수와 서로 대조해 확인하는 것이 연구의 핵심 방법입니다.</p>
+        <p>표면과 계면은 방사광 광전자 분광으로, 격자는 테라헤르츠 시간영역 분광으로 읽습니다.</p>
+        <div class="tags">
+          <span>표면·계면 물리</span><span>페로브스카이트 소재와 박막</span><span>폴라론·포논·전자 상호작용</span><span>THz-TDS 분광과 센서 소자</span><span>방사광 (XPS / ARPES / NEXAFS)</span>
+        </div>
+      </div>
+      <div class="facts">
+        <div><div class="k">연구책임자</div><div class="v">정민철 부교수 (연구)</div></div>
+        <div><div class="k">소속</div><div class="v">상하이교통대학교 GIFT</div></div>
+        <div><div class="k">논문</div><div class="v">총 74편 · 교신 29편</div></div>
+        <div><div class="k">거점</div><div class="v">상하이 · 2026년 설립</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2><span class="no">둘째</span>연구 주제</h2>
+    <div class="themes">
+      <div class="theme"><h3>표면과 계면</h3><p>방사광 PES·XPS·ARPES·NEXAFS로 읽는 표면과 이종 계면의 전자 구조.</p></div>
+      <div class="theme"><h3>결함의 정량화</h3><p>결함의 종류·상태·밀도를 숫자로 — 그리고 THz 흡수와의 상호 대조.</p></div>
+      <div class="theme"><h3>격자 동역학</h3><p>부드럽고 비조화적인 격자에서의 포논 모드와 폴라론 형성.</p></div>
+      <div class="theme"><h3>소자</h3><p>태양전지, THz 센서, 뉴로모픽 메모리 소자.</p></div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <h2><span class="no">셋째</span>최근 논문</h2>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation</span><span class="jr">Advanced Materials</span></div>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells</span><span class="jr">Nanomaterials</span></div>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites</span><span class="jr">Applied Surface Science</span></div>
+  </section>
+
+  <footer><span>시안 D · 한국식 서책 · 라이브 사이트가 아닙니다</span><span>Noto Serif KR · Pretendard</span></footer>
+</div>
+</body>
+</html>

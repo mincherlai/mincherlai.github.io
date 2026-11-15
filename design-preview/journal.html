@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A — The Journal · Design Preview</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--paper:#FBFAF6;--ink:#171410;--body:#33302A;--muted:#7C766A;--line:#DAD4C6;--teal:#0E5A50}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--body);font-family:'Satoshi','Pretendard Variable',sans-serif;font-size:17px;line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+.topbar{border-bottom:3px double var(--ink);padding:14px 0 10px;display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.topbar nav a{color:var(--ink);text-decoration:none;margin-left:22px}
+.topbar nav a:hover{color:var(--teal)}
+.hero{padding:64px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+.hero .kicker{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal);margin-bottom:22px}
+.hero h1{font-family:'Fraunces',serif;font-weight:560;font-size:clamp(44px,7.2vw,84px);line-height:1.02;letter-spacing:-.015em;color:var(--ink)}
+.hero h1 em{font-style:italic;font-weight:380}
+.hero .kr{font-family:'Noto Serif KR',serif;font-size:19px;color:var(--muted);margin-top:20px;letter-spacing:.06em}
+.dateline{display:flex;justify-content:space-between;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:9px 2px;margin-top:38px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{max-width:760px;margin:44px auto 0;font-family:'Fraunces',serif;font-size:clamp(21px,2.6vw,27px);line-height:1.45;color:var(--ink);text-align:center;font-weight:420}
+section{padding:58px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+.sec-head .no{font-size:12px;letter-spacing:.2em;color:var(--teal);text-transform:uppercase;white-space:nowrap}
+.sec-head h2{font-family:'Fraunces',serif;font-size:32px;font-weight:560;color:var(--ink)}
+.sec-head .rule{flex:1;border-top:1px solid var(--line)}
+.cols{columns:2;column-gap:44px;font-size:16.5px}
+.cols p{margin-bottom:14px;break-inside:avoid}
+.cols p:first-child::first-letter{font-family:'Fraunces',serif;font-size:52px;float:left;line-height:.85;padding:5px 10px 0 0;color:var(--teal)}
+.tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid var(--ink);padding:5px 13px;font-size:13px;letter-spacing:.04em;color:var(--ink)}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.theme{padding:18px 0;border-top:1px solid var(--line)}
+.theme h3{font-family:'Fraunces',serif;font-size:21px;font-weight:560;color:var(--ink);margin-bottom:5px}
+.theme p{font-size:15px;color:var(--muted)}
+.toc{list-style:none}
+.toc li{display:flex;align-items:baseline;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}
+.toc .yr{font-size:13px;color:var(--teal);letter-spacing:.1em;white-space:nowrap}
+.toc .tt{font-family:'Fraunces',serif;font-size:18.5px;color:var(--ink)}
+.toc .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.toc .jr{font-style:italic;font-size:14.5px;color:var(--muted);white-space:nowrap}
+footer{padding:34px 0 46px;text-align:center;font-size:13px;color:var(--muted);letter-spacing:.08em}
+footer .sig{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--ink);display:block;margin-bottom:8px}
+@media(max-width:760px){.cols{columns:1}.themes{grid-template-columns:1fr}.toc .jr{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <span>Min-Cherl Jung · Shanghai Jiao Tong University</span>
+    <nav><a href="#about">About</a><a href="#research">Research</a><a href="#pubs">Publications</a><a href="#contact">Contact</a></nav>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">Future Center for Interfacial and Advanced Materials Research</div>
+    <h1>Innovation Lab for<br><em>Halide Perovskite</em> Materials</h1>
+    <div class="kr">할라이드 페로브스카이트 소재 혁신 연구실</div>
+    <div class="dateline"><span>Vol. I — No. 1</span><span>Shanghai · Est. 2026</span><span>November 2026</span></div>
+    <p class="lede">Atomic-scale defects, lattice dynamics, energy and sensor devices — a perovskite story read with synchrotron light and terahertz waves.</p>
+  </header>
+
+  <section id="about">
+    <div class="sec-head"><span class="no">Article I</span><h2>About the Laboratory</h2><div class="rule"></div></div>
+    <div class="cols">
+      <p>The laboratory studies how atomic-scale defects and lattice dynamics decide what a halide perovskite can actually do — in a solar cell, a sensor, or a memory device. The work begins at surfaces and interfaces, where the material meets the world and where most of its behaviour is set.</p>
+      <p>Photoelectron spectroscopy with synchrotron radiation reads the electronic structure; terahertz time-domain spectroscopy reads the lattice. Put together, the two give a quantitative account of defect states and the phonon modes that carry carriers through the soft lattice.</p>
+      <p>The laboratory is led by Min-Cherl Jung, Associate Professor (Research) at the Global Institute of Future Technology, Shanghai Jiao Tong University.</p>
+    </div>
+    <div class="tags">
+      <span>Surface / Interface Physics</span><span>Perovskite Materials &amp; Thin Films</span><span>Polaron · Phonon · Electron Interactions</span><span>THz-TDS Spectroscopy &amp; Sensing Devices</span><span>Synchrotron Radiation (XPS / ARPES / NEXAFS)</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="sec-head"><span class="no">Article II</span><h2>Research Themes</h2><div class="rule"></div></div>
+    <div class="themes">
+      <div class="theme"><h3>Surfaces &amp; Interfaces</h3><p>Electronic structure of perovskite surfaces and heterointerfaces, measured by PES, XPS, ARPES and NEXAFS at synchrotron beamlines.</p></div>
+      <div class="theme"><h3>Defects, Quantified</h3><p>Defect species, states and densities measured quantitatively — and correlated with terahertz absorption on the same films.</p></div>
+      <div class="theme"><h3>Lattice Dynamics</h3><p>Phonon modes, polaron formation and carrier dynamics in a soft, anharmonic lattice, read by THz-TDS and ultrafast spectroscopy.</p></div>
+      <div class="theme"><h3>Devices</h3><p>Solar cells, THz sensors and neuromorphic memory elements built on the same quantitative understanding of the thin film.</p></div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <div class="sec-head"><span class="no">Article III</span><h2>Recent Publications</h2><div class="rule"></div></div>
+    <ul class="toc">
+      <li><span class="yr">2026</span><span class="tt">Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation</span><span class="dots"></span><span class="jr">Advanced Materials</span></li>
+      <li><span class="yr">2026</span><span class="tt">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells</span><span class="dots"></span><span class="jr">Nanomaterials</span></li>
+      <li><span class="yr">2026</span><span class="tt">Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites</span><span class="dots"></span><span class="jr">Applied Surface Science</span></li>
+    </ul>
+  </section>
+
+  <footer id="contact">
+    <span class="sig">— set in Fraunces &amp; Satoshi —</span>
+    Design preview A · The Journal · Not the live site · Innovation Lab for Halide Perovskite Materials
+  </footer>
+</div>
+</body>
+</html>

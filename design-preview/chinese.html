@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E — 中国式 文人书册 · Design Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--paper:#F4F1EA;--ink:#201D18;--body:#474239;--muted:#8D8574;--line:#CFC7B4;--seal:#A62B1F}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--body);font-family:'Noto Serif SC','Pretendard Variable',serif;font-size:16.5px;line-height:1.85;padding:22px}
+.frame{max-width:1120px;margin:0 auto;border:1.5px solid var(--ink);outline:1px solid var(--ink);outline-offset:5px;padding:0 46px;position:relative;background:
+radial-gradient(600px 300px at 85% -40px,rgba(32,29,24,.07),transparent 65%),
+radial-gradient(500px 260px at -80px 30%,rgba(32,29,24,.05),transparent 60%),var(--paper)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-size:13.5px;letter-spacing:.14em}
+.topbar .brand{font-weight:700;color:var(--ink)}
+.topbar nav a{color:var(--body);text-decoration:none;margin-left:22px}
+.topbar nav a:hover{color:var(--seal)}
+.hero{display:flex;gap:40px;padding:74px 0 60px;border-bottom:1px solid var(--line)}
+.hero .main{flex:1}
+.hero .en{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;font-family:'Pretendard Variable',sans-serif}
+.hero h1{font-weight:900;font-size:clamp(36px,5.6vw,62px);line-height:1.3;color:var(--ink);letter-spacing:.02em}
+.hero h1 .accent{color:var(--seal)}
+.hero .lede{margin-top:32px;font-size:18px;line-height:2;max-width:34em}
+.hero .vert{writing-mode:vertical-rl;font-size:21px;font-weight:600;letter-spacing:.42em;color:var(--ink);border-left:1px solid var(--line);padding-left:26px;line-height:1.9}
+.hero .vert .r{color:var(--seal)}
+.seal{display:inline-flex;margin-top:34px;width:58px;height:58px;background:var(--seal);color:var(--paper);font-weight:900;font-size:30px;align-items:center;justify-content:center;border-radius:5px;transform:rotate(-2.5deg);box-shadow:0 2px 10px rgba(166,43,31,.28)}
+section{padding:58px 0;border-bottom:1px solid var(--line)}
+h2{font-weight:700;font-size:26px;color:var(--ink);margin-bottom:28px;display:flex;align-items:baseline;gap:16px}
+h2 .no{font-size:13px;color:var(--seal);letter-spacing:.3em}
+.cols{display:grid;grid-template-columns:1.5fr 1fr;gap:46px}
+.cols p{margin-bottom:16px}
+.facts{border-left:1px solid var(--line);padding-left:26px}
+.facts div{margin-bottom:16px}
+.facts .k{font-size:12px;letter-spacing:.26em;color:var(--muted)}
+.facts .v{font-size:16.5px;color:var(--ink);margin-top:2px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.tags span{border:1px solid var(--ink);padding:5px 13px;font-size:13.5px;color:var(--ink)}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:0 46px}
+.theme{padding:20px 0;border-top:1px solid var(--line)}
+.theme h3{font-size:19.5px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.theme p{font-size:15px}
+.pub{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline}
+.pub .yr{font-weight:700;color:var(--seal);font-size:15px}
+.pub .tt{font-size:16.5px;color:var(--ink);line-height:1.6;font-family:'Pretendard Variable',sans-serif}
+.pub .jr{margin-left:auto;font-size:13.5px;color:var(--muted);font-style:italic;white-space:nowrap;font-family:'Pretendard Variable',sans-serif}
+footer{padding:32px 0 40px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;letter-spacing:.08em;font-family:'Pretendard Variable',sans-serif}
+@media(max-width:820px){body{padding:12px}.frame{padding:0 22px}.hero{flex-direction:column}.hero .vert{writing-mode:horizontal-tb;border-left:none;padding-left:0;letter-spacing:.3em}.cols{grid-template-columns:1fr}.themes{grid-template-columns:1fr}.pub .jr{display:none}}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="topbar">
+    <span class="brand">郑旻哲 课题组</span>
+    <nav><a href="#about">简介</a><a href="#research">研究方向</a><a href="#pubs">论文</a></nav>
+  </div>
+
+  <header class="hero">
+    <div class="main">
+      <div class="en">Innovation Lab for Halide Perovskite Materials · Shanghai Jiao Tong University</div>
+      <h1>卤化物钙钛矿<br>材料<span class="accent">创新</span>实验室</h1>
+      <p class="lede">以同步辐射与太赫兹波,读原子尺度的缺陷与晶格的动力学 — 这是属于钙钛矿的故事:关于表面、界面,以及柔软晶格中载流子的命运。</p>
+      <span class="seal">郑</span>
+    </div>
+    <div class="vert">格物致知 · <span class="r">表界面为先</span></div>
+  </header>
+
+  <section id="about">
+    <h2><span class="no">卷首</span>实验室简介</h2>
+    <div class="cols">
+      <div>
+        <p>本实验室研究决定卤化物钙钛矿实际性能的根本因素:原子尺度缺陷与晶格动力学。我们将缺陷的种类、状态与密度定量化,并与同一薄膜上测得的太赫兹吸收相互印证 — 这种相互关联,是本实验室研究方法的核心。</p>
+        <p>表面与界面由同步辐射光电子能谱读取,晶格由太赫兹时域光谱读取。</p>
+        <div class="tags">
+          <span>表面与界面物理</span><span>钙钛矿材料与薄膜</span><span>极化子 · 声子 · 电子相互作用</span><span>THz-TDS 光谱与传感器件</span><span>同步辐射 (XPS / ARPES / NEXAFS)</span>
+        </div>
+      </div>
+      <div class="facts">
+        <div><div class="k">负责人</div><div class="v">郑旻哲 · 副教授(研究)</div></div>
+        <div><div class="k">单位</div><div class="v">上海交通大学 未来技术学院</div></div>
+        <div><div class="k">论文</div><div class="v">共 74 篇 · 通讯作者 29 篇</div></div>
+        <div><div class="k">地点</div><div class="v">上海 · 2026 年成立</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2><span class="no">卷一</span>研究方向</h2>
+    <div class="themes">
+      <div class="theme"><h3>表面与界面</h3><p>以 PES、XPS、ARPES 与 NEXAFS 读取表面与异质界面的电子结构。</p></div>
+      <div class="theme"><h3>缺陷的定量</h3><p>缺陷的种类、状态与密度 — 先有数字,后有解释,并与 THz 吸收互证。</p></div>
+      <div class="theme"><h3>晶格动力学</h3><p>柔软非谐晶格中的声子模式与极化子形成。</p></div>
+      <div class="theme"><h3>器件</h3><p>太阳能电池、太赫兹传感器与神经形态存储器件。</p></div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <h2><span class="no">卷二</span>近期论文</h2>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation</span><span class="jr">Advanced Materials</span></div>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells</span><span class="jr">Nanomaterials</span></div>
+    <div class="pub"><span class="yr">2026</span><span class="tt">Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites</span><span class="jr">Applied Surface Science</span></div>
+  </section>
+
+  <footer><span>시안 E · 중국식 문인 서책 · 라이브 사이트가 아닙니다</span><span>Noto Serif SC</span></footer>
+</div>
+</body>
+</html>

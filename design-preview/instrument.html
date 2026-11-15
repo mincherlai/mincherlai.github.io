@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B — The Instrument · Design Preview</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--bg:#0B0E11;--panel:#10141A;--ink:#E8EDE9;--body:#B9C2BC;--muted:#6E7A72;--line:#232B31;--sig:#46B39C;--amber:#E0A458}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--body);font-family:'Satoshi','Pretendard Variable',sans-serif;font-size:16.5px;line-height:1.65;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;background-position:center top}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 40%,var(--bg) 88%);pointer-events:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative}
+.mono{font-family:'IBM Plex Mono',monospace}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.topbar .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sig);margin-right:9px;box-shadow:0 0 10px var(--sig)}
+.topbar nav a{color:var(--body);text-decoration:none;margin-left:22px}
+.topbar nav a:hover{color:var(--sig)}
+.hero{padding:70px 0 30px}
+.hero .ch{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;color:var(--sig);text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.06;font-weight:700;color:var(--ink);letter-spacing:-.02em;max-width:16ch}
+.hero h1 .thin{color:var(--sig)}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:18px;color:var(--body)}
+.readouts{display:flex;gap:0;margin-top:44px;border:1px solid var(--line);background:rgba(16,20,26,.75)}
+.readout{flex:1;padding:18px 22px;border-right:1px solid var(--line)}
+.readout:last-child{border-right:none}
+.readout .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.readout .v{font-family:'IBM Plex Mono',monospace;font-size:32px;color:var(--ink);margin-top:4px}
+.readout .v small{font-size:14px;color:var(--sig)}
+.scope{margin:26px 0 8px;border:1px solid var(--line);background:rgba(16,20,26,.75);padding:20px 22px 10px}
+.scope .cap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.scope .cap b{color:var(--amber);font-weight:500}
+svg{display:block;width:100%;height:auto}
+section{padding:54px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.sec-head .ch{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sig);letter-spacing:.2em}
+.sec-head h2{font-size:27px;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.cell{background:var(--panel);padding:24px}
+.cell .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.18em}
+.cell h3{color:var(--ink);font-size:19px;margin:8px 0 6px}
+.cell p{font-size:15px;color:var(--body)}
+.pubs{list-style:none}
+.pubs li{padding:16px 4px;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline}
+.pubs .yr{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--sig)}
+.pubs .tt{color:var(--ink);font-size:17px}
+.pubs .jr{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tags span{font-family:'IBM Plex Mono',monospace;font-size:12px;border:1px solid var(--line);padding:6px 12px;color:var(--body);background:rgba(16,20,26,.7)}
+footer{padding:30px 0 44px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.1em;display:flex;justify-content:space-between}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.readouts{flex-direction:column}.readout{border-right:none;border-bottom:1px solid var(--line)}.pubs .jr{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <span><span class="dot"></span>MCJ-LAB · SIGNAL LIVE</span>
+    <nav><a href="#about">About</a><a href="#research">Research</a><a href="#pubs">Publications</a></nav>
+  </div>
+
+  <header class="hero">
+    <div class="ch">CH-01 · Halide Perovskite Materials</div>
+    <h1>Reading defects &amp; lattices <span class="thin">as signals.</span></h1>
+    <p class="sub">Atomic-scale defects, lattice dynamics, energy and sensor devices — a perovskite story read with synchrotron light and terahertz waves.</p>
+    <div class="readouts">
+      <div class="readout"><div class="k">Publications</div><div class="v"><span data-count="74">0</span></div></div>
+      <div class="readout"><div class="k">Corresponding</div><div class="v"><span data-count="29">0</span></div></div>
+      <div class="readout"><div class="k">First author</div><div class="v"><span data-count="21">0</span></div></div>
+      <div class="readout"><div class="k">Base</div><div class="v">SHA <small>· EST. 2026</small></div></div>
+    </div>
+    <div class="scope">
+      <div class="cap"><span>THz-TDS · absorption trace (schematic motif, no data)</span><b>TRACE 01</b></div>
+      <svg viewBox="0 0 960 240" preserveAspectRatio="none" aria-hidden="true">
+        <g stroke="#232B31" stroke-width="1">
+          <line x1="0" y1="60" x2="960" y2="60"/><line x1="0" y1="120" x2="960" y2="120"/><line x1="0" y1="180" x2="960" y2="180"/>
+          <line x1="240" y1="0" x2="240" y2="240"/><line x1="480" y1="0" x2="480" y2="240"/><line x1="720" y1="0" x2="720" y2="240"/>
+        </g>
+        <path id="trace" fill="none" stroke="#46B39C" stroke-width="2.5" d="M0,196 C90,194 140,192 200,188 C250,184 268,120 300,96 C330,74 356,150 392,178 C430,206 470,204 520,196 C575,187 600,84 636,58 C668,36 694,140 730,176 C770,212 830,206 960,198"/>
+        <path id="trace2" fill="none" stroke="#E0A458" stroke-width="1.5" opacity=".65" d="M0,210 C140,208 240,206 340,200 C430,194 470,150 520,140 C575,129 620,180 700,196 C790,212 880,210 960,208"/>
+      </svg>
+      <div class="cap"><span>frequency →</span><span>phonon mode region</span></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="sec-head"><span class="ch">CH-02</span><h2>About</h2></div>
+    <p style="max-width:62ch">The laboratory quantifies defect species, states and densities in halide perovskite thin films — and correlates them with quantitative terahertz absorption measured on the same films. Surfaces and interfaces are read with synchrotron photoelectron spectroscopy; the lattice is read with THz-TDS. Led by Min-Cherl Jung, Associate Professor (Research), Global Institute of Future Technology, Shanghai Jiao Tong University.</p>
+    <div class="tags">
+      <span>SURFACE / INTERFACE PHYSICS</span><span>PEROVSKITE THIN FILMS</span><span>POLARON · PHONON · ELECTRON</span><span>THz-TDS SENSING</span><span>XPS / ARPES / NEXAFS</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="sec-head"><span class="ch">CH-03</span><h2>Research channels</h2></div>
+    <div class="grid">
+      <div class="cell"><div class="tag">IN · SYNCHROTRON</div><h3>Surfaces &amp; Interfaces</h3><p>Electronic structure at surfaces and heterointerfaces — PES, XPS, ARPES, NEXAFS.</p></div>
+      <div class="cell"><div class="tag">IN · DEFECTS</div><h3>Defects, Quantified</h3><p>Species, states and densities — numbers first, interpretation second.</p></div>
+      <div class="cell"><div class="tag">IN · THz</div><h3>Lattice Dynamics</h3><p>Phonon modes and polaron formation in a soft, anharmonic lattice.</p></div>
+      <div class="cell"><div class="tag">OUT · DEVICES</div><h3>Devices</h3><p>Solar cells, THz sensors and neuromorphic memory on measured films.</p></div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <div class="sec-head"><span class="ch">CH-04</span><h2>Latest output</h2></div>
+    <ul class="pubs">
+      <li><span class="yr">2026</span><span class="tt">Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation</span><span class="jr">ADVANCED MATERIALS</span></li>
+      <li><span class="yr">2026</span><span class="tt">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells</span><span class="jr">NANOMATERIALS</span></li>
+      <li><span class="yr">2026</span><span class="tt">Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites</span><span class="jr">APPLIED SURFACE SCIENCE</span></li>
+    </ul>
+  </section>
+
+  <footer><span>DESIGN PREVIEW B · THE INSTRUMENT · NOT THE LIVE SITE</span><span>GSAP · SCROLLTRIGGER</span></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('[data-count]').forEach(function(el){
+  var end = +el.dataset.count;
+  gsap.fromTo(el, {innerText:0}, {innerText:end, duration:1.4, ease:'power2.out', snap:{innerText:1},
+    scrollTrigger:{trigger:el, start:'top 92%'}});
+});
+['trace','trace2'].forEach(function(id, i){
+  var p = document.getElementById(id), L = p.getTotalLength();
+  p.style.strokeDasharray = L; p.style.strokeDashoffset = L;
+  gsap.to(p, {strokeDashoffset:0, duration:2.2, delay:i*0.35, ease:'power2.inOut',
+    scrollTrigger:{trigger:'.scope', start:'top 85%'}});
+});
+gsap.from('.cell', {y:26, opacity:0, duration:.7, stagger:.09, ease:'power3.out',
+  scrollTrigger:{trigger:'.grid', start:'top 85%'}});
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { gsap.globalTimeline.timeScale(100); }
+</script>
+</body>
+</html>

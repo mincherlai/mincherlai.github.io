@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C — Quiet Field · Design Preview</title>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF7;--ink:#232320;--body:#4A4A44;--muted:#9A9A90;--line:#E4E4DC;--accent:#0E5A50}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--body);font-family:'Pretendard Variable',sans-serif;font-size:16.5px;line-height:1.8;font-weight:340}
+.col{max-width:700px;margin:0 auto;padding:0 30px}
+header{padding:110px 0 90px}
+header .small{font-size:12.5px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:54px}
+h1{font-family:'Erode','Noto Serif KR',serif;font-weight:500;font-size:clamp(34px,5vw,50px);line-height:1.28;color:var(--ink);letter-spacing:-.01em}
+h1 .kr{display:block;font-family:'Noto Serif KR',serif;font-size:.52em;font-weight:400;color:var(--muted);margin-top:26px;letter-spacing:.04em;line-height:1.6}
+.lede{margin-top:56px;font-size:18px;line-height:1.9;color:var(--body);max-width:34em}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font-family:'Erode','Noto Serif KR',serif;font-weight:500;font-size:24px;color:var(--ink);margin-bottom:36px;display:flex;align-items:baseline;gap:18px}
+h2 .n{font-family:'Pretendard Variable',sans-serif;font-size:12px;letter-spacing:.28em;color:var(--accent)}
+p{margin-bottom:20px;max-width:36em}
+.tags{margin-top:44px;line-height:2.3;color:var(--muted);font-size:15px}
+.tags b{color:var(--body);font-weight:500}
+.theme{padding:26px 0;border-bottom:1px solid var(--line)}
+.theme:first-of-type{border-top:1px solid var(--line)}
+.theme h3{font-family:'Erode',serif;font-size:19.5px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.theme p{margin:0;font-size:15.5px}
+.pub{padding:22px 0;border-bottom:1px solid var(--line)}
+.pub .yr{font-size:12.5px;letter-spacing:.2em;color:var(--accent);display:block;margin-bottom:5px}
+.pub .tt{font-family:'Erode',serif;font-size:18.5px;color:var(--ink);line-height:1.5}
+.pub .jr{font-size:14px;color:var(--muted);font-style:italic}
+footer{padding:70px 0 90px;font-size:13px;color:var(--muted);letter-spacing:.06em}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .9s cubic-bezier(0.22,1,0.36,1),transform .9s cubic-bezier(0.22,1,0.36,1)}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:760px){header{padding:70px 0 60px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<div class="col">
+  <header>
+    <div class="small">Shanghai Jiao Tong University · GIFT</div>
+    <h1>Innovation Lab for Halide Perovskite Materials
+      <span class="kr">할라이드 페로브스카이트 소재 혁신 연구실</span>
+    </h1>
+    <p class="lede">Atomic-scale defects, lattice dynamics, energy and sensor devices — a perovskite story read with synchrotron light and terahertz waves.</p>
+  </header>
+
+  <section class="reveal">
+    <h2><span class="n">01</span>About</h2>
+    <p>The laboratory studies how atomic-scale defects and lattice dynamics decide what a halide perovskite can actually do. Defect species, states and densities are quantified, and correlated with terahertz absorption measured on the same films.</p>
+    <p>It is led by Min-Cherl Jung, Associate Professor (Research) at the Global Institute of Future Technology, Shanghai Jiao Tong University.</p>
+    <div class="tags">
+      <b>Surface / Interface Physics</b> · Perovskite Materials &amp; Thin Films · <b>Polaron · Phonon · Electron Interactions</b> · THz-TDS Spectroscopy &amp; Sensing Devices · <b>Synchrotron Radiation</b>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2><span class="n">02</span>Research</h2>
+    <div class="theme"><h3>Surfaces &amp; Interfaces</h3><p>Electronic structure measured by PES, XPS, ARPES and NEXAFS.</p></div>
+    <div class="theme"><h3>Defects, Quantified</h3><p>Species, states and densities — correlated with THz absorption.</p></div>
+    <div class="theme"><h3>Lattice Dynamics</h3><p>Phonon modes and polaron formation in a soft, anharmonic lattice.</p></div>
+    <div class="theme"><h3>Devices</h3><p>Solar cells, THz sensors, neuromorphic memory elements.</p></div>
+  </section>
+
+  <section class="reveal">
+    <h2><span class="n">03</span>Publications</h2>
+    <div class="pub"><span class="yr">2026</span><div class="tt">Pathway Engineering Enables Durable Iridium-Free Acidic Water Oxidation</div><div class="jr">Advanced Materials</div></div>
+    <div class="pub"><span class="yr">2026</span><div class="tt">Terahertz Time-Domain Spectroscopy as a Defect Fingerprinting Tool for Halide Perovskite Solar Cells</div><div class="jr">Nanomaterials</div></div>
+    <div class="pub"><span class="yr">2026</span><div class="tt">Atomic-scale evidence of Sb interdiffusion driving irreversible surface phase transition in MA₃Sb₂I₉ lead-free perovskites</div><div class="jr">Applied Surface Science</div></div>
+  </section>
+
+  <footer>Design preview C · Quiet Field · Not the live site</footer>
+</div>
+<script>
+var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
