@@ -1057,6 +1057,11 @@
       .lb-prog { background: rgba(237,235,228,.16); }
       .lb-prog i { background: #46b39c; }
     }
+
+/* First essay (oldest): title only until opened */
+.essay-item.essay-first .essay-details:not([open]) .essay-top,
+.essay-item.essay-first .essay-details:not([open]) .essay-cover,
+.essay-item.essay-first .essay-details:not([open]) .essay-more{display:none}
 </style>
 </head>
 <body>
@@ -1446,6 +1451,26 @@
         <article class="essay-item">
           <details class="essay-details">
             <summary>
+              <div class="essay-top"><span class="essay-date">Nov 2026</span><span class="essay-keys"><span>Lead-Free</span><span>Tin Perovskite</span><span>Crystallization</span><span>Lone Pair</span></span></div>
+              <div class="essay-title">The Long Detour Toward a Lead-Free Solar Cell</div>
+              <img class="essay-cover" src="essay_lead_free_v1.webp" alt="Ink drawing: a winding detour road curves around a deep teal ring toward a small sun on the horizon">
+              <span class="essay-more">Read the essay</span>
+            </summary>
+            <div class="essay-body">
+<p class="lede">Removing lead from a perovskite is not the substitution of one element. It is learning again the physics of the moment a crystal is born, and that is why this road is not a straight line but a detour.</p>
+<p>At the centre of the halide perovskite solar cell sits lead. Lead carries the outstanding optoelectronic properties of this material, and at the same time it is the question that follows the technology to the gate of commercialization. The environmental burden of soluble lead compounds is a matter of trust before it is a matter of regulation. Replacing lead with tin has therefore been a long-standing task of the field. Tin belongs to the same group and carries a far smaller toxic burden. In real devices, however, tin-based materials long failed to catch up with their lead-based counterparts. The reason lay in the very speed at which the film is born.</p>
+<p>Tin perovskites solidify too fast. While the solution dries, crystallization proceeds uncontrolled, the film fills with voids and defects, and the easy oxidation of tin adds a further handicap from the start. For the origin of this speed, a plausible account circulated for years: tin compounds were said to bind the solvent more strongly. In 2024, a study in Nature Communications tested this account directly by computation, and the answer was the opposite. Per solvent molecule, the binding strength of tin and lead was practically indistinguishable. The real difference lay elsewhere. The stereochemically active 5s lone pair of tin destabilizes the highly coordinated solvate structures and lowers the barrier for solvent release that precedes crystallization. Tin is fast not because it holds on more tightly, but because it lets go earlier.</p>
+<figure><img src="essay_lead_free_body_v1.webp" alt="Ink schematic: a tin centre lets its solvent molecules go early and the film below is full of holes, while tin and lead releasing solvent in step grow a uniform film"></figure>
+<p>This understanding changes the prescription, because the problem is not the strength of binding but the synchronization of crystallization. Using additives to advance the crystallization of lead and retard that of tin, so that the two elements grow at the same pace, the same study obtained uniform tin&ndash;lead films. A single computation that overturned a received account gave a mechanistic map to additive choices that had been accumulated by experience alone.</p>
+<p>The detour is not over. Preventing the oxidation of tin, keeping uniformity over large areas and securing long-term stability remain open tasks. What the field has learned, however, is clear. Replacing a material does not end with changing its composition. Substitution begins only when the physics of the moment a crystal is born is understood. The road to a lead-free solar cell is long, and what shortens it is not a new element but an old question asked again.</p>
+<p class="essay-sources">Source: Zhang et al., &ldquo;Synchronized crystallization in tin-lead perovskite solar cells&rdquo;, <i>Nature Communications</i> 15, 6887 (2024). DOI: <a href="https://doi.org/10.1038/s41467-024-51361-2" target="_blank" rel="noopener">10.1038/s41467-024-51361-2</a> &mdash; the computation that overturned the solvent-binding account, and the synchronized crystallization strategy for uniform tin&ndash;lead films.</p>
+<div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
+            </div>
+          </details>
+        </article>
+        <article class="essay-item">
+          <details class="essay-details">
+            <summary>
               <div class="essay-top"><span class="essay-date">Nov 2026</span><span class="essay-keys"><span>Efficiency Record</span><span>Scaling</span><span>Fill Factor</span><span>Module</span></span></div>
               <div class="essay-title">The Shadow of the Record: What 34 Percent Does Not Say</div>
               <img class="essay-cover" src="essay_record_shadow_v1.webp" alt="Ink drawing: a tiny glowing record cell shines over a large solar module that casts a long hatched shadow">
@@ -1458,7 +1483,7 @@
 <figure><img src="essay_record_shadow_body_v2.webp" alt="Ink schematic: an ideal square current-voltage curve beside a sagging module curve, the area lost between them hatched in teal"></figure>
 <p>This gap is not a failure. It is information. If the record efficiency of a small cell points to the ceiling of a material, the fill factor of a module points to the present state of its manufacturing. Read side by side, the two numbers reveal the next question of the field. Making a known material wide, uniform and reproducible becomes as much a scientific problem as finding a new one. A module that slowed crystallization through a low-temperature process and preserved film uniformity, reaching a certified 23.9 percent at 19.48 square centimetres with a fill factor of 83.3 percent, shows that the bottleneck lay not in the material but in the uniformity of the process.</p>
 <p>The right way to read an efficiency record, therefore, is not to doubt the number but to read its conditions with it. What was the area, was it certified, and what was the fill factor. With these three questions as a habit, a record stops being an instrument of exaggeration and becomes a coordinate that tells us where the research stands. The shadow of the record says more than the record itself.</p>
-<p class="essay-sources">Source: Yan et al., &ldquo;Retarding efficiency loss upon scaling in perovskite photovoltaics as fill factor becomes the bottleneck&rdquo;, <i>Nature Communications</i> (2026). DOI: 10.1038/s41467-026-78867-1 &mdash; the basis for the fill-factor-dominated scaling loss and for the certified low-temperature-process module at 23.9 percent (19.48 cm<sup>2</sup>, fill factor 83.3 percent).</p>
+<p class="essay-sources">Source: Yan et al., &ldquo;Retarding efficiency loss upon scaling in perovskite photovoltaics as fill factor becomes the bottleneck&rdquo;, <i>Nature Communications</i> (2026). DOI: <a href="https://doi.org/10.1038/s41467-026-78867-1" target="_blank" rel="noopener">10.1038/s41467-026-78867-1</a> &mdash; the basis for the fill-factor-dominated scaling loss and for the certified low-temperature-process module at 23.9 percent (19.48 cm<sup>2</sup>, fill factor 83.3 percent).</p>
 <div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
             </div>
           </details>
@@ -1488,7 +1513,7 @@
           </details>
         </article>
 
-        <article class="essay-item">
+        <article class="essay-item essay-first">
           <details class="essay-details">
             <summary>
               <div class="essay-top"><span class="essay-date">Oct 2026</span><span class="essay-keys"><span>AI Energy</span><span>Watts per Ton</span><span>Neuromorphic Memory</span><span>Polaron</span></span></div>

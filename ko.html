@@ -1060,6 +1060,11 @@
       .lb-prog { background: rgba(237,235,228,.16); }
       .lb-prog i { background: #46b39c; }
     }
+
+/* First essay (oldest): title only until opened */
+.essay-item.essay-first .essay-details:not([open]) .essay-top,
+.essay-item.essay-first .essay-details:not([open]) .essay-cover,
+.essay-item.essay-first .essay-details:not([open]) .essay-more{display:none}
 </style>
 </head>
 <body>
@@ -1443,6 +1448,26 @@
         <article class="essay-item">
           <details class="essay-details">
             <summary>
+              <div class="essay-top"><span class="essay-date">2026년 11월</span><span class="essay-keys"><span>Lead-Free</span><span>Tin Perovskite</span><span>Crystallization</span><span>Lone Pair</span></span></div>
+              <div class="essay-title">납 없는 태양전지를 향한 긴 우회로</div>
+              <img class="essay-cover" src="essay_lead_free_v1.webp" alt="잉크 드로잉: 딥 틸 링을 돌아 작은 태양을 향해 굽이치는 우회로">
+              <span class="essay-more">에세이 읽기</span>
+            </summary>
+            <div class="essay-body">
+<p class="lede">페로브스카이트에서 납을 빼는 일은 원소 하나의 대체가 아니다. 결정이 태어나는 순간의 물리를 다시 배우는 일이며, 그래서 이 길은 직선이 아니라 우회로이다.</p>
+<p>할라이드 페로브스카이트 태양전지의 중심에는 납이 있다. 납은 이 소재의 뛰어난 광전자 특성을 떠받치는 원소이지만, 동시에 상용화의 문 앞에서 늘 따라붙는 질문이기도 하다. 수용성 납 화합물의 환경 부담은 규제의 문제이기 전에 신뢰의 문제이다. 그래서 납을 주석으로 바꾸려는 시도는 이 분야의 오랜 과제였다. 주석은 납과 같은 족에 속하고 독성의 부담이 훨씬 작다. 그런데 실제 소자에서 주석 기반 소재는 오랫동안 납 기반을 따라잡지 못했다. 이유는 막이 만들어지는 속도 그 자체에 있었다.</p>
+<p>주석 페로브스카이트는 너무 빨리 굳는다. 용액이 마르는 동안 결정화가 제멋대로 진행되어 막은 구멍과 결함으로 가득 차고, 주석의 산화까지 겹치면 소자는 시작부터 불리하다. 이 빠름의 원인에 대해서는 오랫동안 그럴듯한 설명이 통용되어 왔다. 주석의 화합물이 용매와 더 강하게 결합하기 때문이라는 설명이다. 그러나 2024년 Nature Communications에 실린 한 연구는 이 통설을 계산으로 정면으로 검증했고, 답은 반대였다. 용매 분자 하나당 결합 강도는 주석과 납이 사실상 구별되지 않았고, 진짜 차이는 다른 곳에 있었다. 주석의 5s lone pair이 만드는 입체적 활성이 고배위 용매화 구조를 불안정하게 만들어, 결정이 시작되기 전에 거쳐야 하는 용매 이탈의 장벽을 낮추고 있었던 것이다. 주석이 빠른 것은 더 단단히 붙어서가 아니라, 더 일찍 놓아 버리기 때문이다.</p>
+<figure><img src="essay_lead_free_body_v1.webp" alt="잉크 도식: 용매를 일찍 놓아 버리는 주석 중심과 구멍투성이 막, 나란히 용매를 놓으며 균일하게 자라는 주석과 납의 막"></figure>
+<p>이 이해는 처방을 바꾼다. 문제는 결합의 강도가 아니라 결정화의 동기화이기 때문이다. 같은 연구는 첨가제를 이용해 납 쪽의 결정화를 앞당기고 주석 쪽을 늦춰, 두 원소의 결정이 같은 속도로 자라게 만드는 동기화 전략으로 균일한 주석–납 혼합막을 얻었다. 통설을 뒤집은 계산 하나가, 경험으로 쌓아 올린 첨가제 선택에 메커니즘의 지도를 제공한 셈이다.</p>
+<p>물론 우회로는 아직 끝나지 않았다. 주석의 산화를 막는 일, 대면적에서의 균일성, 장기 안정성은 여전히 남아 있는 과제이다. 그럼에도 이 분야가 배운 것은 분명하다. 소재를 바꾸는 일은 조성을 바꾸는 일로 끝나지 않는다. 결정이 태어나는 순간의 물리를 이해할 때 비로소 대체는 시작된다. 납 없는 태양전지를 향한 길은 멀지만, 그 거리를 줄이는 것은 새로운 원소가 아니라 오래된 질문을 다시 묻는 일이다.</p>
+<p class="essay-sources">출처: Zhang et al., &ldquo;Synchronized crystallization in tin-lead perovskite solar cells&rdquo;, <i>Nature Communications</i> 15, 6887 (2024). DOI: <a href="https://doi.org/10.1038/s41467-024-51361-2" target="_blank" rel="noopener">10.1038/s41467-024-51361-2</a> &mdash; 용매 결합 통설의 반박(분자당 결합 강도 동등)과 lone pair에 의한 용매화 구조 불안정화, 동기화 결정화 전략의 근거.</p>
+<div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
+            </div>
+          </details>
+        </article>
+        <article class="essay-item">
+          <details class="essay-details">
+            <summary>
               <div class="essay-top"><span class="essay-date">2026년 11월</span><span class="essay-keys"><span>Efficiency Record</span><span>Scaling</span><span>Fill Factor</span><span>Module</span></span></div>
               <div class="essay-title">기록의 그림자: 효율 34퍼센트가 말하지 않는 것</div>
               <img class="essay-cover" src="essay_record_shadow_v1.webp" alt="잉크 드로잉: 빛나는 작은 기록 셀 아래로 긴 그림자를 드리우는 대면적 태양전지 모듈">
@@ -1455,7 +1480,7 @@
 <figure><img src="essay_record_shadow_body_v2.webp" alt="잉크 도식: 이상적인 사각형 전류-전압 곡선과 무너져 내린 모듈 곡선, 그 사이로 사라진 면적의 틸 해칭"></figure>
 <p>이 간극은 실패가 아니라 정보다. 기록 셀의 효율이 소재의 천장을 가리킨다면, 모듈의 곡선인자는 제조의 현재를 가리킨다. 두 숫자를 나란히 놓고 읽으면 연구의 다음 질문이 보인다. 새 소재를 찾는 일만큼이나, 이미 가진 소재를 넓게, 균일하게, 재현성 있게 만드는 일이 과학의 문제가 된다. 실제로 저온 공정을 이용해 결정화의 속도를 늦추고 막의 균일성을 지킨 모듈이 19.48제곱센티미터 면적에서 23.9퍼센트의 인증 효율과 83.3퍼센트의 곡선인자를 함께 기록한 사례는, 병목이 소재의 한계가 아니라 공정의 균일성 쪽에 있었음을 보여 준다.</p>
 <p>그러므로 효율 기록을 읽는 올바른 방법은 숫자를 의심하는 것이 아니라 숫자의 조건을 함께 읽는 것이다. 면적은 얼마인가, 인증을 받았는가, 곡선인자는 얼마인가. 이 세 가지를 묻는 습관이 갖춰질 때, 기록은 과장의 도구가 아니라 연구가 어디에 서 있는지를 알려 주는 좌표가 된다. 기록의 그림자는 기록 자체보다 많은 것을 말해 준다.</p>
-<p class="essay-sources">출처: Yan et al., &ldquo;Retarding efficiency loss upon scaling in perovskite photovoltaics as fill factor becomes the bottleneck&rdquo;, <i>Nature Communications</i> (2026). DOI: 10.1038/s41467-026-78867-1 &mdash; 스케일링 손실의 곡선인자 지배와 저온 공정 미니모듈 인증 23.9퍼센트(19.48 cm<sup>2</sup>, FF 83.3퍼센트)의 근거.</p>
+<p class="essay-sources">출처: Yan et al., &ldquo;Retarding efficiency loss upon scaling in perovskite photovoltaics as fill factor becomes the bottleneck&rdquo;, <i>Nature Communications</i> (2026). DOI: <a href="https://doi.org/10.1038/s41467-026-78867-1" target="_blank" rel="noopener">10.1038/s41467-026-78867-1</a> &mdash; 스케일링 손실의 곡선인자 지배와 저온 공정 미니모듈 인증 23.9퍼센트(19.48 cm<sup>2</sup>, FF 83.3퍼센트)의 근거.</p>
 <div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
             </div>
           </details>
@@ -1485,7 +1510,7 @@
           </details>
         </article>
 
-        <article class="essay-item">
+        <article class="essay-item essay-first">
           <details class="essay-details">
             <summary>
               <div class="essay-top"><span class="essay-date">2026년 10월</span><span class="essay-keys"><span>AI Energy</span><span>Watts per Ton</span><span>Neuromorphic Memory</span><span>Polaron</span></span></div>
