@@ -1062,6 +1062,9 @@
 .essay-item.essay-first .essay-details:not([open]) .essay-top,
 .essay-item.essay-first .essay-details:not([open]) .essay-cover,
 .essay-item.essay-first .essay-details:not([open]) .essay-more{display:none}
+.essay-item.essay-title-only .essay-details:not([open]) .essay-top,
+.essay-item.essay-title-only .essay-details:not([open]) .essay-cover,
+.essay-item.essay-title-only .essay-details:not([open]) .essay-more{display:none}
 </style>
 </head>
 <body>
@@ -1451,6 +1454,26 @@
         <article class="essay-item">
           <details class="essay-details">
             <summary>
+              <div class="essay-top"><span class="essay-date">Nov 2026</span><span class="essay-keys"><span>Building-Integrated PV</span><span>Semi-Transparent</span><span>Interface</span><span>City</span></span></div>
+              <div class="essay-title">The Conditions under Which a Window Becomes a Power Plant</div>
+              <img class="essay-cover" src="essay_window_power_v1.webp" alt="Ink drawing: a tall glass building facade with deep teal solar window cells and circuit traces">
+              <span class="essay-more">Read the essay</span>
+            </summary>
+            <div class="essay-body">
+<p class="lede">In a city, the largest empty surface is not the roof but the glass. For a window to become a power plant, what is needed is not efficiency alone but the physics of a surface that satisfies transparency, colour, lifetime and efficiency at the same time.</p>
+<p>The map of photovoltaics has long been drawn on empty land. Desert plants and panels in open fields were its protagonists, and the city remained a place that only consumes electricity. Count the total surface a city owns, however, and the story changes. The glass facades of tall buildings are far larger than any south-facing roof, and that glass receives light all day while doing nothing. The idea of the generating window, of building-integrated photovoltaics, is an attempt to turn this idle surface into an asset of the city.</p>
+<p>The technical core is semi-transparency. A window must be a device that produces light's electricity and at the same time admits light. Make the absorbing layer thin and light passes but current falls. Make it thick and generation rises but the window darkens. Onto this comes the problem of colour. What architecture demands is not an efficiency curve but a neutral colour and a uniform appearance to the eye, since a tinted window changes the impression of the whole building. Designing which part of the spectrum is converted into electricity and which part is let through is, at once, designing colour. This is why selective absorbers, which transmit the visible and harvest only the ultraviolet and infrared, are proposed as the ideal.</p>
+<figure><img src="essay_window_power_body_v1.webp" alt="Ink schematic: sunlight enters a semi-transparent window cross-section, visible light passes through while ultraviolet and infrared are absorbed in the thin layer and carried out as current"></figure>
+<p>From the standpoint of surface physics, the bottleneck returns to the interface. Where the transparent electrode meets the absorber, charges leak or are captured, and the thinner the film, the larger the share of that loss. Coating a uniform film of nanometre thickness reproducibly over a large pane, sealing it against decades of ultraviolet and thermal cycling, and tolerating partial shade and soiling &mdash; the conditions for a generating window form a list entirely different from a laboratory record. A technology that does not pass this list stops at the prototype.</p>
+<p>The direction matters because the energy problem of the city is a problem of land. In a city with no ground for power plants, the surfaces of buildings already standing are the only generation sites left. A modest efficiency can be repaid by area, and when generation and consumption coincide, transmission losses shrink as well. The condition under which a window becomes a power plant is, in the end, not a single number but a contract signed at once by physics, architecture and the city. Filling in its clauses, one by one, is the present state of this field.</p>
+<p class="essay-sources">Based on the general literature on building-integrated photovoltaics (BIPV) and semi-transparent solar cells. This introductory essay contains no numerical claims about specific products.</p>
+<div class="essay-sign"><div class="nm">Min-Cherl Jung</div><div class="af">Global Institute of Future Technology (GIFT), Shanghai Jiao Tong University</div></div>
+            </div>
+          </details>
+        </article>
+        <article class="essay-item">
+          <details class="essay-details">
+            <summary>
               <div class="essay-top"><span class="essay-date">Nov 2026</span><span class="essay-keys"><span>Lead-Free</span><span>Tin Perovskite</span><span>Crystallization</span><span>Lone Pair</span></span></div>
               <div class="essay-title">The Long Detour Toward a Lead-Free Solar Cell</div>
               <img class="essay-cover" src="essay_lead_free_v1.webp" alt="Ink drawing: a winding detour road curves around a deep teal ring toward a small sun on the horizon">
@@ -1489,7 +1512,7 @@
           </details>
         </article>
 
-        <article class="essay-item">
+        <article class="essay-item essay-title-only">
           <details class="essay-details">
             <summary>
               <div class="essay-top"><span class="essay-date">Nov 2026</span><span class="essay-keys"><span>Fundamental Physics</span><span>Carrier Identity</span><span>Nonradiative Recombination</span><span>Measurement</span></span></div>
@@ -1729,3 +1752,4 @@
 
 </body>
 </html>
+
